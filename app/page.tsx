@@ -115,7 +115,22 @@ function FigmaVideo({
 }
 
 export default function Home() {
+  const [query, setQuery] = useState("");
   const [showSearch, setShowSearch] = useState(false);
+  const products = [
+    "Bubble Curve",
+    "Serpentine",
+    "Pétale",
+    "Niwa",
+    "En-Tête",
+    "Trinta"
+  ];
+  const filtered = products
+  .filter((item) =>
+    item.toLowerCase().includes(query.toLowerCase())
+  )
+  .slice(0, 5);
+  
   return (
     <div className="flex flex-col flex-1 bg-white">
       <main className="w-full flex justify-center">
@@ -190,11 +205,31 @@ export default function Home() {
           </header>
           {showSearch && (
             <div className="absolute top-[118px] left-0 w-full bg-white z-[999] p-4 shadow-md">
+              
               <input
                 type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search products..."
                 className="w-full border border-gray-300 px-4 py-2 outline-none"
               />
+              {query && (
+                <div className="mt-2 bg-white border p-2">
+                  {filtered.length > 0 ? (
+                    filtered.map((item, index) => (
+                      <div
+                        key={index}
+                        className="py-2 px-2 border-b cursor-pointer hover:bg-gray-100"
+                      >
+                        {item}
+                      </div>
+                    ))
+                  ) : (
+                    <div>No results</div>
+                  )}
+                </div>
+              )}
+
             </div>
           )}
 
