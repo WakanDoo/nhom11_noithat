@@ -1,5 +1,7 @@
 "use client";
 
+// Trang danh mục sản phẩm - Products Overview
+// Animation: stagger fade-in cho sections, scale effect cho featured images
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,12 +11,14 @@ import { categoryMap } from "@/src/lib/categories";
 import { cormorant, roboto } from "@/src/lib/fonts";
 import { fadeInScale, fadeInUp, motionTransition, staggerContainer } from "@/src/lib/motion";
 
+// Ảnh featured hiển thị bên phải trang
 const featuredImages = [
   { src: "/category/products-elegant.jpeg", label: "Elegant" },
   { src: "/category/products-luxury.jpeg", label: "Luxury" },
   { src: "/category/products-timeless.jpeg", label: "Timeless" },
 ];
 
+// Danh sách các khu vực phòng và slug danh mục tương ứng
 const sections = [
   { title: "Livingroom", items: ["sofa", "tables-chairs", "tv-cabinets"] },
   { title: "Home Office", items: ["office", "office-chairs", "bookshelf"] },
@@ -30,7 +34,10 @@ export function ProductsOverview() {
 
       <main className="mx-auto w-full max-w-7xl px-5 pb-0 pt-8 sm:px-8 lg:px-10 lg:pt-9">
         <section className="grid gap-8 lg:grid-cols-[392px_minmax(0,1fr)] lg:gap-10">
+
+          {/* Cột trái: nhãn Products + danh sách sections */}
           <div className="space-y-7 pt-2 lg:pt-5.5">
+            {/* Nhãn "Products" fade-in từ dưới lên */}
             <motion.p
               className={`${roboto.className} text-[11px] uppercase tracking-[0.24em] text-black/50`}
               initial={{ opacity: 0, y: 10 }}
@@ -40,6 +47,7 @@ export function ProductsOverview() {
               Products
             </motion.p>
 
+            {/* Danh sách sections với stagger animation */}
             <motion.div className="space-y-4.5" variants={staggerContainer()} initial="hidden" animate="show">
               {sections.map((section) => (
                 <motion.div key={section.title} className="space-y-2.5" variants={fadeInUp}>
@@ -49,6 +57,7 @@ export function ProductsOverview() {
                     {section.title}
                   </h2>
 
+                  {/* Links danh mục với stagger riêng bên trong mỗi section */}
                   <motion.div className="space-y-1.5" variants={staggerContainer(0.06)}>
                     {section.items.map((slug) => {
                       const category = categoryMap.get(slug);
@@ -71,6 +80,7 @@ export function ProductsOverview() {
             </motion.div>
           </div>
 
+          {/* Cột phải: 3 ảnh featured với fade-in + scale + hover effect */}
           <motion.div className="grid gap-6 sm:grid-cols-3 lg:gap-6" variants={staggerContainer(0.1)} initial="hidden" animate="show">
             {featuredImages.map((image, index) => (
               <motion.div
@@ -95,6 +105,7 @@ export function ProductsOverview() {
                   />
                 </div>
 
+                {/* Label chữ overlay phía dưới ảnh */}
                 <p
                   className={`${cormorant.className} pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 text-center text-[34px] uppercase tracking-[0.08em] text-[#f3ece7] sm:text-[38px] lg:text-[41px]`}
                 >
