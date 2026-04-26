@@ -11,8 +11,9 @@ import { aboutContent } from "../data/about";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f7f3ed]">
-      <div className="mx-auto w-full max-w-[420px] bg-[#fbf8f3] shadow-[0_0_0_1px_#efe8dd] md:max-w-[900px] lg:max-w-[1120px]">
-        <AboutNavbar logo={aboutContent.nav.centerLogo} />
+      <AboutNavbar logo={aboutContent.nav.centerLogo} />
+
+      <div className="mx-auto w-full max-w-3xl px-5 sm:px-8">
         <AboutHero
           subtitle={aboutContent.hero.subtitle}
           title={aboutContent.hero.title}
@@ -23,8 +24,9 @@ export default function Home() {
         <AboutPromise section={aboutContent.promise} />
         <AboutTeam section={aboutContent.team} />
         <AboutStats stats={aboutContent.stats} />
-        <AboutFooter footer={aboutContent.footer} />
       </div>
+
+      <AboutFooter footer={aboutContent.footer} />
     </main>
   );
 }

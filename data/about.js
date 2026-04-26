@@ -24,7 +24,7 @@ export const aboutContent = {
     label: "OUR EXPERTISE",
     title: "Why Choose OWLHOME?",
     points: [
-      "Personalization at its Core|Every project begins with you-your lifestyle, your taste, your dreams. Our designers take the time to understand what makes your space truly yours, creating environments that reflect who you are.",
+      "Personalization at its Core|Every project begins with you - your lifestyle, your taste, your dreams. Our designers take the time to understand what makes your space truly yours, creating environments that reflect who you are.",
       "Advanced 3D Visualization|See your space come to life before it's built. Our state-of-the-art 3D rendering technology allows you to walk through your future home, make adjustments in real-time, and perfect every detail.",
       "AI-Powered Design Assistance|Our intelligent design platform learns from your preferences, suggesting furniture, colors, and layouts that match your style while staying within your budget.",
     ],
@@ -35,7 +35,7 @@ export const aboutContent = {
     label: "OUR COMMITMENT",
     title: "Our Promise",
     description:
-      "\"At OWLHOME, we don't just design rooms-we create sanctuaries. Spaces where memories are made, stories unfold, and life happens. Let us help you write the next chapter of your home's story.\"",
+      "\"At OWLHOME, we don't just design rooms - we create sanctuaries. Spaces where memories are made, stories unfold, and life happens. Let us help you write the next chapter of your home's story.\"",
     cta: "MAKE IT YOURS",
     image:
       "https://www.figma.com/api/mcp/asset/7b9c0258-b6cd-4747-89e2-aaed82da655c",
@@ -90,6 +90,6 @@ export const aboutContent = {
   footer: {
     copyright: "CONTACT",
     links: ["ALL STORES", "PRIVACY AND DATA PROTECTION POLICY"],
-    social: ["Follow us on:", "IG", "FB", "G"],
+    social: ["IG", "FB", "G"],
   },
 };

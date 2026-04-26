@@ -1,34 +1,46 @@
 "use client";
-
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function AboutStory({ section }) {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 32 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true }}
       transition={{ duration: 0.55 }}
-      className="px-4 pt-1"
+      className="pb-8"
     >
-      <div className="grid gap-3 sm:grid-cols-[0.95fr_1.05fr]">
-        <div className="overflow-hidden rounded-xl shadow-[0_8px_22px_rgba(56,39,20,0.16)]">
+      <div className="grid gap-5 sm:grid-cols-2 items-start">
+        {/* IMAGE */}
+        <div className="overflow-hidden rounded-xl shadow-sm">
           <Image
             src={section.image}
-            alt="Modern living room interior"
-            width={800}
-            height={560}
-            className="h-[194px] w-full object-cover sm:h-full"
+            alt="Interior design"
+            width={600}
+            height={450}
+            className="w-full aspect-[4/3] object-cover"
             unoptimized
           />
         </div>
-        <div className="rounded-xl border border-[#efe8dd] bg-white p-4 shadow-[0_10px_26px_rgba(71,52,31,0.1)]">
-          <p className="text-[8px] font-semibold tracking-[0.24em] text-[#b1936f]">{section.label}</p>
-          <h2 className="mt-2 font-serif text-[18px] font-semibold text-[#2f2b28]">{section.title}</h2>
-          <p className="mt-2 text-[10px] leading-5 text-[#6a6056]">{section.description}</p>
-          <p className="mt-2 text-[10px] leading-5 text-[#6a6056]">{section.description2}</p>
-          <p className="mt-2 border-t border-[#e8e6e0] pt-2 text-[8px] italic text-[#9b938c]">{section.quote}</p>
+
+        {/* CONTENT */}
+        <div className="rounded-xl border border-[#efe8dd] bg-white p-5">
+          <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-[#b1936f]">
+            {section.label}
+          </p>
+          <h2 className="mt-2 font-serif text-xl font-semibold text-[#2f2b28]">
+            {section.title}
+          </h2>
+          <p className="mt-3 text-[13px] leading-6 text-[#6a6056]">
+            {section.description}
+          </p>
+          <p className="mt-2 text-[13px] leading-6 text-[#6a6056]">
+            {section.description2}
+          </p>
+          <p className="mt-4 border-t border-[#e8e6e0] pt-3 text-[11px] italic text-[#9b938c]">
+            {section.quote}
+          </p>
         </div>
       </div>
     </motion.section>
