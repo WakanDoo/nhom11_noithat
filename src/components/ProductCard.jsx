@@ -42,9 +42,9 @@ export default function ProductCard({ product, priority = false }) {
         />
       </div>
       <div className="mt-4">
-        <h3 className="text-sm font-medium text-gray-900">{name}</h3>
-        <p className="text-sm text-gray-500">{category}</p>
-        <p className="text-sm font-medium text-gray-900">{formatPrice(product.price)}</p>
+        <h3 className="text-[17px] font-medium leading-tight text-gray-900 md:text-[18px]">{name}</h3>
+        <p className="mt-1 text-[15px] leading-tight text-gray-500 md:text-base">{category}</p>
+        <p className="mt-1 text-[15px] font-medium leading-tight text-gray-900 md:text-base">{formatPrice(product.price)}</p>
       </div>
     </Link>
   );

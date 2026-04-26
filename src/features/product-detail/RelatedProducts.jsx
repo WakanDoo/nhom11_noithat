@@ -27,15 +27,15 @@ export function RelatedProducts({ products = [], currentId }) {
 
   return (
     <section className="mt-7 md:mt-4 lg:mt-16">
-      <h2 className="mb-4 text-[18px] font-bold leading-none md:text-[20px] lg:mb-7 lg:text-[34px]">
+      <h2 className="mb-4 text-[24px] font-bold leading-none md:text-[28px] lg:mb-7 lg:text-[34px]">
         You might also like:
       </h2>
-      <div className="-mx-5 flex snap-x gap-4 overflow-x-auto px-5 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0 lg:gap-14">
+      <div className="flex snap-x gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:pb-0 lg:gap-14">
         {related.map((product) => (
           <Link
             key={product.id}
             href={`/product/${encodeURIComponent(String(product.id))}`}
-            className="group min-w-[70vw] snap-start md:min-w-0"
+            className="group min-w-full snap-start md:min-w-0"
           >
             <div className="relative aspect-[1.22/1] overflow-hidden bg-[#f6f5f3]">
               <Image
@@ -47,10 +47,10 @@ export function RelatedProducts({ products = [], currentId }) {
               />
             </div>
             <div className="pt-3 text-black">
-              <h3 className="text-[12px] font-bold leading-tight md:text-[13px]">
+              <h3 className="text-base font-bold leading-tight md:text-[17px]">
                 {product.name}
               </h3>
-              <p className="mt-1 text-[11px] font-semibold leading-tight md:text-[12px]">
+              <p className="mt-1 text-[15px] font-semibold leading-tight md:text-base">
                 {formatPrice(product.price)} VND
               </p>
             </div>

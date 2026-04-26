@@ -79,7 +79,7 @@ export default async function ProductDetailPage({ params }) {
 
         <footer className="mt-7 bg-black text-white md:mt-12 lg:mt-24">
           <div className="px-4 py-3 md:px-6 lg:px-5 lg:py-4">
-            <div className="flex flex-col items-center justify-center gap-1 text-center text-[7px] uppercase tracking-[0.12em] text-white/90 md:text-[8px] lg:flex-row lg:justify-between lg:gap-6 lg:text-[10px]">
+            <div className="flex flex-col items-center justify-center gap-1 text-center text-[10px] uppercase tracking-[0.12em] text-white/90 md:text-[11px] lg:flex-row lg:justify-between lg:gap-6 lg:text-[12px]">
               <div className="flex flex-wrap items-center justify-center gap-1 lg:gap-2">
               <span>Contact</span>
               <span>|</span>
@@ -88,7 +88,7 @@ export default async function ProductDetailPage({ params }) {
               <span>Privacy and data protection policy</span>
             </div>
               <div className="flex items-center gap-2 lg:gap-3">
-                <span className="text-[7px] normal-case tracking-normal text-white md:text-[8px]">
+                <span className="text-[10px] normal-case tracking-normal text-white md:text-[11px] lg:text-[12px]">
                   Follow us on:
                 </span>
                 <InstagramIcon />
@@ -96,7 +96,7 @@ export default async function ProductDetailPage({ params }) {
                 <GmailIcon />
               </div>
             </div>
-            <div className="mt-1 flex items-center justify-center gap-1 text-[7px] text-white md:text-[8px] lg:mt-3 lg:justify-start lg:text-[9px]">
+            <div className="mt-1 flex items-center justify-center gap-1 text-[10px] text-white md:text-[11px] lg:mt-3 lg:justify-start lg:text-[12px]">
               <MailIcon />
               <span>owlhome@gmail.com</span>
             </div>

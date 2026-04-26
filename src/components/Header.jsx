@@ -37,7 +37,7 @@ export default function Header({ breadcrumb = [], showHero = false }) {
     <div className="w-full bg-white">
       <header className="grid min-h-[58px] w-full grid-cols-[1fr_auto_1fr] items-center gap-3 px-3 py-3 md:min-h-[64px] md:px-6 lg:min-h-[78px] lg:items-end lg:px-4 lg:pb-3">
         {/* Left Nav */}
-        <nav className="flex items-center justify-start gap-3 text-[10px] font-semibold uppercase text-black md:gap-4 lg:gap-3">
+        <nav className="flex items-center justify-start gap-3 text-[12px] font-semibold uppercase text-black md:gap-4 md:text-[13px] lg:gap-3 lg:text-[13px]">
           <button
             type="button"
             className="inline-flex items-center gap-1 bg-transparent p-0"
@@ -71,7 +71,7 @@ export default function Header({ breadcrumb = [], showHero = false }) {
         </div>
 
         {/* Right Nav */}
-        <nav className="flex items-center justify-end gap-2 text-[10px] font-semibold uppercase text-black md:gap-3 lg:gap-4">
+        <nav className="flex items-center justify-end gap-2 text-[12px] font-semibold uppercase text-black md:gap-3 md:text-[13px] lg:gap-4 lg:text-[13px]">
           <button
             type="button"
             className="hidden bg-transparent p-0 lg:inline-flex"
@@ -116,7 +116,7 @@ export default function Header({ breadcrumb = [], showHero = false }) {
       </header>
 
       {breadcrumb.length > 0 ? (
-        <nav className="px-3 pb-2 text-[9px] text-stone-700 md:px-8 lg:-mt-3 lg:px-9 lg:pb-0 lg:text-[10px]">
+        <nav className="px-3 pb-2 text-[12px] text-stone-700 md:px-8 md:text-[13px] lg:-mt-3 lg:px-9 lg:pb-0 lg:text-[13px]">
           <ol className="flex flex-wrap items-center gap-1">
             {breadcrumb.map((item, index) => (
               <li key={`${item.label}-${index}`} className="flex items-center gap-1">
