@@ -233,7 +233,7 @@ export const products = [
     category: "dining_tables_chairs",
     group: "dining-room",
     price: 76000000,
-    image: "https://`res.cloudinary.com/dvwrylphl/image/upload/v1777030241/Image_5_yiwpma.png",
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030241/Image_5_yiwpma.png",
     gallery: [
       "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030246/Image_3_dvnxvm.png",
       "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030244/Image_2_ryrww5.png",

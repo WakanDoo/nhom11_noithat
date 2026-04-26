@@ -3,7 +3,12 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 
-export default function ProductGallery({ gallery, images, name = "Product" }) {
+export default function ProductGallery({
+  gallery,
+  images,
+  name = "Product",
+  desktopTrackRef,
+}) {
   const galleryImages = gallery?.length ? gallery : images?.length ? images : [];
   const [activeIndex, setActiveIndex] = useState(0);
   const trackRef = useRef(null);
@@ -40,16 +45,28 @@ export default function ProductGallery({ gallery, images, name = "Product" }) {
 
   return (
     <div className="bg-white">
-      <div className="hidden lg:flex lg:min-h-[520px] lg:items-center lg:justify-center lg:pt-12">
-        <div className="relative h-[330px] w-full max-w-[720px] xl:h-[360px] xl:max-w-[780px]">
-          <Image
-            src={galleryImages[0]}
-            alt={`${name} view 1`}
-            fill
-            priority
-            sizes="(min-width: 1280px) 760px, (min-width: 1024px) 60vw, 100vw"
-            className="object-contain"
-          />
+      <div className="hidden lg:block">
+        <div
+          ref={desktopTrackRef}
+          className="gallery-scroll h-[calc(100vh-118px)] min-h-[520px] overflow-y-auto overscroll-contain pr-2"
+        >
+          {galleryImages.map((image, index) => (
+            <div
+              key={`${image}-desktop-${index}`}
+              className="flex min-h-[520px] items-center justify-center bg-white py-8"
+            >
+              <div className="relative h-[330px] w-full max-w-[720px] xl:h-[360px] xl:max-w-[780px]">
+                <Image
+                  src={image}
+                  alt={`${name} view ${index + 1}`}
+                  fill
+                  priority={index === 0}
+                  sizes="(min-width: 1280px) 760px, (min-width: 1024px) 60vw, 100vw"
+                  className="object-contain"
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -84,19 +101,26 @@ export default function ProductGallery({ gallery, images, name = "Product" }) {
           ))}
         </div>
 
-        <div className="-mt-1 flex justify-center md:-mt-2">
-          <div className="flex items-center gap-1.5 px-4 md:px-10">
-            {galleryImages.map((_, index) => (
-              <button
-                key={index}
-                type="button"
-                aria-label={`Go to image ${index + 1}`}
-                onClick={() => scrollToIndex(index)}
-                className={`h-1.5 w-1.5 rounded-full transition md:h-2 md:w-2 ${
-                  index === activeIndex ? "bg-black" : "bg-stone-300"
-                }`}
-              />
-            ))}
+        <div className="pointer-events-none relative -mt-8 flex justify-center md:-mt-10">
+          <div className="pointer-events-auto flex items-center gap-1.5 md:gap-2">
+            {galleryImages.map((_, index) => {
+              const isActive = index === activeIndex;
+
+              return (
+                <button
+                  key={index}
+                  type="button"
+                  aria-label={`Go to image ${index + 1} of ${galleryImages.length}`}
+                  aria-current={isActive ? "true" : undefined}
+                  onClick={() => scrollToIndex(index)}
+                  className={`rounded-full transition-all duration-200 ${
+                    isActive
+                      ? "h-2 w-2 bg-black md:h-2.5 md:w-2.5"
+                      : "h-1.5 w-1.5 bg-stone-300 hover:bg-stone-500 md:h-2 md:w-2"
+                  }`}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
