@@ -1,0 +1,358 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./components/account/account.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+.account_page__ipiL_ {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #000000;
+}
+
+.account_hero__XPafJ {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+
+.account_heroInner__m_S8s {
+  min-height: 217px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px;
+}
+
+.account_heroInner__m_S8s h1 {
+  margin: 0;
+  font-family: Didot, "Bodoni 72", "Bodoni MT", Georgia, serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 60px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.account_heroInner__m_S8s p {
+  margin: 12px 0 0;
+  font-size: 11px;
+  line-height: 16.5px;
+  letter-spacing: 1.32px;
+  text-transform: uppercase;
+}
+
+.account_accountShell__3FMJS {
+  display: grid;
+  grid-template-columns: 256px 832px;
+  gap: 64px;
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 36px 0 96px;
+}
+
+.account_sidebar__z2SV_ {
+  width: 256px;
+}
+
+.account_sidebarNav__oCJFX {
+  display: flex;
+  flex-direction: column;
+}
+
+.account_sidebarItem__hbe_R {
+  position: relative;
+  min-height: 49.5px;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  padding: 16px 16px 15px;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: left;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16.5px;
+  letter-spacing: 1.32px;
+  text-transform: uppercase;
+}
+
+.account_sidebarItem__hbe_R::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1.6px;
+  background: transparent;
+  content: "";
+}
+
+.account_sidebarItem__hbe_R:hover {
+  color: #000000;
+}
+
+.account_sidebarItemActive__u8_X2 {
+  color: #000000;
+  font-weight: 600;
+}
+
+.account_sidebarItemActive__u8_X2::before {
+  background: #000000;
+}
+
+.account_contentArea__An0oB {
+  width: 100%;
+  max-width: 832px;
+}
+
+.account_accountForm__VgfKa {
+  width: 100%;
+}
+
+.account_formSection__4KKv8 {
+  margin-bottom: 48px;
+}
+
+.account_sectionTitle__4pibk,
+.account_emptyPanel__NOdwR h2,
+.account_modalBox__eHCVW h2 {
+  margin: 0;
+  font-family: Didot, "Bodoni 72", "Bodoni MT", Georgia, serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.account_sectionTitle__4pibk {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 24px;
+  font-size: 24px;
+  line-height: 21px;
+  letter-spacing: 2.1px;
+}
+
+.account_formGrid__YNXnB {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.account_spanTwo__r4FA2 {
+  grid-column: span 2;
+}
+
+.account_field__D32AG {
+  display: block;
+}
+
+.account_field__D32AG span {
+  display: block;
+  margin-bottom: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 13.5px;
+  letter-spacing: 1.08px;
+  text-transform: uppercase;
+}
+
+.account_field__D32AG input {
+  display: block;
+  width: 100%;
+  height: 45.1px;
+  border: 0.8px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background: #ffffff;
+  padding: 12px 16px;
+  color: #000000;
+  font-size: 13px;
+  line-height: 19.5px;
+}
+
+.account_field__D32AG input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.account_field__D32AG input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.account_field__D32AG input:focus {
+  border-color: #000000;
+  outline: none;
+}
+
+.account_formActions__wW5Bs {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  border-top: 0.8px solid rgba(0, 0, 0, 0.2);
+  padding-top: 32px;
+}
+
+.account_buttonPrimary__adrys,
+.account_buttonSecondary__2Yx4k {
+  min-width: 132px;
+  height: 40.6px;
+  border: 0.8px solid #000000;
+  border-radius: 0;
+  padding: 0 28px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.account_buttonPrimary__adrys {
+  min-width: 178px;
+  background: #000000;
+  color: #ffffff;
+}
+
+.account_buttonSecondary__2Yx4k {
+  background: #ffffff;
+  color: #000000;
+}
+
+.account_buttonPrimary__adrys:hover,
+.account_buttonSecondary__2Yx4k:hover {
+  filter: invert(1);
+}
+
+.account_emptyPanel__NOdwR {
+  padding-top: 8px;
+}
+
+.account_emptyPanel__NOdwR h2 {
+  font-size: 24px;
+  line-height: 21px;
+  letter-spacing: 8px;
+}
+
+.account_emptyPanel__NOdwR p {
+  margin: 30px 0 0;
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.account_modalOverlay__JKQSH {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 24px;
+}
+
+.account_modalBox__eHCVW {
+  position: relative;
+  width: min(100%, 420px);
+  border: 0.8px solid rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  padding: 52px 48px 48px;
+}
+
+.account_modalClose___4kSz {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  border: 0;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.account_modalClose___4kSz:hover {
+  color: #000000;
+}
+
+.account_modalBox__eHCVW h2 {
+  padding-right: 28px;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 3px;
+}
+
+.account_modalBox__eHCVW p {
+  margin: 28px 0 0;
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.account_modalActions__3LEkN {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 38px;
+}
+
+@media (max-width: 1180px) {
+  .account_accountShell__3FMJS {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .account_sidebar__z2SV_,
+  .account_contentArea__An0oB {
+    width: 100%;
+    max-width: none;
+  }
+
+  .account_sidebarNav__oCJFX {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .account_sidebarItem__hbe_R {
+    min-width: -moz-max-content;
+    min-width: max-content;
+    width: auto;
+    padding-right: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  .account_heroInner__m_S8s {
+    min-height: 168px;
+    padding: 44px 24px;
+  }
+
+  .account_heroInner__m_S8s h1 {
+    font-size: 34px;
+    line-height: 44px;
+    letter-spacing: 4px;
+  }
+
+  .account_accountShell__3FMJS {
+    gap: 32px;
+    padding: 28px 24px 72px;
+  }
+
+  .account_formGrid__YNXnB {
+    grid-template-columns: 1fr;
+  }
+
+  .account_spanTwo__r4FA2 {
+    grid-column: auto;
+  }
+
+  .account_formActions__wW5Bs,
+  .account_modalActions__3LEkN {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .account_buttonPrimary__adrys,
+  .account_buttonSecondary__2Yx4k {
+    width: 100%;
+  }
+
+  .account_modalBox__eHCVW {
+    padding: 44px 28px 32px;
+  }
+}
+
