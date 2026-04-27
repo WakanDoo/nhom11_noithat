@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-brand: "Cormorant Garamond";
+  --font-inter: "Inter";
+  --font-roboto: "Roboto";
+  --background: #ffffff;
+  --foreground: #111111;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(17, 17, 17, 0.09) 1.3px, transparent 1.4px);
+  background-position: 0 0;
+  background-size: 24px 24px;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #cfcfcf transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 7px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+  border-radius: 999px;
+}
