@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, Search, ShoppingCart, User } from "lucide-react";
+import { CheckCircle, Menu, Search, ShoppingCart, User } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useCartStore } from "@/store/useCartStore";
 
@@ -21,11 +21,14 @@ const inputStyle =
 
 export default function CheckoutPage() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [selectedShipping, setSelectedShipping] = useState<"standard" | "express">("standard");
+  const [selectedPayment, setSelectedPayment] = useState<"cod" | "bank" | "ewallet" | null>(null);
+  const [orderSuccess, setOrderSuccess] = useState(false);
   const { items } = useCartStore();
   const firstItem = items[0];
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const shipping = 0;
-  const total = subtotal + shipping;
+  const shippingCost = selectedShipping === "express" ? 350000 : 0;
+  const total = subtotal + shippingCost;
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 8);
@@ -34,8 +37,42 @@ export default function CheckoutPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handlePlaceOrder = () => {
+    setOrderSuccess(true);
+  };
+
   return (
     <main className="min-h-screen bg-white px-3 py-3 text-black md:px-4 md:py-5 lg:px-8">
+      {/* Success Modal */}
+      {orderSuccess && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm">
+          <div
+            className="mx-4 w-full max-w-sm border border-black/15 bg-white p-8 text-center shadow-2xl"
+            style={{ animation: "fadeScaleIn 0.3s ease forwards" }}
+          >
+            <div className="mb-4 flex justify-center">
+              <CheckCircle className="h-14 w-14 text-black" strokeWidth={1.2} />
+            </div>
+            <h2 className="mb-2 font-serif text-2xl tracking-wide">Order Placed!</h2>
+            <p className="mb-1 text-sm text-black/60">Thanh toán thành công.</p>
+            <p className="mb-6 text-sm text-black/60">Chúng tôi sẽ liên hệ xác nhận đơn hàng sớm nhất.</p>
+            <Link
+              href="/"
+              className="block bg-black px-4 py-3 text-[11px] uppercase tracking-[0.15em] text-white transition hover:bg-black/85"
+            >
+              Về trang chủ
+            </Link>
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        @keyframes fadeScaleIn {
+          from { opacity: 0; transform: scale(0.93); }
+          to   { opacity: 1; transform: scale(1); }
+        }
+      `}</style>
+
       <header
         className={`fixed top-0 right-0 left-0 z-50 bg-white transition-shadow duration-200 ${
           isScrolled ? "shadow-[0_2px_10px_rgba(0,0,0,0.12)]" : ""
@@ -90,23 +127,46 @@ export default function CheckoutPage() {
             <div className="mb-7">
               <p className="mb-3 text-[11px] uppercase tracking-[0.13em] text-black/60">Shipping Method</p>
               <div className="space-y-2">
-                <label className="flex cursor-pointer items-center justify-between border border-black/20 bg-white px-4 py-3 text-sm">
-                  <span>Standard Delivery (5-7 business days)</span>
-                  <span>Free</span>
-                </label>
-                <label className="flex cursor-pointer items-center justify-between border border-black/20 bg-white px-4 py-3 text-sm">
-                  <span>Express Delivery (1-2 business days)</span>
-                  <span>{formatVnd(350000)}</span>
-                </label>
+                {[
+                  { id: "standard", label: "Standard Delivery (5-7 business days)", price: "Free" },
+                  { id: "express", label: "Express Delivery (1-2 business days)", price: formatVnd(350000) },
+                ].map(({ id, label, price }) => (
+                  <button
+                    key={id}
+                    onClick={() => setSelectedShipping(id as "standard" | "express")}
+                    className={`flex w-full cursor-pointer items-center justify-between px-4 py-3 text-sm transition-all duration-150 ${
+                      selectedShipping === id
+                        ? "border border-black bg-black text-white"
+                        : "border border-black/20 bg-white text-black hover:border-black/50"
+                    }`}
+                  >
+                    <span>{label}</span>
+                    <span>{price}</span>
+                  </button>
+                ))}
               </div>
             </div>
 
             <div>
               <p className="mb-3 text-[11px] uppercase tracking-[0.13em] text-black/60">Payment Method</p>
               <div className="space-y-2">
-                <button className="w-full border border-black/20 px-4 py-3 text-left text-sm">Cash on Delivery</button>
-                <button className="w-full border border-black/20 px-4 py-3 text-left text-sm">Bank Transfer</button>
-                <button className="w-full border border-black/20 px-4 py-3 text-left text-sm">E-Wallet</button>
+                {[
+                  { id: "cod", label: "Cash on Delivery" },
+                  { id: "bank", label: "Bank Transfer" },
+                  { id: "ewallet", label: "E-Wallet" },
+                ].map(({ id, label }) => (
+                  <button
+                    key={id}
+                    onClick={() => setSelectedPayment(id as "cod" | "bank" | "ewallet")}
+                    className={`w-full px-4 py-3 text-left text-sm transition-all duration-150 ${
+                      selectedPayment === id
+                        ? "border border-black bg-black text-white"
+                        : "border border-black/20 bg-white text-black hover:border-black/50"
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
               </div>
             </div>
           </section>
@@ -133,14 +193,17 @@ export default function CheckoutPage() {
               </div>
               <div className="flex justify-between">
                 <span>Shipping</span>
-                <span>{shipping === 0 ? "Free" : formatVnd(shipping)}</span>
+                <span>{shippingCost === 0 ? "Free" : formatVnd(shippingCost)}</span>
               </div>
             </div>
             <div className="my-4 flex items-center justify-between text-xl">
               <span>Total</span>
               <span>{formatVnd(total)}</span>
             </div>
-            <button className="w-full bg-black px-4 py-3 text-[11px] uppercase tracking-[0.15em] text-white transition hover:bg-black/85">
+            <button
+              onClick={handlePlaceOrder}
+              className="w-full bg-black px-4 py-3 text-[11px] uppercase tracking-[0.15em] text-white transition hover:bg-black/85 active:scale-[0.98]"
+            >
               Place order
             </button>
             <p className="mt-3 text-center text-[11px] text-black/55">Secure payment. Your data is encrypted.</p>

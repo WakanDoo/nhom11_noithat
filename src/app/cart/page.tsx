@@ -136,11 +136,11 @@ export default function CartPage() {
 
             <div className="mt-2 flex justify-between border-t border-black/15 pt-3 text-xs md:text-sm">
               <span>Subtotal:</span>
-              <span>{formatUsd(subtotal)}</span>
+              <span>{formatVnd(subtotal)}</span>
             </div>
             <div className="mt-6 flex justify-between border-t border-black/20 pt-3 text-[32px] font-semibold leading-none md:text-[38px]">
               <span>Total:</span>
-              <span className="text-[28px] md:text-[36px]">{formatUsd(subtotal)}</span>
+              <span className="text-[28px] md:text-[36px]">{formatVnd(subtotal)}</span>
             </div>
           </section>
 
@@ -149,7 +149,7 @@ export default function CartPage() {
             <div className="space-y-3 border-b border-black/15 pb-6 text-sm">
               <div className="flex items-center justify-between">
                 <span>Subtotal</span>
-                <span>{formatUsd(subtotal)}</span>
+                <span>{formatVnd(subtotal)}</span>
               </div>
               <div className="flex items-center justify-between">
                 <span>Shipping</span>
@@ -158,7 +158,7 @@ export default function CartPage() {
             </div>
             <div className="mt-5 mb-6 flex items-center justify-between text-2xl">
               <span>Total</span>
-              <span>{formatUsd(subtotal)}</span>
+              <span>{formatVnd(subtotal)}</span>
             </div>
             <Link
               href="/checkout"
