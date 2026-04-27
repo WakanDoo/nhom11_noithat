@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+
 function ChevronLeftIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -114,23 +114,7 @@ function FigmaVideo({
   );
 }
 
-export default function Home() {
-  const [query, setQuery] = useState("");
-  const [showSearch, setShowSearch] = useState(false);
-  const products = [
-    "Bubble Curve",
-    "Serpentine",
-    "Pétale",
-    "Niwa",
-    "En-Tête",
-    "Trinta"
-  ];
-  const filtered = products
-  .filter((item) =>
-    item.toLowerCase().includes(query.toLowerCase())
-  )
-  .slice(0, 5);
-  
+export default function Home() { 
   return (
     <div className="flex flex-col flex-1 bg-white">
       <main className="w-full flex justify-center">
@@ -168,19 +152,15 @@ export default function Home() {
               </a>
 
               {/* Search icon + SEARCH label */}
-              <div 
-                onClick={() => setShowSearch(!showSearch)}
-                className="absolute left-[195px] top-[71px] flex items-center gap-2 cursor-pointer"
-              >
+              {/* Cụm SEARCH mới: Click là chuyển trang, không hiện gì thêm */}
+              <Link href="/search" className="absolute left-[195px] top-[71px] flex items-center gap-2 cursor-pointer">
                 <div className="w-[24px] h-[24px] text-black">
                   <SearchIcon className="w-full h-full" />
                 </div>
-
                 <div className="text-[20px] leading-[23px] font-medium tracking-[0.08em] text-[#0A0A0A] [font-family:var(--font-roboto),_system-ui]">
                   SEARCH
                 </div>
-              </div>
-
+              </Link>
               <a
                 href="#products"
                 className="absolute left-[970px] top-[72px] text-[20px] leading-[23px] font-medium tracking-[0.08em] text-[#0A0A0A] [font-family:var(--font-roboto),_system-ui]"
@@ -203,36 +183,7 @@ export default function Home() {
               </div>
             </nav>
           </header>
-          {showSearch && (
-            <div className="absolute top-[118px] left-0 w-full bg-white z-[999] p-4 shadow-md">
-              
-              <input
-                type="text"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search products..."
-                className="w-full border border-gray-300 px-4 py-2 outline-none"
-              />
-              {query && (
-                <div className="mt-2 bg-white border p-2">
-                  {filtered.length > 0 ? (
-                    filtered.map((item, index) => (
-                      <div
-                        key={index}
-                        className="py-2 px-2 border-b cursor-pointer hover:bg-gray-100"
-                      >
-                        {item}
-                      </div>
-                    ))
-                  ) : (
-                    <div>No results</div>
-                  )}
-                </div>
-              )}
-
-            </div>
-          )}
-
+          
           {/* Main content starts at y=118 */}
           <section className="absolute left-0 top-[118px] w-[1280px]">
             {/* Hero (y=0..600) */}
