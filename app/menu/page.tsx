@@ -129,7 +129,9 @@ export default function MenuPage() {
               ABOUT
             </div>
             <div className="absolute left-[9px] top-[296px] text-[27px] font-bold text-[#0A0A0A] [font-family:var(--font-inter),_system-ui] leading-[1.1672]">
-              3D MODELS
+              <Link href="/3d" className="hover:text-gray-600 transition-colors">
+                3D MODELS
+              </Link>
             </div>
 
             <div className="absolute left-[8px] top-[360px] text-[27px] font-bold text-[#0A0A0A] [font-family:var(--font-inter),_system-ui] leading-[1.1672]">
