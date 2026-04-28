@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { allProducts } from "@/lib/categories";
-import { ProductCard } from "@/components/product-card";
+import { products } from "@/data/products";
+import ProductCard from "@/components/ProductCard";
 
 function HeaderBar() {
   return (
@@ -158,12 +158,12 @@ function FooterBar() {
 
 export default function SearchPage() {
   const [query, setQuery] = useState("");
-  // 1. Dùng dữ liệu thật từ file lib
-  const searchResults = allProducts.filter((product) => {
+  const searchResults = products.filter((product) => {
     const searchTerm = query.toLowerCase();
     return (
-      product.label.toLowerCase().includes(searchTerm) ||
-      product.title.toLowerCase().includes(searchTerm)
+      product.name.toLowerCase().includes(searchTerm) ||
+      product.category.toLowerCase().includes(searchTerm) ||
+      product.group.toLowerCase().includes(searchTerm)
     );
   });
 
@@ -199,7 +199,7 @@ export default function SearchPage() {
                     
                     {/* Dòng này để hiện thêm danh mục cho rõ ràng */}
                     <p className="text-xs text-gray-400 mt-2 uppercase tracking-widest">
-                      Category: {product.categorySlug}
+                      Category: {product.category}
                     </p>
                   </div>
                 ))}

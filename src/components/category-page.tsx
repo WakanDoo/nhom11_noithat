@@ -4,10 +4,32 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { categoryMap } from "@/lib/categories";
 import { inter, roboto } from "@/lib/fonts";
+import { products } from "@/data/products";
+
+const categoryProductKeys: Record<string, string[]> = {
+  livingroom: ["sofa", "tables_chairs", "tv_cabinets_consoles"],
+  bedroom: ["bed", "wardrobe"],
+  sofa: ["sofa"],
+  "tables-chairs": ["tables_chairs"],
+  "tv-cabinets": ["tv_cabinets_consoles"],
+  office: ["desks"],
+  "office-chairs": ["office-chairs"],
+  bookshelf: ["bookshelves"],
+  "dining-table-chairs": ["dining_tables_chairs"],
+  bed: ["bed"],
+  wardrobe: ["wardrobe"],
+  bath: ["bathtub"],
+  mirror: ["mirror"],
+};
 
 export function CategoryPage({ slug }: { slug: string }) {
   const category = categoryMap[slug];
   if (!category) notFound();
+
+  const categoryProducts = products.filter((product) => {
+    const keys = categoryProductKeys[slug] ?? [slug.replace(/-/g, "_")];
+    return keys.includes(product.category);
+  });
 
   return (
     <div className={`${inter.className} min-h-screen bg-[#fffdfb] text-black`}>
@@ -30,7 +52,7 @@ export function CategoryPage({ slug }: { slug: string }) {
         </div>
 
         <section className="grid items-stretch gap-6 py-8 md:grid-cols-2">
-          {category.products.map((product) => (
+          {categoryProducts.map((product) => (
             <ProductCard
               key={product.id}
               product={product}

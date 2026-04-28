@@ -20,11 +20,34 @@ const featuredImages = [
 
 // Danh sách các khu vực phòng và slug danh mục tương ứng
 const sections = [
-  { title: "Livingroom", items: ["sofa", "tables-chairs", "tv-cabinets"] },
-  { title: "Home Office", items: ["office", "office-chairs", "bookshelf"] },
-  { title: "Kitchen", items: ["dining-table-chairs"] },
-  { title: "Bedroom", items: ["bed", "wardrobe"] },
-  { title: "Bathroom", items: ["bath", "mirror"] },
+  {
+    title: "Livingroom",
+    items: [
+      { slug: "sofa", label: "Sofa" },
+      { slug: "tables-chairs", label: "Tables & Chairs" },
+      { slug: "tv-cabinets", label: "TV Cabinets & Consoles" },
+    ],
+  },
+  {
+    title: "Home Office",
+    items: [
+      { slug: "office", label: "Desk" },
+      { slug: "office-chairs", label: "Office Chairs" },
+      { slug: "bookshelf", label: "Bookshelf" },
+    ],
+  },
+  {
+    title: "Kitchen",
+    items: [{ slug: "dining-table-chairs", label: "Dining Table & Chairs" }],
+  },
+  {
+    title: "Bedroom",
+    items: [{ slug: "bed", label: "Bed" }, { slug: "wardrobe", label: "Wardrobe" }],
+  },
+  {
+    title: "Bathroom",
+    items: [{ slug: "bath", label: "Bathtub" }, { slug: "mirror", label: "Mirror" }],
+  },
 ];
 
 export function ProductsOverview() {
@@ -59,21 +82,16 @@ export function ProductsOverview() {
 
                   {/* Links danh mục với stagger riêng bên trong mỗi section */}
                   <motion.div className="space-y-1.5" variants={staggerContainer(0.06)}>
-                    {section.items.map((slug) => {
-                      const category = categoryMap[slug];
-                      if (!category) return null;
-
-                      return (
-                        <motion.div key={slug} variants={fadeInUp}>
-                          <Link
-                            href={`/category/${slug}`}
-                            className={`${roboto.className} block text-[20px] uppercase tracking-[0.08em] text-[#111] transition-colors duration-300 hover:text-black/40 hover:tracking-[0.12em] sm:text-[22px] lg:text-[24px]`}
-                          >
-                            {category.heading}
-                          </Link>
-                        </motion.div>
-                      );
-                    })}
+                    {section.items.map((item) => (
+                      <motion.div key={item.slug} variants={fadeInUp}>
+                        <Link
+                          href={`/category/${item.slug}`}
+                          className={`${roboto.className} block text-[20px] uppercase tracking-[0.08em] text-[#111] transition-colors duration-300 hover:text-black/40 hover:tracking-[0.12em] sm:text-[22px] lg:text-[24px]`}
+                        >
+                          {item.label}
+                        </Link>
+                      </motion.div>
+                    ))}
                   </motion.div>
                 </motion.div>
               ))}

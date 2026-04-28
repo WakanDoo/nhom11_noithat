@@ -72,12 +72,12 @@ export default function Header({ breadcrumb = [], showHero = false }) {
 
         {/* Right Nav */}
         <nav className="flex items-center justify-end gap-2 text-[12px] font-semibold uppercase text-black md:gap-3 md:text-[13px] lg:gap-4 lg:text-[13px]">
-          <button
-            type="button"
-            className="hidden bg-transparent p-0 lg:inline-flex"
+          <Link
+            href="/products"
+            className="inline-flex bg-transparent p-0"
           >
             Products
-          </button>
+          </Link>
           <button
             type="button"
             className="hidden bg-transparent p-0 lg:inline-flex"
