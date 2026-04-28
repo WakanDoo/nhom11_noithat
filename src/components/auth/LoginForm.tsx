@@ -100,14 +100,24 @@ function SocialButtons() {
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2">
-        <Link href = "google.com" className="text-xs" fullWidth variant="outline">
-          <Button className="text-xs" fullWidth variant="outline">
-            <Icon className="text-[#ea3535]" name="google" size={18} />
-               Google
-          </Button>
+        <Link
+          href= "https://www.google.com/accounts/Login?hl=en&continue=https://www.google.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs"
+          >
+            <Button className="text-xs" fullWidth variant="outline">
+              <Icon className="text-[#ea3535]" name="google" size={18} />
+                Google
+            </Button>
         </Link>
 
-        <Link href = "facebook.com" className="text-xs" fullWidth variant="outline">
+        <Link
+          href="https://www.facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs"
+        >
           <Button className="text-xs" fullWidth variant="outline">
             <Icon className="text-[#1877f2]" name="facebook" size={18} />
             Facebook
