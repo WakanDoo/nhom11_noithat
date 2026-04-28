@@ -1,5 +1,7 @@
 import type { FormEvent } from "react";
 
+import Link from "next/link";
+
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import Input from "@/components/ui/Input";
@@ -98,14 +100,19 @@ function SocialButtons() {
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2">
-        <Button className="text-xs" fullWidth variant="outline">
-          <Icon className="text-[#ea3535]" name="google" size={18} />
-          Google
-        </Button>
-        <Button className="text-xs" fullWidth variant="outline">
-          <Icon className="text-[#1877f2]" name="facebook" size={18} />
-          Facebook
-        </Button>
+        <Link href = "google.com" className="text-xs" fullWidth variant="outline">
+          <Button className="text-xs" fullWidth variant="outline">
+            <Icon className="text-[#ea3535]" name="google" size={18} />
+               Google
+          </Button>
+        </Link>
+
+        <Link href = "facebook.com" className="text-xs" fullWidth variant="outline">
+          <Button className="text-xs" fullWidth variant="outline">
+            <Icon className="text-[#1877f2]" name="facebook" size={18} />
+            Facebook
+          </Button>
+        </Link>
       </div>
     </div>
   );

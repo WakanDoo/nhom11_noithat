@@ -118,17 +118,6 @@ export default function AuthForm() {
     console.log("Register payload", registerValues);
   };
 
-  return (
-    <div className="w-full max-w-full rounded-4xl border border-white/55 bg-white/70 p-6 shadow-[0_30px_80px_rgba(32,24,18,0.18)] backdrop-blur-2xl sm:max-w-125 sm:p-8 lg:max-w-135 lg:p-10">
-      <div className="mb-8 text-center">
-        <p className="font-(family-name:--font-brand-serif) text-[2.7rem] tracking-[0.24em] text-[#28211c] sm:text-[3rem]">
-          OWLHOME
-        </p>
-        <div className="mx-auto mt-4 h-px w-24 bg-[#c9a96e]" />
-        <p className="mt-4 text-xs font-medium uppercase tracking-[0.38em] text-[#6d6255]">
-          Make it yours
-        </p>
-      </div>
 
       <AuthTabs activeTab={activeTab} onChange={handleTabChange} />
 
