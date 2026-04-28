@@ -3,11 +3,6 @@ import type { Category, CategoryId, RoomId } from "@/types/shop";
 import { getCategorySlug, getRoomSlug } from "@/data/shop";
 
 type CategoryTabsProps = {
-  roomType: RoomId;
-  categories: Category[];
-  activeCategory?: CategoryId;
-};
-
 export function CategoryTabs({ roomType, categories, activeCategory }: CategoryTabsProps) {
   return (
     <div className="scrollbar-thin flex gap-3 overflow-x-auto rounded-[20px] border border-[#e5e5e5] bg-white p-2">

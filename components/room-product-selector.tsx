@@ -33,19 +33,10 @@ export function RoomProductSelector({ room, category, products }: RoomProductSel
   }
 
   return (
-    <section className="grid min-h-screen overflow-x-hidden pt-[94px] md:pt-[118px] lg:grid-cols-[minmax(0,974px)_306px] xl:justify-center">
-      <div className="dot-grid relative h-[560px] overflow-hidden border-b border-[#f5f5f5] sm:h-[620px] lg:h-[calc(100vh-118px)] lg:min-h-[650px]">
-        <div className="absolute left-5 top-[22px] z-20">
-          <TotalPill />
-        </div>
-        <ThreeScene
-          products={sceneProducts}
-          activeProductId={selectedItem?.id}
-          animationKey={focusKey}
-          focused={Boolean(selectedItem)}
-          selected={Boolean(selectedItem)}
-          onProductSelect={handleSelectItem}
-        />
+    <section className="flex h-full w-full gap-6 rounded-[20px] bg-[#f7f7f7] p-6 lg:flex-row">
+      <div className="relative flex-1 overflow-hidden rounded-[20px]">
+        <ThreeScene key={focusKey} products={sceneProducts} />
+        <TotalPill total={selectedItem ? selectedItem.price : 0} />
         <CategoryToolbar roomType={room.id} activeCategory={category.id} />
         <button
           type="button"

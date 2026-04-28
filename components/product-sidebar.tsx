@@ -10,12 +10,6 @@ import { formatVnd } from "@/lib/format";
 type ProductSidebarProps = {
   room: Room;
   roomType: RoomId;
-  category: CategoryId;
-  products: Product[];
-  selectedProductId?: string;
-  onProductSelect?: (product: Product) => void;
-};
-
 export function ProductSidebar({ room, roomType, category, products, selectedProductId, onProductSelect }: ProductSidebarProps) {
   return (
     <aside className="scrollbar-thin overflow-y-auto overflow-x-hidden rounded-[20px] bg-white px-4 pb-8 pt-4 shadow-rail lg:h-[calc(100vh-118px)] lg:min-h-[650px] lg:w-[306px] lg:rounded-l-[20px] lg:rounded-r-none">
