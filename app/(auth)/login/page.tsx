@@ -1,3 +1,4 @@
+import Link from "next/link";
 import AuthForm from "@/components/auth/AuthForm";
 import Icon from "@/components/ui/Icon";
 
@@ -43,9 +44,9 @@ export default function LoginPage() {
               MENU
             </button>
 
-            <p className="truncate text-center font-(family-name:--font-brand-serif) text-4xl tracking-[0.18em] sm:text-5xl">
+            <Link href="/" className="truncate text-center font-(family-name:--font-brand-serif) text-4xl tracking-[0.18em] sm:text-5xl">
               OWLHOME
-            </p>
+            </Link>
 
             <div className="flex items-center gap-3 lg:hidden">
               <button className="rounded-full p-2 transition hover:bg-white/60" type="button">

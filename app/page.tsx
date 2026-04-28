@@ -132,9 +132,9 @@ export default function Home() {
             </div>
 
             {/* OWLHOME (Figma Group 11): x=278.66 y=21.77 w=635.35 h=195.61 */}
-            <div className="absolute left-[500px] top-[22px] w-[635.35px] h-[96px] flex items-center pointer-events-none">
+            <Link href="/" className="absolute left-[500px] top-[22px] w-[635.35px] h-[96px] flex items-center">
               <OwlhomeLogo />
-            </div>
+            </Link>
 
             <nav className="absolute left-0 top-0 w-full h-full">
               {/* Order per Figma: hamburger, MENU, ABOUT, search icon, SEARCH, OWLHOME, PRODUCTS, CONSTRUCTION */}
@@ -178,9 +178,9 @@ export default function Home() {
               <div className="absolute left-[1181px] top-[18px] w-[35px] h-[35px] text-black">
                 <ShoppingCartIcon className="w-full h-full" />
               </div>
-              <div className="absolute left-[1221px] top-[23px] w-[26px] h-[26px] text-black">
+              <Link href="/login" className="absolute left-[1221px] top-[23px] w-[26px] h-[26px] text-black hover:text-[#c9a96e] transition-colors">
                 <UserIcon className="w-full h-full" />
-              </div>
+              </Link>
             </nav>
           </header>
           
