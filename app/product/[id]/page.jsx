@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Header from "@/components/Header";
 import ProductDetailSection from "@/features/product-detail/ProductDetailSection";
 import { RelatedProducts } from "@/features/product-detail/RelatedProducts";
@@ -81,7 +82,7 @@ export default async function ProductDetailPage({ params }) {
           <div className="px-4 py-3 md:px-6 lg:px-5 lg:py-4">
             <div className="flex flex-col items-center justify-center gap-1 text-center text-[10px] uppercase tracking-[0.12em] text-white/90 md:text-[11px] lg:flex-row lg:justify-between lg:gap-6 lg:text-[12px]">
               <div className="flex flex-wrap items-center justify-center gap-1 lg:gap-2">
-              <span>Contact</span>
+              <Link href="/contact">Contact</Link>
               <span>|</span>
               <span>All stores</span>
               <span>|</span>

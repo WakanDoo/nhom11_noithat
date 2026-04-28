@@ -64,7 +64,7 @@ export function ContactFormSection() {
     ) => {
       const nextValue = event.target.value;
       setValues((current) => ({ ...current, [field]: nextValue }));
-      setSuccessMessage("");
+      if (successMessage) setSuccessMessage("");
 
       setErrors((current) => {
         if (!current[field]) return current;
@@ -96,7 +96,6 @@ export function ContactFormSection() {
   return (
     <section className="w-full flex justify-center bg-white">
       <div className="w-full max-w-content flex flex-col gap-10 md:gap-12 lg:gap-14 px-4 md:px-6 lg:px-10 py-14 md:py-[72px] lg:py-[88px] lg:pb-24">
-        {/* Header */}
         <div className="reveal-on-scroll flex flex-col items-center gap-4 text-center">
           <h2 className="font-cormorant text-[32px] leading-[34px] md:text-[44px] md:leading-[46px] lg:text-display-sm font-normal text-owl-black tracking-[-0.4px] m-0">
             Let&apos;s Talk
@@ -107,14 +106,12 @@ export function ContactFormSection() {
           </p>
         </div>
 
-        {/* Form + Map */}
         <div className="w-full grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-6 lg:gap-8 items-start">
           <form
             onSubmit={handleSubmit}
             noValidate
             className="reveal-on-scroll flex flex-col gap-6"
           >
-            {/* Name Row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <FormField label="First Name" error={errors.firstName}>
                 <Input
@@ -227,7 +224,6 @@ export function ContactFormSection() {
             )}
           </form>
 
-          {/* Map */}
           <div className="interactive-card reveal-on-scroll min-h-[360px] md:min-h-[440px] lg:min-h-[560px] overflow-hidden rounded-2xl bg-[#f7f3ee] shadow-map">
             <iframe
               title="OWLHOME Location - Thu Duc, Ho Chi Minh City"

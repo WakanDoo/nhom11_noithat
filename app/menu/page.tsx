@@ -110,7 +110,7 @@ export default function MenuPage() {
             <div className="absolute left-[8px] top-[342px] w-[282.01px] h-[1px] bg-black" />
 
             <div className="absolute left-[8px] top-[55px] text-[27px] font-bold text-[#0A0A0A] [font-family:var(--font-inter),_system-ui] leading-[1.1672]">
-              CONTACT
+              <Link href="/contact" className="text-[#0A0A0A] hover:opacity-70">CONTACT</Link>
             </div>
             <div className="absolute left-[7px] top-[101px] text-[27px] font-bold text-[#0A0A0A] [font-family:var(--font-inter),_system-ui] leading-[1.1672]">
               MY ACCOUNT

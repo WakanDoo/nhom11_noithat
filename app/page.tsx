@@ -333,7 +333,7 @@ export default function Home() {
             <footer className="relative w-[1280px] h-[153px] mt-[97px]">
               <div className="absolute left-0 top-[10px] w-[1280px] h-[127px] bg-black" />
               <div className="absolute left-[21px] top-[33px] text-[20px] font-light tracking-[0.05em] text-white [font-family:var(--font-inter),_system-ui]">
-                CONTACT
+                <Link href="/contact" className="text-white hover:opacity-80">CONTACT</Link>
               </div>
               <div className="absolute left-[152px] top-[33px] text-[20px] font-light tracking-[0.05em] text-white [font-family:var(--font-inter),_system-ui]">
                 ALL STORES

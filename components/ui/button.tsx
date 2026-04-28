@@ -22,13 +22,13 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "interactive-button inline-flex items-center justify-center gap-2 rounded-pill font-inter font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-owl-black/20 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-70";
+    "inline-flex items-center justify-center gap-2 rounded-full font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-70";
 
   const variants = {
     primary:
-      "h-[38px] min-w-[162px] px-8 bg-owl-black text-white text-sm hover:bg-[#242424]",
+      "h-[38px] min-w-[162px] px-8 bg-black text-white text-sm hover:bg-[#242424]",
     secondary:
-      "h-[34px] min-w-[126px] px-6 bg-white text-owl-black text-body-xs hover:bg-owl-cream",
+      "h-[34px] min-w-[126px] px-6 bg-white text-black text-xs hover:bg-gray-100",
   };
 
   return (

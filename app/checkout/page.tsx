@@ -213,7 +213,7 @@ export default function CheckoutPage() {
 
         <footer className="mt-10 border-t border-black/20 pt-4 text-[10px] uppercase tracking-[0.11em] text-black/80 md:flex md:items-center md:justify-between">
           <div className="mb-2 flex flex-wrap gap-x-3 gap-y-1 md:mb-0">
-            <Link href="#">Contact</Link>
+            <Link href="/contact">Contact</Link>
             <Link href="#">All Stores</Link>
             <Link href="#">Privacy</Link>
             <Link href="#">Policy</Link>

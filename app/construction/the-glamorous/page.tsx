@@ -120,7 +120,7 @@ function FooterBar() {
       <div  className="w-full h-full bg-black"/>
 
       <div className="absolute left-[29px] top-[33px] text-[20px] font-light tracking-[0.05em] text-white [font-family:var(--font-inter),_system-ui]">
-        CONTACT
+        <Link href="/contact" className="text-white hover:opacity-80">CONTACT</Link>
       </div>
       <div className="absolute left-[152px] top-[33px] text-[20px] font-light tracking-[0.05em] text-white [font-family:var(--font-inter),_system-ui]">
         ALL STORES
