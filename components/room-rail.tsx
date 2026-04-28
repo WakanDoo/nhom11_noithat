@@ -8,7 +8,11 @@ import { ProductCard } from "@/components/product-card";
 
 type RoomRailProps = {
   activeRoom: RoomId;
-  selectedProductId?: string;
+  selectedProductId: string | null;
+  selectedIds: string[];
+  onRoomSelect: (room: RoomId) => void;
+  onProductSelect: (product: Product) => void;
+};
 
 export function RoomRail({ activeRoom, selectedProductId, selectedIds, onRoomSelect, onProductSelect }: RoomRailProps) {
   const visibleProducts = products.filter((product) => product.roomId === activeRoom);

@@ -82,7 +82,9 @@ function RoomShell() {
 
 function SceneContent(props: InteriorSceneProps) {
   const sceneProducts = props.products ?? (props.product ? [props.product] : []);
-  const activeProduct = sceneProducts.find((product) => product.id === props.activeProductId) ?? props.product ?? sceneProducts[0];
+  const activeProduct = props.activeProductId
+    ? sceneProducts.find((product) => product.id === props.activeProductId)
+    : props.product;
   const activePosition = activeProduct ? getScenePlacement(activeProduct, sceneProducts.findIndex((product) => product.id === activeProduct.id)).position : undefined;
 
   return (
@@ -98,10 +100,10 @@ function SceneContent(props: InteriorSceneProps) {
         const active = product.id === activeProduct?.id;
         return (
           <Product3D
-            key={`${product.id}-${props.animationKey ?? 0}`}
+            key={product.id}
             product={product}
             placement={getScenePlacement(product, index)}
-            active={active && props.focused}
+            active={false}
             selected={active}
             onSelect={props.onProductSelect}
             onRemove={props.onProductRemove}

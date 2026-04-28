@@ -46,8 +46,8 @@ export function ProductExperience({ product }: { product: Product }) {
   return (
     <main className="min-h-screen bg-white">
       <Header />
-      <section className="grid min-h-screen overflow-x-hidden pt-[94px] md:pt-[118px] lg:grid-cols-[minmax(0,974px)_306px] xl:justify-center">
-        <div className="dot-grid relative h-[560px] overflow-hidden border-b border-[#f5f5f5] sm:h-[620px] lg:h-[calc(100vh-118px)] lg:min-h-[650px]">
+      <section className="grid min-h-[100svh] grid-rows-[minmax(0,1fr)_auto] overflow-x-hidden pt-[94px] md:pt-[118px] lg:min-h-screen lg:grid-cols-[minmax(0,974px)_306px] lg:grid-rows-none xl:justify-center">
+        <div className="dot-grid relative h-[calc(100svh-94px-252px)] min-h-[330px] overflow-hidden border-b border-[#f5f5f5] sm:h-[420px] md:h-[calc(100svh-118px-320px)] md:min-h-[380px] lg:h-[calc(100vh-118px)] lg:min-h-[650px]">
           <div className="absolute left-5 top-[22px] z-20">
             <TotalPill />
           </div>

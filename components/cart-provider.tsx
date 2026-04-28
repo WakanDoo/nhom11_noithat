@@ -2,11 +2,12 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { products } from "@/data/shop";
-import type { Product } from "@/types/shop";
+import type { CategoryId, Product } from "@/types/shop";
 
 type CartContextValue = {
   selectedIds: string[];
   selectedProducts: Product[];
+  selectedByType: Partial<Record<CategoryId, Product>>;
   total: number;
   isSelected: (id: string) => boolean;
   addProduct: (product: Product) => void;
@@ -45,6 +46,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     () => selectedIds.map((id) => products.find((product) => product.id === id)).filter(Boolean) as Product[],
     [selectedIds]
   );
+  const selectedByType = useMemo(
+    () =>
+      selectedProducts.reduce<Partial<Record<CategoryId, Product>>>((selected, product) => {
+        selected[product.categoryId] = product;
+        return selected;
+      }, {}),
+    [selectedProducts]
+  );
 
   const isSelected = useCallback((id: string) => selectedIds.includes(id), [selectedIds]);
   const addProduct = useCallback((product: Product) => {
@@ -70,6 +79,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     () => ({
       selectedIds,
       selectedProducts,
+      selectedByType,
       total: selectedProducts.reduce((sum, product) => sum + product.price, 0),
       isSelected,
       addProduct,
@@ -78,7 +88,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       getTotalPrice,
       clearCart: clearProducts
     }),
-    [addProduct, clearProducts, getTotalPrice, isSelected, removeProduct, selectedIds, selectedProducts]
+    [addProduct, clearProducts, getTotalPrice, isSelected, removeProduct, selectedByType, selectedIds, selectedProducts]
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

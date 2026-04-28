@@ -15,19 +15,21 @@ type CameraControllerProps = {
 export function CameraController({ product, targetPosition, focused }: CameraControllerProps) {
   const cameraRef = useRef<THREE.PerspectiveCamera>(null);
   const controlsRef = useRef<React.ElementRef<typeof OrbitControls>>(null);
+  const roomTarget = useMemo(() => new THREE.Vector3(0, 0.85, -0.35), []);
   const productTarget = useMemo(() => {
     if (targetPosition) return new THREE.Vector3(targetPosition[0], targetPosition[1], targetPosition[2]);
     if (!product) return new THREE.Vector3(0, 0.7, -0.2);
     return new THREE.Vector3(product.position[0], product.position[1], product.position[2]);
-  }, [product]);
+  }, [product, targetPosition]);
 
   useFrame((_, delta) => {
     if (!cameraRef.current || !controlsRef.current) return;
 
-    const distance = focused && product ? 4.1 : 5.85;
-    const desiredPosition = new THREE.Vector3(productTarget.x + distance * 0.72, productTarget.y + 1.75, productTarget.z + distance);
+    const target = focused ? roomTarget : productTarget;
+    const distance = focused ? 5.25 : 5.85;
+    const desiredPosition = new THREE.Vector3(target.x + distance * 0.72, target.y + 1.75, target.z + distance);
     cameraRef.current.position.lerp(desiredPosition, 1 - Math.exp(-delta * 2.7));
-    controlsRef.current.target.lerp(productTarget, 1 - Math.exp(-delta * 3.2));
+    controlsRef.current.target.lerp(target, 1 - Math.exp(-delta * 3.2));
     controlsRef.current.update();
   });
 

@@ -7,9 +7,20 @@ type CategoryToolbarProps = {
   roomType: RoomId;
   activeCategory: CategoryId;
 };
-const iconMap: Record<CategoryId, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
-  sofa: Sofa,
-  bed: BedDouble,
+
+const iconMap: Partial<Record<CategoryId, React.ComponentType<{ className?: string; strokeWidth?: number }>>> = {
+  sofas: Sofa,
+  tables: Table2,
+  storage: LibraryBig,
+  desks: Monitor,
+  chairs: Armchair,
+  bookcases: LibraryBig,
+  dining: Utensils,
+  "bath-tubs": Bath,
+  mirrors: ScanFace,
+  beds: BedDouble,
+  wardrobes: DoorClosed
+};
 
 export function CategoryToolbar({ roomType, activeCategory }: CategoryToolbarProps) {
   const categories = getRoomCategories(roomType);
