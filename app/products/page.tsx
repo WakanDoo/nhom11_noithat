@@ -1,4 +1,4 @@
-import { ProductsOverview } from "@/src/components/products-overview";
+import { ProductsOverview } from "@/components/products-overview";
 
 export default function ProductsPage() {
   return <ProductsOverview />;

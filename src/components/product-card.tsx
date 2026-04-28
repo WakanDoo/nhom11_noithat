@@ -1,6 +1,6 @@
 import Image from "next/image";
-import type { Product } from "@/src/lib/categories";
-import { inter, roboto } from "@/src/lib/fonts";
+import type { Product } from "@/lib/categories";
+import { inter, roboto } from "@/lib/fonts";
 
 export function ProductCard({
   product,
@@ -15,7 +15,7 @@ export function ProductCard({
     <article className="flex h-full flex-col overflow-hidden rounded-[16px] border border-black/8 bg-white">
       <div className={`relative ${imageHeightClass} bg-[#f5f0ee]`}>
         <Image
-          src={product.imageSrc}
+          src={product.image}
           alt={product.label}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 560px"

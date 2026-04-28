@@ -1,5 +1,5 @@
-import { CategoryPage } from "@/src/components/category-page";
-import { categories } from "@/src/lib/categories";
+import { CategoryPage } from "@/components/category-page";
+import { categories } from "@/lib/categories";
 
 export function generateStaticParams() {
   return categories.map((category) => ({ slug: category.slug }));

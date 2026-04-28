@@ -5,11 +5,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { SiteFooter } from "@/src/components/site-footer";
-import { SiteHeader } from "@/src/components/site-header";
-import { categoryMap } from "@/src/lib/categories";
-import { cormorant, roboto } from "@/src/lib/fonts";
-import { fadeInScale, fadeInUp, motionTransition, staggerContainer } from "@/src/lib/motion";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { categoryMap } from "@/lib/categories";
+import { cormorant, roboto } from "@/lib/fonts";
+import { fadeInScale, fadeInUp, motionTransition, staggerContainer } from "@/lib/motion";
 
 // Ảnh featured hiển thị bên phải trang
 const featuredImages = [
@@ -60,7 +60,7 @@ export function ProductsOverview() {
                   {/* Links danh mục với stagger riêng bên trong mỗi section */}
                   <motion.div className="space-y-1.5" variants={staggerContainer(0.06)}>
                     {section.items.map((slug) => {
-                      const category = categoryMap.get(slug);
+                      const category = categoryMap[slug];
                       if (!category) return null;
 
                       return (

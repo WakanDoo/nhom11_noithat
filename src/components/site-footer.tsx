@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { inter } from "@/src/lib/fonts";
+import { inter } from "@/lib/fonts";
 
 const footerLinks = [
   { href: "mailto:owlhome@gmail.com", label: "CONTACT" },

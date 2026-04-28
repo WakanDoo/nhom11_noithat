@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { cormorant, roboto } from "@/src/lib/fonts";
+import { cormorant, roboto } from "@/lib/fonts";
 
 const leftNavItems = [
   { href: "#", label: "Menu" },

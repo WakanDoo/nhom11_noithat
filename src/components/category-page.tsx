@@ -1,12 +1,12 @@
 import { notFound } from "next/navigation";
-import { ProductCard } from "@/src/components/product-card";
-import { SiteFooter } from "@/src/components/site-footer";
-import { SiteHeader } from "@/src/components/site-header";
-import { categoryMap } from "@/src/lib/categories";
-import { inter, roboto } from "@/src/lib/fonts";
+import { ProductCard } from "@/components/product-card";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { categoryMap } from "@/lib/categories";
+import { inter, roboto } from "@/lib/fonts";
 
 export function CategoryPage({ slug }: { slug: string }) {
-  const category = categoryMap.get(slug);
+  const category = categoryMap[slug];
   if (!category) notFound();
 
   return (

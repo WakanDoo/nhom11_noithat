@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { allProducts } from "@/lib/categories";
+import { ProductCard } from "@/components/product-card";
 
 function HeaderBar() {
   return (
@@ -156,11 +158,14 @@ function FooterBar() {
 
 export default function SearchPage() {
   const [query, setQuery] = useState("");
-  const products = ["Sofas", "Tables & Chairs", "TV Cabinets & consoles", "Desk", "Office chairs","BOOKSHELF","Dining table & Chairs","BED","WARDROBE","BATHTUB","MIRROR"];
-
-  const filtered = products.filter((item) =>
-    item.toLowerCase().includes(query.toLowerCase())
-  );
+  // 1. Dùng dữ liệu thật từ file lib
+  const searchResults = allProducts.filter((product) => {
+    const searchTerm = query.toLowerCase();
+    return (
+      product.label.toLowerCase().includes(searchTerm) ||
+      product.title.toLowerCase().includes(searchTerm)
+    );
+  });
 
   return (
     <div className="flex justify-center bg-white">
@@ -184,20 +189,25 @@ export default function SearchPage() {
               className="w-full h-[80px] border border-black px-8 text-[24px] outline-none"
             />
 
-            {/* Danh sách kết quả lọc */}
+            {/* DÁN ĐOẠN NÀY VÀO */}
             {query && (
-              <div className="absolute left-4 right-4 bg-white border border-t-0 border-black z-20">
-                {filtered.map((item, index) => (
-                  <Link
-                    key={index}
-                    href={`/products/${item.toLowerCase()}`}
-                    className="block p-4 border-b border-gray-100 hover:bg-gray-50 last:border-0"
-                  >
-                    {item}
-                  </Link>
+              <div className="mt-12 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+                {searchResults.map((product) => (
+                  <div key={product.id} className="w-full">
+                    {/* Đây chính là nơi gọi ProductCard để hiện ảnh và tên */}
+                    <ProductCard product={product} />
+                    
+                    {/* Dòng này để hiện thêm danh mục cho rõ ràng */}
+                    <p className="text-xs text-gray-400 mt-2 uppercase tracking-widest">
+                      Category: {product.categorySlug}
+                    </p>
+                  </div>
                 ))}
-                {filtered.length === 0 && (
-                  <div className="p-4 text-gray-400 italic">No products found</div>
+                
+                {searchResults.length === 0 && (
+                  <div className="col-span-full text-center text-gray-400 italic py-10">
+                    No products found for "{query}"
+                  </div>
                 )}
               </div>
             )}

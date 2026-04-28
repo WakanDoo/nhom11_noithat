@@ -1,0 +1,641 @@
+export const products = [
+  // =========================
+  // 🏠 LIVING ROOM (SOFA + TV + TABLE)
+  // =========================
+  {
+    id: "sofa-setup",
+    name: "Setup",
+    category: "sofa",
+    group: "living-room",
+    price: 111000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029183/Image_5_eqtova.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029183/Image_5_eqtova.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029180/Image_1_d7sqmt.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029182/Image_4_d9pfyl.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029181/Image_2_kmaa3x.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029183/Image_3_kgryoc.png",
+    ],
+    description:
+      "The Setup sofa is upholstered in a fabric containing alpaca down and wool, giving it a very soft and pleasant feel to the touch. The sofa features multi-density polyurethane foam with polyester fibers and a metal frame. It has an elastic strap suspension system. The legs are made of solid oak with an anti-slip system. The design is eco-friendly.",
+    designedBy: "Sacha Lakic",
+    size: "W. 240 x H. 85 x D. 108 cm",
+    material: "Smile Flex Fabric",
+  },
+  {
+    id: "sofa-bubble",
+    name: "Bubble Curve",
+    category: "sofa",
+    group: "living-room",
+    price: 200000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029621/Image_5_mthork.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029619/Image_4_nv8vra.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029618/Image_3_eybkrk.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029616/Image_2_erbr37.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029614/Image_1_eumghi.png",
+    ],
+    description:
+      "Inspired by natural forms and entirely handmade, its design required the development of special stretch fabrics that perfectly hug its rounded curves. Features dual-density polyurethane foam (35 soft-22 kg/m³ for the seat and 35 soft-22 kg/m³ for the backrest). Solid pine frame, pine plywood, and particleboard panels. Suspension with elastic straps. Eco-friendly design.",
+    designedBy: "Sacha Lakic",
+    size: "W. 248 x H. 80 x D. 132 cm",
+    material: "Orsetto Flex Fabric",
+  },
+  {
+    id: "sofa-altea",
+    name: "Altea",
+    category: "sofa",
+    group: "living-room",
+    price: 150000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029630/Image_5_bdo96k.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029624/Image_1_bj5nzx.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029625/Image_2_apegak.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029627/Image_3_obqfig.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029629/Image_4_v9w8kk.png",
+    ],
+    description:
+      "The Altea sofa features a classic look with refined details, appealing through its balance of spaciousness and simplicity. Seat cushions made of dual-density polyurethane foam (35 soft-40 kg/m³) and polyester fibers. Backrest cushions stuffed with goose feathers, polyester fibers, and polyurethane chips. Frame made of solid pine, pine plywood, particleboard, and hardwood. Suspension with elastic straps. Base made of beech wood and birch plywood with a matte black finish.",
+    designedBy: "Philippe Bouix",
+    size: "W. 240 x H. 89 x D. 106 cm",
+    material: "Tango Fabric",
+  },
+  {
+    id: "sofa-allusion",
+    name: "Allusion",
+    category: "sofa",
+    group: "living-room",
+    price: 250000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029612/Image_5_xaeg7d.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029605/Image_1_n8s6hs.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029610/Image_4_xxtqq8.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029609/Image_3_fs3ixy.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029606/Image_u3cylx.png",
+    ],
+    description:
+      "Sofa set includes decorative pillows. The aesthetic design allows the sofa to be placed in the center of the room, while its shallow depth saves space, making it ideal for smaller areas. Seats made of dual-density polyurethane foam (25-35 kg/m³). Backrest made of 25 kg/m³ density polyurethane foam. Back pillows made of polyester fibers. Frame constructed from solid pine and pine plywood. Legs made of matte bronze lacquered aluminum.",
+    designedBy: "Sacha Lakic",
+    size: "W. 240 x H. 81 x D. 94 cm",
+    material: "Nuage Fabric",
+  },
+  {
+    id: "tables_chairs-pétale",
+    name: "Pétale",
+    category: "tables_chairs",
+    group: "living-room",
+    price: 11000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029935/Image_6_jszldj.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029916/Image_1_snn20l.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029918/Image_2_y2gysj.png",
+    ],
+    description:
+      "Pétale swivel armchair features seat cushions in dual-density polyurethane foam (25-40 kg/m³) and polyester fibers. Backrest cushions in dual-density polyurethane foam (25-75 kg/m³) and polyester fibers. Frame made of pine plywood and particleboard. Suspension system with elastic straps. Base in polished chrome-plated metal, with an automatic return and position memory mechanism.",
+    designedBy: "Sacha Lakic",
+    size: "W. 76 x H. 72 x D. 81 cm",
+    material: "Ricochet Fabric",
+  },
+  {
+    id: "tables_chairs-niwa",
+    name: "Niwa",
+    category: "tables_chairs",
+    group: "living-room",
+    price: 22000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029947/Image_6_zqaxcv.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029940/Image_1_cy4vez.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029949/Image_5_rqd6bc.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029945/Image_4_cegaee.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029944/Image_3_gukio9.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029942/Image_2_ep2kod.png",
+    ],
+    description:
+      "NIWA combines the warmth of wood, the sophistication of lacquer, and a slender metal structure with a classic bronze finish. It realizes a delicate balance between elements, where proportions and movement converge to create a relaxing and functional space. Its two rotating surfaces offer flexibility and movement, resembling stones in a Zen garden.",
+    designedBy: "Dai Sugasawa",
+    size: "W. 200 x H. 41 x D. 110 cm",
+    material: "Matte lacquer",
+  },
+  {
+    id: "tables_chairs-blogger",
+    name: "Blogger",
+    category: "tables_chairs",
+    group: "living-room",
+    price: 20000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029892/Image_ib6nvx.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029894/Image_1_bf7pvy.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029898/Image_5_ioeend.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029900/Image_3_qeipnp.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029902/Image_2_c7jkcx.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029904/Image_4_gpxrvk.png",
+    ],
+    description:
+      "Sofa featuring a wide seat and low backrest. Seat cushions in dual-density foam of different densities for relaxing comfort. Fully upholstered in stretch fabric that hugs the shape, providing comfort. Structure in solid pine, pine plywood, and engineered composite wood. Suspension system with XL elastic straps. Solid oak base with a black stain finish.",
+    designedBy: "Tapinassi & Maurizio",
+    size: "W. 115 x H. 67 x D. 104 cm",
+    material: "Câlin Fabric",
+  },
+  {
+    id: "tables_chairs-ovni-up",
+    name: "Ovni Up",
+    category: "tables_chairs",
+    group: "living-room",
+    price: 25000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029912/Image_5_ypjovu.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029924/Image_2_o2jvmn.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029926/Image_1_qetape.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029922/Image_3_xwujyp.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777029920/Image_4_bgeig1.png",
+    ],
+    description:
+      "The unique conical shape of the OVNI table creates a sensation as if the center is being pulled down, and thin concentric stripes create movement. The refined silhouette stretches harmoniously to the base and is balanced by a lacquered steel disk at the bottom. Top made of 6mm thick clear or smoked tempered glass. Matte lacquered base in the same color as the tray.",
+    designedBy: "Vincenzo Maiolino",
+    size: "H. 34 x ∅. 122 cm",
+    material: "Matte / Tenax lacquer",
+  },
+  {
+    id: "tv_cabinets_consoles-trinta",
+    name: "Trinta",
+    category: "tv_cabinets_consoles",
+    group: "living-room",
+    price: 45000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030108/Image_5_w17ra3.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030106/Image_4_v3t9br.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030104/Image_3_ytjxlu.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030102/Image_2_mnwtsk.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030099/Image_1_tewlbb.png",
+    ],
+    description:
+      "Create an instant transformation with this bookshelf; its horizontal modules alternately rotate to the right and left, creating the illusion that they are drifting apart. The bookshelf consists of 6 modules. Structure made of lacquered medium-density fiberboard (MDF), with a high-gloss lacquer finish on the exterior; the interior and partitions feature two different matte colors. Base equipped with height adjusters. Fasteners for assembly between modules. Version includes LED lighting.",
+    designedBy: "Fabrice Berrux",
+    size: "W. 163 x H. 208.7 x D. 30 cm",
+    material: "Matte lacquer",
+  },
+  {
+    id: "tv_cabinets_consoles-ruban",
+    name: "Ruban",
+    category: "tv_cabinets_consoles",
+    group: "living-room",
+    price: 35000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030113/Image_1_zdkuu0.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030121/Image_5_fgld4q.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030119/Image_4_anv1qp.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030117/Image_3_tlxwus.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030115/Image_2_c3w8nd.png",
+    ],
+    description:
+      "Wooden shelves, bordered by lacquered ribbons, provide lightness and structure to the entire ensemble. Bookcase with uprights made of high-gloss lacquered medium-density fiberboard. Shelves in brushed oak veneer with removable LED lighting.",
+    designedBy: "Luca Binaglia",
+    size: "W. 224 x H. 204.7 x D. 45.6 cm",
+    material: "High gloss",
+  },
+  {
+    id: "tv_cabinets_consoles-ora_ito",
+    name: "Ora Ito",
+    category: "tv_cabinets_consoles",
+    group: "living-room",
+    price: 55000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030070/Image_1_aqx8hk.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030068/Image_f2ygsu.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030119/Image_4_anv1qp.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030072/Image_2_u64kta.png",
+    ],
+    description:
+      "TV unit with 2 side doors and 2 drawers, structure made of curved medium-density fiberboard, finished in metallic lacquer.",
+    designedBy: "Ora Ito",
+    size: "W. 242.5 x H. 45.5 x D. 62 cm",
+    material: "Matte lacquer",
+  },
+  {
+    id: "tv_cabinets_consoles-globo",
+    name: "Globo",
+    category: "tv_cabinets_consoles",
+    group: "living-room",
+    price: 42000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030083/Image_xfa9k0.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030086/Image_1_ixkens.png",
+    ],
+    description:
+      "TV unit with 3 doors. Structure in melamine, graphite color, covered in extra-clear lacquered glass, mirrored surfaces, or Alpi® veneer with a lacquered top. Legs in chrome-plated metal with a matte finish.",
+    designedBy: "Studio Roche Bobois",
+    size: "W. 200.4 x H. 51 x D. 48 cm",
+    material: "Lacquered glass",
+  },
+  {
+    id: "dining_tables_chairs-rio_ipanema",
+    name: "Rio Ipanema",
+    category: "dining_tables_chairs",
+    group: "dining-room",
+    price: 76000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030241/Image_5_yiwpma.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030246/Image_3_dvnxvm.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030244/Image_2_ryrww5.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030232/Image_4_pupkhg.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030230/Image_1_pi4zpu.png",
+    ],
+    description:
+      "Rectangular dining table with an organic base, crafted entirely from solid oak. Seat and backrest in high-resilience foam, featuring a Roche Bobois protective underlayer. Finished with water-based paint, an antique-effect patina, and cellulose varnish.",
+    designedBy: "Moinard & Fred",
+    size: "Table: W. 300 x H. 75.8 x D. 130 cm",
+    material: "Orsetto Fabric",
+  },
+  {
+    id: "dining_tables_chairs-serpentine",
+    name: "Serpentine",
+    category: "dining_tables_chairs",
+    group: "dining-room",
+    price: 65000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030255/Image_5_zuidod.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030255/Image_5_zuidod.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030252/Image_4_qyaqyi.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030250/Image_2_wzvpn1.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030234/Image_3_twu4sn.png",
+    ],
+    description:
+      "The Setup sofa is upholstered in a fabric containing alpaca down and wool, giving it a very soft and pleasant feel to the touch. The sofa features multi-density polyurethane foam with polyester fibers and a metal frame. It has an elastic strap suspension system. The legs are made of solid oak with an anti-slip system. The design is eco-friendly.",
+    designedBy: "Fritsch & Vivien",
+    size: "W. 240 x H. 75 x D. 120 cm",
+    material: "Defibrated oak & Velvet",
+  },
+  {
+    id: "dining_tables_chairs-elanta",
+    name: "Elanta",
+    category: "dining_tables_chairs",
+    group: "dining-room",
+    price: 56000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030284/Image_5_cioins.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030282/Image_4_afxcen.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030279/Image_3_t58u5t.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030277/Image_2_idrcdq.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030275/Image_1_fi2m3w.png",
+    ],
+    description:
+      "Elanta round dining table made of treated oak. Wood and ceramics blend elegantly on the tabletop, softened at the corners by a slightly sloped trim. The Elanta chair features soft lines similar to the dining table. The curves of the backrest are highlighted by an elegant decorative trim, available in matching or contrasting colors.",
+    designedBy: "Patrick Norguet",
+    size: "W. 300 x H. 76 x D. 128 cm",
+    material: "Defibrated oak & Velvet",
+  },
+  {
+    id: "dining_tables_chairs-track-2",
+    name: "Track 2",
+    category: "dining_tables_chairs",
+    group: "dining-room",
+    price: 58000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030270/Image_6_mtnvoa.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030264/Image_3_gxkmg2.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030262/Image_2_dij2qu.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030259/Image_1_b0a1tp.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030268/Image_5_nyaoqv.png",
+    ],
+    description:
+      "Dining table with a thick oak veneer top, finished with grooved MDF and a stained coating. Two-part synchronous opening top with an integrated central extension (60 cm long). Steel legs with epoxy finish. Chair upholstered in fabric or soft leather. Stained ash wood legs. Tonal stitching.",
+    designedBy: "Gorgoni & Vivien",
+    size: "W. 220 x H. 74 x D. 105 cm",
+    material: "OAK & Grain Uni Fabric",
+  },
+  {
+    id: "desk-calligraphie",
+    name: "Calligraphie",
+    category: "desks",
+    group: "office-room",
+    price: 46000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030412/Image_6_xyjigy.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030410/Image_5_azlzev.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030407/Image_4_xshunh.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030405/Image_3_wbqz52.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030402/Image_2_qulrnd.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030400/Image_1_delcaj.png",
+    ],
+    description:
+      "Desk made of birch plywood with a polished natural Canaletto walnut veneer. One drawer in black-stained plywood, interior upholstered in orange synthetic leather-effect fabric with black stitching, and a matte black lacquered MDF front. Legs in black epoxy-finished steel with bronze epoxy-finished bases.",
+    designedBy: "Julien Vidame",
+    size: "W. 147 x H. 77 x D. 76.5 cm",
+    material: "Canaletto walnut",
+  },
+  {
+    id: "desk-prismo",
+    name: "Prismo",
+    category: "desks",
+    group: "office-room",
+    price: 48000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030381/Image_6_b3txzl.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030379/Image_5_ffibhw.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030374/Image_4_u87k3y.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030372/Image_3_frfgix.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030369/Image_1_yz4uy6.png",
+    ],
+    description:
+      "Based on the principle of a fighter jet evading radar, Daniel Rode designed Prismo to challenge the laws of gravity with its spectacular console structure and the prismatic elegance of triangular shapes. Small desk with a lacquered MDF structure in Anthracite Gray. Equipped with a cable outlet. Detachable.",
+    designedBy: "Daniel Rode",
+    size: "W. 175 x H. 72 x D. 84.5 cm",
+    material: "Tenax lacquer",
+  },
+  {
+    id: "desk-pulp",
+    name: "Pulp",
+    category: "desks",
+    group: "office-room",
+    price: 44000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030395/Image_5_wgkspm.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030393/Image_4_nfp37a.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030391/Image_3_gak8xu.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030388/Image_2_nbiock.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030386/Image_1_d6rz39.png",
+    ],
+    description:
+      "3-legged desk. Pebble-shaped triangular tabletop made of lacquered MDF with laminated Fenix® veneer, high-gloss lacquered edges, and legs in high-gloss lacquered reinforced polyurethane. Metal crossbar under the tabletop in a matte lacquer finish matching the base.",
+    designedBy: "Eugeni Quitllet",
+    size: "W. 220 x H. 75 x D. 127 cm",
+    material: "Glossy lacquer",
+  },
+  {
+    id: "office-chairs-ceo",
+    name: "Ceo",
+    category: "office-chairs",
+    group: "office-room",
+    price: 26000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030497/Image_3_hvsez0.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030494/Image_6_lrndy9.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030492/Image_2_jf3cs0.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030489/Image_1_cody46.png",
+    ],
+    description:
+      "Seat made of 50 kg/m³ foam and synthetic fibers. Backrest made of 45 kg/m³ foam and synthetic fibers. Frame in solid pine and pine plywood. Suspension system with elastic straps. Metal base with a polished aluminum or matte black lacquer finish. Swivel armchair with a rocking mechanism.",
+    designedBy: "Sacha Lakic",
+    size: "W. 65 x H. 120 x D. 72.5 cm",
+    material: "Orsetto Flex Fabric",
+  },
+  {
+    id: "office-chairs-nixon",
+    name: "Nixon",
+    category: "office-chairs",
+    group: "office-room",
+    price: 34000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030514/Image_6_grraii.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030512/Image_5_dekwgd.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030509/Image_4_cii0hk.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030507/Image_3_pqma0e.png",
+    ],
+    description:
+      "High-back office chair made of two layers of walnut-veneered plywood, padded and upholstered in leather. Swivels, tilts 7°, and locks in an upright position. Seat height is adjustable from 44 to 54 cm. Height-adjustable headrest. Aluminum base with casters.",
+    designedBy: "Fritsch & Vivien",
+    size: "W. 65 x H. 120 x D. 68 cm",
+    material: "Canaletto walnut",
+  },
+  {
+    id: "office-chairs-pulp",
+    name: "Pulp",
+    category: "office-chairs",
+    group: "office-room",
+    price: 30000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030532/Image_6_efby1o.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030527/Image_4_fnwl3w.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030530/Image_5_y5kvs8.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030525/Image_3_l644ur.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030520/Image_1_fwmik3.png",
+    ],
+    description:
+      "Seat cushions in dual-density foam (35-37 kg/m³), back cushions in 35 kg/m³ foam. Frame in curved birch wood. Swivel base in polished die-cast aluminum with an adjustment mechanism.",
+    designedBy: "Eugeni Quitllet",
+    size: "W. 89 x H. 118 x D. 78 cm",
+    material: "Orsetto Flex Fabric",
+  },
+  {
+    id: "bookshelf-toccata",
+    name: "Toccata",
+    category: "bookshelves",
+    group: "office-room",
+    price: 40000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030631/Image_6_gbpxjj.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030643/Image_2_wokp6y.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030625/Image_1_gt3pql.png",
+    ],
+    description:
+      "Bookcase made of particle board. Front features vertical MDF slats covered in bronze-colored lacquered glass. Optional LED backlighting available.",
+    designedBy: "Alessio Bassan",
+    size: "W. 65 x H. 120 x D. 72.5 cm",
+    material: "Particle board",
+  },
+  {
+    id: "bookshelf-wallover",
+    name: "Wallover",
+    category: "bookshelves",
+    group: "office-room",
+    price: 32000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030649/Image_6_w1xgle.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030641/Image_4_blbgbh.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030638/Image_3_rruy61.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030636/Image_1_qqgjke.png",
+    ],
+    description:
+      "2 bookcases W.45 (3 compartments) with back panels and lighting + 2 drop-down cabinets W.120 + 1 top and 2 finished side panels + 1 base + full lighting system.",
+    designedBy: "Alessio Bassan",
+    size: "W. 165 x H. 90 x D. 45.5 cm",
+    material: "Particle board",
+  },
+  {
+    id: "bookshelf-elanta",
+    name: "Elanta",
+    category: "bookshelves",
+    group: "office-room",
+    price: 35000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030659/Image_6_r2eewc.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030657/Image_2_xe62dv.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030654/Image_1_mbcbwg.png",
+    ],
+    description:
+      "Curved doors made of oak-veneered plywood, with the exterior surface treated to remove fibers (defibrated). Interior structure made of sycamore-veneered medium-density fiberboard (MDF) with fixed shelves. Top and bottom panels in lacquer or wood finish. Stainless steel base featuring Onyx stone details.",
+    designedBy: "Patrick Norguet",
+    size: "W. 125 x H. 190 x D. 47 cm",
+    material: "Defibrated oak",
+  },
+  {
+    id: "bed-bubble",
+    name: "Bubble",
+    category: "bed",
+    group: "bed-room",
+    price: 60000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030806/Image_5_lh2xrx.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030803/Image_3_jwfj5b.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030800/Image_1_jtieun.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030814/Image_2_acgqng.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030817/Image_4_nit2tq.png",
+    ],
+    description:
+      "Resembling a cloud, this bed features soft curves that create a sense of ultimate comfort. Headboard made of dual-density polyurethane foam (35-23 kg/m³). Bed frame made of 35 kg/m³ polyurethane foam. Structure constructed from solid pine, pine plywood, and particleboard. Base made of polished solid oak with a Wenge stain finish.",
+    designedBy: "Sacha Lakic",
+    size: "W. 202 x H. 90 x D. 266 cm",
+    material: "Orsetto Flex Fabric",
+  },
+  {
+    id: "bed-en-tête",
+    name: "En-tête",
+    category: "bed",
+    group: "bed-room",
+    price: 75000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030786/Image_5_bvzvpe.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030789/Image_2_jcc6sm.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030792/Image_1_sza0rc.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030809/Image_3_xs8sep.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030812/Image_4_wlywzf.png",
+    ],
+    description:
+      "A modern bed featuring two ruffled pillows for a cozy feel. Upholstered in Belize fabric, with a fully removable cover. Bed frame made of solid pine, birch wood, and pine plywood. Metal headboard structure, containing triple-density foam (18-22-30) and synthetic fibers.",
+    designedBy: "Studio Roche Bobois",
+    size: "W. 178 x H. 113 x D. 230 cm",
+    material: "Belize Fabric",
+  },
+  {
+    id: "bed-cherche-midi",
+    name: "Cherche Midi",
+    category: "bed",
+    group: "bed-room",
+    price: 85000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030783/Image_os9mcv.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030795/Image_1_kux18f.png",
+    ],
+    description:
+      "This bed features a luxurious design and refined details, such as a meticulously hand-stitched headboard. Fully upholstered in leather. Bed frame made of solid pine with polyurethane foam padding; headboard features quilted patterns and edges finished in Nubuck leather.",
+    designedBy: "Eric Gizard",
+    size: "W. 262 x H. 120 x D. 229 cm",
+    material: "Pine frame, Nubuck leather",
+  },
+  {
+    id: "wardrobe-cristal",
+    name: "Cristal",
+    category: "wardrobe",
+    group: "bed-room",
+    price: 67000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030879/Image_yelpqy.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030891/Image_1_wdrjrt.png",
+    ],
+    description:
+      "6-door wardrobe with melamine frame and base. Features 4 extra-clear glass doors on bronze-colored aluminum frames with an internal metal structure, and 2 block-style drawers. 2 doors in high-gloss lacquer with matte lacquered edges. Shelves feature metal frames and glass with integrated hanging rails",
+    designedBy: "Alessio Bassan",
+    size: "W. 355.3 x H. 261 x D. 59 cm",
+    material: "Particle board",
+  },
+  {
+    id: "wardrobe-paris-paname",
+    name: "Paris Paname",
+    category: "wardrobe",
+    group: "bed-room",
+    price: 60000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030882/Image_2_t9mzki.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030885/Image_1_o9naf5.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030888/Image_3_sq2y0d.png"
+    ],
+    description:
+      "This wardrobe is robust and made of wood, featuring soft, undulating lines. Structure in treated ash wood, doors with Caresse leather internal lining, 3 adjustable wooden shelves (hangers included), 1 hanging rail, internal mirror, and stainless steel base with a gold lacquer finish.",
+    designedBy: "Bruno Moinard",
+    size: "W. 110 x H. 195 x D. 61 cm",
+    material: "Wood MDF",
+  },
+  {
+    id: "bathtub-ocean",
+    name: "Ocean",
+    category: "bathtub",
+    group: "bath-room",
+    price: 170000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030974/Image_inbudm.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030977/Image_3_eyroqw.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030971/Image_5_htdufm.png"
+    ],
+    description:
+      "Featuring artistic curves and a meticulously crafted silhouette, the Ocean bathtub adds an architectural highlight to any modern bathroom, bringing a sense of luxury and sophistication to the space. Both ends of the bathtub are ergonomically designed to support the head and neck, providing an unparalleled relaxing bathing experience.",
+    designedBy: "Riluxa",
+    size: " ",
+    material: "Mineral Stone",
+  },
+  {
+    id: "bathtub-nimes",
+    name: "Nimes",
+    category: "bathtub",
+    group: "bath-room",
+    price: 180000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030989/Image_bn6yo2.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030996/Image_2_j0ticl.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777030999/Image_3_ikabap.png"
+    ],
+    description:
+      "The Nimes bathtub embodies minimalist elegance, with a perfectly symmetrical design that contributes to a sense of tranquility and serenity. Designed for bathing at either end, the tub walls are ergonomically shaped to support the body during full immersion. The Nimes bathtub is easy to clean and highly stain-resistant, while minor scratches can be easily repaired.",
+    designedBy: "Riluxa",
+    size: " ",
+    material: "Mineral Stone",
+  },
+  {
+    id: "Mirror-castia",
+    name: "Castia",
+    category: "mirror",
+    group: "bath-room",
+    price: 27000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777031082/Image_6_zzqubu.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777031079/Image_5_tnmi1c.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777031073/Image_1_vwo4su.png"
+    ],
+    description:
+      "Crafted with meticulous attention to detail, the Castia rectangular framed mirror possesses a simple yet sophisticated beauty that completes your space. With high versatility, the Castia collection effortlessly harmonizes with various interior styles.",
+    designedBy: "Studio McGee",
+    size: "W. 50.8 x H. 76.2 cm x D. 5 cm",
+    material: "Premium metal and mirrored glass",
+  },
+  {
+    id: "Mirror-halo",
+    name: "Halo",
+    category: "mirror",
+    group: "bath-room",
+    price: 67000000,
+    image: "https://res.cloudinary.com/dvwrylphl/image/upload/v1777031085/Image_usggp4.png",
+    gallery: [
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777048519/Image_5_avwrhi.png",
+      "https://res.cloudinary.com/dvwrylphl/image/upload/v1777048523/Image_1_imqvnj.png"
+    ],
+    description:
+      "The Halo mirror features a wide rectangular design. With soft backlighting along all four edges, it creates a warm and inviting atmosphere. Its slim, frameless profile offers an elegant and refined look. You can choose between touch control or hardwired connection, with an optional anti-fog (demister) function for added comfort and clarity.",
+    designedBy: "Alessio Bassan",
+    size: "W. 180 x H. 120 x D. 3 cm",
+    material: "Glass",
+  },
+];
+
+export function getProductById(id) {
+  const rawId = String(id ?? "");
+  let decodedId = rawId;
+
+  try {
+    decodedId = decodeURIComponent(rawId);
+  } catch {
+    decodedId = rawId;
+  }
+
+  return products.find(
+    (product) => product.id === rawId || product.id === decodedId
+  );
+}
