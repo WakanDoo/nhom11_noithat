@@ -1,4 +1,4 @@
-import RevealSection from "@/components/RevealSection";
+import RevealSection from "@/components/about/RevealSection";
 
 export default function Hero() {
   return (

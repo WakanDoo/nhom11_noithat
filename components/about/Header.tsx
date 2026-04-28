@@ -1,105 +1,46 @@
-import Image from "next/image";
+"use client";
 
-const image = (name: string) => `/assets/images/${name}`;
+import Link from "next/link";
+import { Menu, Search, ShoppingCart, User } from "lucide-react";
+import { CartBadgeLink } from "@/components/CartBadgeLink";
 
 export default function Header() {
   return (
-    <header className="site-header">
-      <div className="header-inner">
-        <nav className="nav-group nav-left" aria-label="Primary navigation">
-          <a className="nav-link menu-link" href="#">
-            <span className="menu-lines" aria-hidden="true">
-              <Image src={image("line-menu.svg")} alt="" width={19} height={4} />
-              <Image src={image("line-menu.svg")} alt="" width={19} height={4} />
-              <Image src={image("line-menu.svg")} alt="" width={19} height={4} />
-            </span>
-            <span>MENU</span>
-          </a>
-          <a className="nav-link" href="#about">
-            ABOUT
-          </a>
-          <a className="nav-link search-link" href="#">
-            <span className="icon-search" aria-hidden="true">
-              <Image
-                className="search-ring"
-                src={image("icon-search-ring.svg")}
-                alt=""
-                width={16}
-                height={16}
-              />
-              <Image
-                className="search-handle"
-                src={image("icon-search-handle.svg")}
-                alt=""
-                width={7}
-                height={7}
-              />
-            </span>
-            <span>SEARCH</span>
-          </a>
+    <header className="w-full bg-white border-b border-black/10">
+      <div className="relative w-full max-w-[1280px] mx-auto h-[118px] flex items-end pb-[18px] px-4 md:px-6">
+
+        {/* Left nav */}
+        <nav className="flex items-center gap-5 text-[20px] font-medium tracking-[0.08em] text-[#0A0A0A]">
+          <Link href="/menu" className="flex items-center gap-1.5 hover:opacity-60">
+            <Menu className="h-[18px] w-[18px]" />
+            MENU
+          </Link>
+          <Link href="/about" className="hover:opacity-60">ABOUT</Link>
+          <Link href="/search" className="flex items-center gap-1.5 hover:opacity-60">
+            <Search className="h-[18px] w-[18px]" />
+            SEARCH
+          </Link>
         </nav>
 
-        <a className="brand-logo" href="#" aria-label="OWLHOME home">
+        {/* Logo */}
+        <Link
+          href="/"
+          className="absolute left-1/2 -translate-x-1/2 bottom-[22px] text-[#0A0A0A] font-serif font-medium tracking-[0.08em] text-[54px] leading-none whitespace-nowrap"
+        >
           OWLHOME
-        </a>
+        </Link>
 
-        <nav className="nav-group nav-right" aria-label="Product navigation">
-          <a className="nav-link" href="#">
-            PRODUCTS
-          </a>
-          <a className="nav-link" href="#">
-            CONSTRUCTION
-          </a>
+        {/* Right nav */}
+        <nav className="ml-auto flex items-center gap-5 text-[20px] font-medium tracking-[0.08em] text-[#0A0A0A]">
+          <Link href="/products" className="hidden md:inline hover:opacity-60">PRODUCTS</Link>
+          <Link href="/construction" className="hidden md:inline hover:opacity-60">CONSTRUCTION</Link>
+          <CartBadgeLink>
+            <ShoppingCart className="h-[22px] w-[22px]" />
+          </CartBadgeLink>
+          <Link href="/login" className="hover:opacity-60">
+            <User className="h-[22px] w-[22px]" />
+          </Link>
         </nav>
-
-        <div className="header-actions" aria-label="Account and cart">
-          <a className="icon-cart" href="#" aria-label="Cart">
-            <Image
-              className="cart-basket"
-              src={image("icon-cart-basket.svg")}
-              alt=""
-              width={25}
-              height={16}
-            />
-            <Image
-              className="cart-wheel wheel-left"
-              src={image("icon-cart-wheel.svg")}
-              alt=""
-              width={6}
-              height={6}
-            />
-            <Image
-              className="cart-wheel wheel-right"
-              src={image("icon-cart-wheel.svg")}
-              alt=""
-              width={6}
-              height={6}
-            />
-            <Image
-              className="cart-handle"
-              src={image("icon-cart-handle.svg")}
-              alt=""
-              width={6}
-              height={2}
-            />
-          </a>
-          <a className="icon-user" href="#" aria-label="User account">
-            <Image
-              className="user-body"
-              src={image("icon-user-body.svg")}
-              alt=""
-              width={18}
-              height={8}
-            />
-            <Image
-              className="user-head"
-              src={image("icon-user-head.svg")}
-              alt=""
-              width={9}
-              height={9}
-            />
-          </a>
-        </div>
       </div>
     </header>
   );

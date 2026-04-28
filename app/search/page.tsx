@@ -33,7 +33,7 @@ function HeaderBar() {
           MENU
         </a>
         <a
-          href="/#about"
+          href="/about"
           className="absolute left-[113px] top-[72px] text-[20px] leading-[23px] font-medium tracking-[0.08em] text-[#0A0A0A] [font-family:var(--font-roboto),_system-ui]"
         >
           ABOUT

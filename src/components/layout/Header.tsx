@@ -1,9 +1,10 @@
+import Link from "next/link";
 import Icon from "@/components/ui/Icon";
 
 const leftNav = [
-  { label: "MENU", icon: "bars" as const },
-  { label: "ABOUT" as const },
-  { label: "SEARCH", icon: "search" as const },
+  { label: "MENU", icon: "bars" as const, href: "/menu" },
+  { label: "ABOUT", href: "/about" },
+  { label: "SEARCH", icon: "search" as const, href: "/search" },
 ];
 
 const rightNav = ["PRODUCTS", "CONSTRUCTION"] as const;
@@ -14,14 +15,14 @@ export default function Header() {
       <div className="mx-auto flex max-w-400 items-center justify-between gap-4 px-4 py-4 sm:px-6 xl:px-10">
         <nav className="hidden items-center gap-6 xl:flex">
           {leftNav.map((item) => (
-            <button
+            <Link
               key={item.label}
+              href={item.href}
               className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.16em] text-[#171717] transition-colors hover:text-[#c9a96e]"
-              type="button"
             >
               {item.icon ? <Icon name={item.icon} size={14} /> : null}
               {item.label}
-            </button>
+            </Link>
           ))}
         </nav>
 

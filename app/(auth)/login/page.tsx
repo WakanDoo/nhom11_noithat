@@ -5,7 +5,7 @@ import Icon from "@/components/ui/Icon";
 
 const leftNav = [
   { label: "MENU", icon: "bars" as const, href: "/menu" },
-  { label: "ABOUT" },
+  { label: "ABOUT", href: "/about" },
   { label: "SEARCH", icon: "search" as const, href: "/search" },
 ];
 

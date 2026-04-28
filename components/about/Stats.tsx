@@ -1,4 +1,4 @@
-import RevealSection from "@/components/RevealSection";
+import RevealSection from "@/components/about/RevealSection";
 
 const stats = [
   {

@@ -1,4 +1,4 @@
-import RevealSection from "@/components/RevealSection";
+import RevealSection from "@/components/about/RevealSection";
 import Image from "next/image";
 
 export default function BrandStory() {
