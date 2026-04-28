@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CheckCircle, Menu, Search, ShoppingCart, User } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useCartStore } from "@/store/useCartStore";
+import { CartBadgeLink } from "@/components/CartBadgeLink";
 
 const USD_RATE = 26400;
 
@@ -80,21 +81,21 @@ export default function CheckoutPage() {
       >
         <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between border-x border-b border-black/15 px-3 py-3 text-[11px] uppercase tracking-[0.12em] md:px-5 md:py-4 md:text-xs lg:px-6">
           <div className="flex items-center gap-3">
-            <button className="inline-flex items-center gap-1">
+            <Link href="/menu" className="inline-flex items-center gap-1">
               <Menu className="h-3.5 w-3.5" />
               <span className="hidden md:inline">Menu</span>
-            </button>
+            </Link>
             <span className="hidden md:inline">About</span>
-            <button className="inline-flex items-center gap-1">
+            <Link href="/search" className="inline-flex items-center gap-1">
               <Search className="h-3.5 w-3.5" />
               <span className="hidden md:inline">Search</span>
-            </button>
+            </Link>
           </div>
-          <h1 className="font-serif text-xl tracking-[0.2em] md:text-[46px] md:leading-none">OWLHOME</h1>
+          <Link href="/" className="font-serif text-xl tracking-[0.2em] md:text-[46px] md:leading-none">OWLHOME</Link>
           <div className="flex items-center gap-3">
-            <span className="hidden md:inline">Products</span>
-            <span className="hidden md:inline">Construction</span>
-            <ShoppingCart className="h-3.5 w-3.5" />
+            <Link href="/products" className="hidden md:inline">Products</Link>
+            <Link href="/construction" className="hidden md:inline">Construction</Link>
+            <CartBadgeLink><ShoppingCart className="h-3.5 w-3.5" /></CartBadgeLink>
             <User className="h-3.5 w-3.5" />
           </div>
         </div>

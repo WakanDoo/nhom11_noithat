@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { cormorant, roboto } from "@/lib/fonts";
+import { CartBadgeLink } from "@/components/CartBadgeLink";
 
 const leftNavItems = [
-  { href: "#", label: "Menu" },
+  { href: "/menu", label: "Menu" },
   { href: "#", label: "About" },
-  { href: "#", label: "Search" },
+  { href: "/search", label: "Search" },
 ];
 
 const rightNavItems = [
   { href: "/products", label: "Products" },
-  { href: "#", label: "Construction" },
+  { href: "/construction", label: "Construction" },
 ];
 
 function MenuIcon() {
@@ -54,23 +55,23 @@ export function SiteHeader() {
   return (
     <header className="border-b border-black/8 bg-white">
       <div className="mx-auto flex min-h-23 w-full max-w-7xl items-center justify-between gap-4 px-5 sm:px-8 lg:hidden lg:px-10">
-        <button
-          type="button"
+        <Link
+          href="/menu"
           aria-label="Open menu"
           className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10"
         >
           <MenuIcon />
-        </button>
+        </Link>
 
         <Link
-          href="/products"
+          href="/"
           className={`${cormorant.className} shrink-0 text-center text-[31px] leading-none tracking-[0.12em] text-[#1f1917] sm:text-[35px]`}
         >
           OWLHOME
         </Link>
 
         <div className="flex items-center gap-3 text-black">
-          <SearchIcon />
+          <Link href="/search" aria-label="Search"><SearchIcon /></Link>
           <Link href="/products" className={`${roboto.className} text-[10px] uppercase tracking-[0.22em] text-black/75`}>
             Products
           </Link>
@@ -95,15 +96,15 @@ export function SiteHeader() {
         </div>
 
         <Link
-          href="/products"
+          href="/"
           className={`${cormorant.className} absolute left-1/2 top-5.5 -translate-x-1/2 text-center text-[54px] leading-none tracking-[0.08em] text-[#17120f]`}
         >
           OWLHOME
         </Link>
 
-        <div className="absolute right-4.5 top-8.75 flex items-start gap-3 text-black" aria-hidden="true">
-          <CartIcon />
-          <UserIcon />
+        <div className="absolute right-4.5 top-8.75 flex items-start gap-3 text-black">
+          <CartBadgeLink><CartIcon /></CartBadgeLink>
+          <Link href="/login" aria-label="Account"><UserIcon /></Link>
         </div>
 
         <div className="absolute right-4.5 top-17.25 flex items-center gap-3.5">

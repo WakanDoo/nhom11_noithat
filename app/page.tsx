@@ -1,8 +1,8 @@
 "use client";
 
-
 import Image from "next/image";
 import Link from "next/link";
+import { CartBadgeLink } from "@/components/CartBadgeLink";
 
 function ChevronLeftIcon({ className }: { className?: string }) {
   return (
@@ -175,9 +175,9 @@ export default function Home() {
               </Link>
 
               {/* Right icons */}
-              <div className="absolute left-[1181px] top-[18px] w-[35px] h-[35px] text-black">
+              <CartBadgeLink className="absolute left-[1181px] top-[18px] w-[35px] h-[35px] text-black hover:text-[#c9a96e] transition-colors">
                 <ShoppingCartIcon className="w-full h-full" />
-              </div>
+              </CartBadgeLink>
               <Link href="/login" className="absolute left-[1221px] top-[23px] w-[26px] h-[26px] text-black hover:text-[#c9a96e] transition-colors">
                 <UserIcon className="w-full h-full" />
               </Link>

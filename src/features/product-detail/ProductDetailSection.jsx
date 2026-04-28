@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import ProductGallery from "./ProductGallery";
+import { useCartStore } from "@/store/useCartStore";
 
 function formatPrice(price) {
   return `${new Intl.NumberFormat("vi-VN").format(price)} VND`;
@@ -27,6 +29,17 @@ function ShareIcon() {
 export default function ProductDetailSection({ product, gallery }) {
   const sectionRef = useRef(null);
   const desktopGalleryRef = useRef(null);
+  const router = useRouter();
+  const addItem = useCartStore((state) => state.addItem);
+
+  function handleAddToCart() {
+    addItem({ id: product.id, name: product.name, price: product.price, image: product.image });
+  }
+
+  function handleBuyNow() {
+    addItem({ id: product.id, name: product.name, price: product.price, image: product.image });
+    router.push("/cart");
+  }
 
   useEffect(() => {
     const desktopQuery = window.matchMedia("(min-width: 1024px)");
@@ -159,12 +172,14 @@ export default function ProductDetailSection({ product, gallery }) {
         <div className="mt-5 flex flex-col gap-2 md:mt-6 lg:mt-7 lg:flex-row lg:items-center lg:gap-3">
           <button
             type="button"
+            onClick={handleAddToCart}
             className="w-full rounded-full bg-black px-6 py-2.5 text-[15px] font-medium text-white transition hover:bg-stone-800 lg:w-auto lg:min-w-[132px] lg:py-3"
           >
             Add to cart
           </button>
           <button
             type="button"
+            onClick={handleBuyNow}
             className="w-full rounded-full border border-black px-6 py-2.5 text-[15px] font-medium text-black transition hover:bg-stone-50 lg:w-auto lg:min-w-[132px] lg:py-3"
           >
             Buy now

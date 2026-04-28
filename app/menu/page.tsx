@@ -63,7 +63,7 @@ function HeaderBar() {
         </Link>
 
         <Link
-          href="/#products"
+          href="/products"
           className="absolute left-[970px] top-[72px] text-[20px] leading-[23px] font-medium tracking-[0.08em] text-[#0A0A0A] [font-family:var(--font-roboto),_system-ui]"
         >
           PRODUCTS

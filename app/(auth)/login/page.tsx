@@ -1,14 +1,18 @@
 import Link from "next/link";
 import AuthForm from "@/components/auth/AuthForm";
+import { CartBadgeLink } from "@/components/CartBadgeLink";
 import Icon from "@/components/ui/Icon";
 
 const leftNav = [
-  { label: "MENU", icon: "bars" as const },
+  { label: "MENU", icon: "bars" as const, href: "/menu" },
   { label: "ABOUT" },
-  { label: "SEARCH", icon: "search" as const },
+  { label: "SEARCH", icon: "search" as const, href: "/search" },
 ];
 
-const rightNav = ["PRODUCTS", "CONSTRUCTION"];
+const rightNav = [
+  { label: "PRODUCTS", href: "/products" },
+  { label: "CONSTRUCTION", href: "/construction" },
+];
 
 export default function LoginPage() {
   return (
@@ -23,35 +27,34 @@ export default function LoginPage() {
       <header className="relative z-10 border-b border-white bg-white ">
         <div className="mx-auto flex max-w-375 items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-10">
           <nav className="hidden items-center gap-6 lg:flex">
-            {leftNav.map((item) => (
-              <button
-                key={item.label}
-                className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.16em] text-[#171717] transition-colors hover:text-[#c9a96e]"
-                type="button"
-              >
-                {item.icon ? <Icon name={item.icon} size={14} /> : null}
-                {item.label}
-              </button>
-            ))}
+            {leftNav.map((item) =>
+              item.href ? (
+                <Link key={item.label} href={item.href} className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.16em] text-[#171717] transition-colors hover:text-[#c9a96e]">
+                  {item.icon ? <Icon name={item.icon} size={14} /> : null}
+                  {item.label}
+                </Link>
+              ) : (
+                <button key={item.label} className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.16em] text-[#171717] transition-colors hover:text-[#c9a96e]" type="button">
+                  {item.label}
+                </button>
+              )
+            )}
           </nav>
 
           <div className="flex flex-1 items-center justify-between gap-4 lg:flex-none">
-            <button
-              className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] text-[#171717] lg:hidden"
-              type="button"
-            >
+            <Link href="/menu" className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] text-[#171717] lg:hidden">
               <Icon name="bars" size={14} />
               MENU
-            </button>
+            </Link>
 
             <Link href="/" className="truncate text-center font-(family-name:--font-brand-serif) text-4xl tracking-[0.18em] sm:text-5xl">
               OWLHOME
             </Link>
 
             <div className="flex items-center gap-3 lg:hidden">
-              <button className="rounded-full p-2 transition hover:bg-white/60" type="button">
+              <CartBadgeLink className="rounded-full p-2 transition hover:bg-white/60">
                 <Icon name="cart" size={18} />
-              </button>
+              </CartBadgeLink>
               <button className="rounded-full p-2 transition hover:bg-white/60" type="button">
                 <Icon name="user" size={18} />
               </button>
@@ -60,17 +63,17 @@ export default function LoginPage() {
 
           <nav className="hidden items-center gap-6 lg:flex">
             {rightNav.map((item) => (
-              <button
-                key={item}
+              <Link
+                key={item.label}
+                href={item.href}
                 className="text-sm font-semibold tracking-[0.16em] text-[#171717] transition-colors hover:text-[#c9a96e]"
-                type="button"
               >
-                {item}
-              </button>
+                {item.label}
+              </Link>
             ))}
-            <button className="rounded-full p-2 transition hover:bg-white/60" type="button">
+            <Link href="/cart" className="rounded-full p-2 transition hover:bg-white/60">
               <Icon name="cart" size={18} />
-            </button>
+            </Link>
             <button className="rounded-full p-2 transition hover:bg-white/60" type="button">
               <Icon name="user" size={18} />
             </button>

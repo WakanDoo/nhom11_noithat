@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { CartBadgeLink } from "@/components/CartBadgeLink";
 
 function MenuIcon() {
   return (
@@ -38,26 +39,20 @@ export default function Header({ breadcrumb = [], showHero = false }) {
       <header className="grid min-h-[58px] w-full grid-cols-[1fr_auto_1fr] items-center gap-3 px-3 py-3 md:min-h-[64px] md:px-6 lg:min-h-[78px] lg:items-end lg:px-4 lg:pb-3">
         {/* Left Nav */}
         <nav className="flex items-center justify-start gap-3 text-[12px] font-semibold uppercase text-black md:gap-4 md:text-[13px] lg:gap-3 lg:text-[13px]">
-          <button
-            type="button"
-            className="inline-flex items-center gap-1 bg-transparent p-0"
-          >
+          <Link href="/menu" className="inline-flex items-center gap-1 bg-transparent p-0">
             <MenuIcon />
             <span className="hidden lg:inline">Menu</span>
-          </button>
+          </Link>
           <button
             type="button"
             className="hidden bg-transparent p-0 lg:inline-flex"
           >
             About
           </button>
-          <button
-            type="button"
-            className="inline-flex items-center gap-1 bg-transparent p-0"
-          >
+          <Link href="/search" className="inline-flex items-center gap-1 bg-transparent p-0">
             <SearchIcon />
             <span className="hidden lg:inline">Search</span>
-          </button>
+          </Link>
         </nav>
 
         {/* Logo */}
@@ -78,17 +73,10 @@ export default function Header({ breadcrumb = [], showHero = false }) {
           >
             Products
           </Link>
-          <button
-            type="button"
-            className="hidden bg-transparent p-0 lg:inline-flex"
-          >
+          <Link href="/construction" className="hidden bg-transparent p-0 lg:inline-flex">
             Construction
-          </button>
-          <button
-            type="button"
-            aria-label="Shopping cart"
-            className="inline-flex h-5 w-5 items-center justify-center bg-transparent p-0"
-          >
+          </Link>
+          <CartBadgeLink className="inline-flex h-5 w-5 items-center justify-center bg-transparent p-0">
             <Image
               width={18}
               height={18}
@@ -97,7 +85,7 @@ export default function Header({ breadcrumb = [], showHero = false }) {
               src="/icon-shopping-cart.svg"
               className="h-4 w-4 lg:h-5 lg:w-5"
             />
-          </button>
+          </CartBadgeLink>
           <button
             type="button"
             aria-label="User"

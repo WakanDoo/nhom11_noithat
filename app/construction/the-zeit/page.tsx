@@ -35,30 +35,32 @@ function HeaderBar() {
           ABOUT
         </a>
 
-        <svg
-          className="absolute left-[195px] top-[71px] w-[24px] h-[24px] text-black"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-          fill="none"
-        >
-          <path
-            d="M10.5 18.5a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          />
-          <path
-            d="M16.5 16.5 21 21"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-        </svg>
-        <div className="absolute left-[221px] top-[72px] text-[20px] leading-[23px] font-medium tracking-[0.08em] text-[#0A0A0A] [font-family:var(--font-roboto),_system-ui]">
-          SEARCH
-        </div>
+        <Link href="/search" className="flex items-center">
+          <svg
+            className="absolute left-[195px] top-[71px] w-[24px] h-[24px] text-black"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            fill="none"
+          >
+            <path
+              d="M10.5 18.5a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            />
+            <path
+              d="M16.5 16.5 21 21"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+          </svg>
+          <div className="absolute left-[221px] top-[72px] text-[20px] leading-[23px] font-medium tracking-[0.08em] text-[#0A0A0A] [font-family:var(--font-roboto),_system-ui]">
+            SEARCH
+          </div>
+        </Link>
 
         <a
-          href="/#products"
+          href="/products"
           className="absolute left-[970px] top-[72px] text-[20px] leading-[23px] font-medium tracking-[0.08em] text-[#0A0A0A] [font-family:var(--font-roboto),_system-ui]"
         >
           PRODUCTS
