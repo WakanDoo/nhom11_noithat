@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 
@@ -12,21 +13,22 @@ const brandSerif = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
 });
 
-export const metadata = {
-  title: "OwlHome",
-  description: "Furniture showroom experience built with Next.js",
+export const metadata: Metadata = {
+  title: "OWLHOME",
+  description: "Luxury authentication experience for OWLHOME.",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html
       lang="en"
       className={`${brandSans.variable} ${brandSerif.variable} h-full antialiased`}
-      suppressHydrationWarning={true}
     >
-      <body className="min-h-full flex flex-col" suppressHydrationWarning={true}>
-        {children}
-      </body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }
