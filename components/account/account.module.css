@@ -1,0 +1,348 @@
+.page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #000000;
+}
+
+.hero {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+
+.heroInner {
+  min-height: 217px;
+  width: 100%;
+  padding: 64px;
+}
+
+.heroInner h1 {
+  margin: 0;
+  font-family: Didot, "Bodoni 72", "Bodoni MT", Georgia, serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 60px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.heroInner p {
+  margin: 12px 0 0;
+  font-size: 11px;
+  line-height: 16.5px;
+  letter-spacing: 1.32px;
+  text-transform: uppercase;
+}
+
+.accountShell {
+  display: grid;
+  grid-template-columns: 256px 832px;
+  gap: 64px;
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 36px 0 96px;
+}
+
+.sidebar {
+  width: 256px;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarItem {
+  position: relative;
+  min-height: 49.5px;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  padding: 16px 16px 15px;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: left;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16.5px;
+  letter-spacing: 1.32px;
+  text-transform: uppercase;
+}
+
+.sidebarItem::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1.6px;
+  background: transparent;
+  content: "";
+}
+
+.sidebarItem:hover {
+  color: #000000;
+}
+
+.sidebarItemActive {
+  color: #000000;
+  font-weight: 600;
+}
+
+.sidebarItemActive::before {
+  background: #000000;
+}
+
+.contentArea {
+  width: 100%;
+  max-width: 832px;
+}
+
+.accountForm {
+  width: 100%;
+}
+
+.formSection {
+  margin-bottom: 48px;
+}
+
+.sectionTitle,
+.emptyPanel h2,
+.modalBox h2 {
+  margin: 0;
+  font-family: Didot, "Bodoni 72", "Bodoni MT", Georgia, serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.sectionTitle {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 24px;
+  font-size: 24px;
+  line-height: 21px;
+  letter-spacing: 2.1px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.spanTwo {
+  grid-column: span 2;
+}
+
+.field {
+  display: block;
+}
+
+.field span {
+  display: block;
+  margin-bottom: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 13.5px;
+  letter-spacing: 1.08px;
+  text-transform: uppercase;
+}
+
+.field input {
+  display: block;
+  width: 100%;
+  height: 45.1px;
+  border: 0.8px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background: #ffffff;
+  padding: 12px 16px;
+  color: #000000;
+  font-size: 13px;
+  line-height: 19.5px;
+}
+
+.field input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.field input:focus {
+  border-color: #000000;
+  outline: none;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  border-top: 0.8px solid rgba(0, 0, 0, 0.2);
+  padding-top: 32px;
+}
+
+.buttonPrimary,
+.buttonSecondary {
+  min-width: 132px;
+  height: 40.6px;
+  border: 0.8px solid #000000;
+  border-radius: 0;
+  padding: 0 28px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.buttonPrimary {
+  min-width: 178px;
+  background: #000000;
+  color: #ffffff;
+}
+
+.buttonSecondary {
+  background: #ffffff;
+  color: #000000;
+}
+
+.buttonPrimary:hover,
+.buttonSecondary:hover {
+  filter: invert(1);
+}
+
+.emptyPanel {
+  padding-top: 8px;
+}
+
+.emptyPanel h2 {
+  font-size: 24px;
+  line-height: 21px;
+  letter-spacing: 8px;
+}
+
+.emptyPanel p {
+  margin: 30px 0 0;
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.modalOverlay {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 24px;
+}
+
+.modalBox {
+  position: relative;
+  width: min(100%, 420px);
+  border: 0.8px solid rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  padding: 52px 48px 48px;
+}
+
+.modalClose {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  border: 0;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.modalClose:hover {
+  color: #000000;
+}
+
+.modalBox h2 {
+  padding-right: 28px;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 3px;
+}
+
+.modalBox p {
+  margin: 28px 0 0;
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.modalActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 38px;
+}
+
+@media (max-width: 1180px) {
+  .accountShell {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .sidebar,
+  .contentArea {
+    width: 100%;
+    max-width: none;
+  }
+
+  .sidebarNav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .sidebarItem {
+    min-width: max-content;
+    width: auto;
+    padding-right: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  .heroInner {
+    min-height: 168px;
+    padding: 44px 24px;
+  }
+
+  .heroInner h1 {
+    font-size: 34px;
+    line-height: 44px;
+    letter-spacing: 4px;
+  }
+
+  .accountShell {
+    gap: 32px;
+    padding: 28px 24px 72px;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .spanTwo {
+    grid-column: auto;
+  }
+
+  .formActions,
+  .modalActions {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .buttonPrimary,
+  .buttonSecondary {
+    width: 100%;
+  }
+
+  .modalBox {
+    padding: 44px 28px 32px;
+  }
+}

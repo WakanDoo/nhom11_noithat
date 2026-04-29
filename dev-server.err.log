@@ -1,0 +1,2 @@
+ ⚠ Port 3000 is in use by process 33684, using available port 3001 instead.
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: EPERM: operation not permitted, rename 'C:\Users\NHI\Downloads\TKW_NHOM11\.next\cache\webpack\server-development\0.pack.gz_' -> 'C:\Users\NHI\Downloads\TKW_NHOM11\.next\cache\webpack\server-development\0.pack.gz'

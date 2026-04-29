@@ -1,0 +1,29 @@
+.shell {
+  --site-header-height: 118px;
+  --site-footer-min-height: 127px;
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
+  background: #fff;
+}
+
+
+.main {
+  flex: 1 0 auto;
+  min-width: 0;
+  min-height: calc(100dvh - var(--site-header-height) - var(--site-footer-min-height));
+}
+
+@media (max-width: 1023px) {
+  .shell {
+    --site-header-height: 70px;
+    --site-footer-min-height: 176px;
+  }
+}
+
+@media (max-width: 767px) {
+  .shell {
+    --site-header-height: 64px;
+    --site-footer-min-height: 252px;
+  }
+}
