@@ -1,17 +1,9 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === "production";
-
 const nextConfig = {
-  output: "export",
-  reactStrictMode: true,
-
-
-  basePath: isProd ? "/nhom11_noithat" : "",
-  assetPrefix: isProd ? "/nhom11_noithat/" : "",
-
-  images: {
-    unoptimized: true,
-  },
+  output: 'export',                     
+  basePath: '/nhom11_noithat',              
+  assetPrefix: '/nhom11_noithat/',            
+  trailingSlash: true,                  
 };
 
 module.exports = nextConfig;
