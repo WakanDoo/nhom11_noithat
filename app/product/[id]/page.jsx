@@ -1,5 +1,7 @@
 import Link from "next/link";
-import Header from "@/components/Header";
+import { Menu, Search, ShoppingCart } from "lucide-react";
+import { CartBadgeLink } from "@/components/CartBadgeLink";
+import { UserNavLink } from "@/components/UserNavLink";
 import ProductDetailSection from "@/features/product-detail/ProductDetailSection";
 import { RelatedProducts } from "@/features/product-detail/RelatedProducts";
 import { getProductById, products } from "@/data/products";
@@ -64,13 +66,29 @@ export default async function ProductDetailPage({ params }) {
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-black">
       <div className="mx-auto min-h-screen w-full max-w-[375px] bg-white md:max-w-[768px] lg:max-w-[1280px]">
-        <Header
-          breadcrumb={[
-            { label: "Home", href: "/" },
-            { label: product.category },
-            { label: product.name },
-          ]}
-        />
+        <header className="fixed top-0 right-0 left-0 z-50 bg-white">
+          <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between border-x border-b border-black/15 px-3 py-3 text-[11px] uppercase tracking-[0.12em] md:px-5 md:py-4 md:text-xs lg:px-6">
+            <div className="flex items-center gap-3">
+              <Link href="/menu" className="inline-flex items-center gap-1">
+                <Menu className="h-3.5 w-3.5" />
+                <span className="hidden md:inline">Menu</span>
+              </Link>
+              <span className="hidden md:inline">About</span>
+              <Link href="/search" className="inline-flex items-center gap-1">
+                <Search className="h-3.5 w-3.5" />
+                <span className="hidden md:inline">Search</span>
+              </Link>
+            </div>
+            <Link href="/" className="font-serif text-xl tracking-[0.2em] md:text-[46px] md:leading-none">OWLHOME</Link>
+            <div className="flex items-center gap-3">
+              <Link href="/products" className="hidden md:inline">Products</Link>
+              <Link href="/construction" className="hidden md:inline">Construction</Link>
+              <CartBadgeLink><ShoppingCart className="h-3.5 w-3.5" /></CartBadgeLink>
+              <UserNavLink />
+            </div>
+          </div>
+        </header>
+        <div className="h-[68px] md:h-[90px]" />
 
         <div className="px-5 pb-0 pt-7 md:px-8 md:pt-10 lg:px-10 lg:pb-0 lg:pt-0">
           <ProductDetailSection product={product} gallery={gallery} />

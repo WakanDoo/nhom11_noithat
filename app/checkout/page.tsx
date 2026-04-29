@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle, Menu, Search, ShoppingCart, User } from "lucide-react";
+import { CheckCircle, Menu, Search, ShoppingCart } from "lucide-react";
+import { UserNavLink } from "@/components/UserNavLink";
 import { useEffect, useState } from "react";
 import { useCartStore } from "@/store/useCartStore";
 import { CartBadgeLink } from "@/components/CartBadgeLink";
@@ -120,7 +121,7 @@ export default function CheckoutPage() {
             <Link href="/products" className="hidden md:inline">Products</Link>
             <Link href="/construction" className="hidden md:inline">Construction</Link>
             <CartBadgeLink><ShoppingCart className="h-3.5 w-3.5" /></CartBadgeLink>
-            <User className="h-3.5 w-3.5" />
+            <UserNavLink />
           </div>
         </div>
       </header>

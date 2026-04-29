@@ -3,21 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, Minus, Plus, Search, ShoppingCart, User, X } from "lucide-react";
+import { Menu, Minus, Plus, Search, ShoppingCart, X } from "lucide-react";
 import { CartBadgeLink } from "@/components/CartBadgeLink";
+import { UserNavLink } from "@/components/UserNavLink";
 import { useEffect, useState } from "react";
 import { useCartStore } from "@/store/useCartStore";
 
 const SHIPPING_LABEL = "Complimentary";
-const USD_RATE = 26400;
-
 const formatVnd = (value: number) =>
   new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(value);
-
-const formatUsd = (value: number) =>
-  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(
-    value / USD_RATE,
-  );
 
 export default function CartPage() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,7 +49,7 @@ export default function CartPage() {
             <Link href="/products" className="hidden md:inline">Products</Link>
             <Link href="/construction" className="hidden md:inline">Construction</Link>
             <CartBadgeLink><ShoppingCart className="h-3.5 w-3.5" /></CartBadgeLink>
-            <User className="h-3.5 w-3.5" />
+            <UserNavLink />
           </div>
         </div>
       </header>

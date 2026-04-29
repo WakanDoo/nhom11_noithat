@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, Search, ShoppingCart, User } from "lucide-react";
+import { Menu, Search, ShoppingCart } from "lucide-react";
 import { CartBadgeLink } from "@/components/CartBadgeLink";
+import { UserNavLink } from "@/components/UserNavLink";
 
 export function Header() {
   return (
@@ -34,9 +35,7 @@ export function Header() {
           <CartBadgeLink>
             <ShoppingCart className="h-3.5 w-3.5" />
           </CartBadgeLink>
-          <Link href="/login" className="text-black hover:opacity-60">
-            <User className="h-3.5 w-3.5" />
-          </Link>
+          <UserNavLink className="text-black hover:opacity-60" />
         </nav>
       </header>
 

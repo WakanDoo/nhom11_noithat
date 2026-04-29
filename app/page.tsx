@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CartBadgeLink } from "@/components/CartBadgeLink";
+import { UserNavLink } from "@/components/UserNavLink";
 
 function ChevronLeftIcon({ className }: { className?: string }) {
   return (
@@ -178,9 +179,9 @@ export default function Home() {
               <CartBadgeLink className="absolute left-[1181px] top-[18px] w-[35px] h-[35px] text-black hover:text-[#c9a96e] transition-colors">
                 <ShoppingCartIcon className="w-full h-full" />
               </CartBadgeLink>
-              <Link href="/login" className="absolute left-[1221px] top-[23px] w-[26px] h-[26px] text-black hover:text-[#c9a96e] transition-colors">
+              <UserNavLink className="absolute left-[1221px] top-[23px] w-[26px] h-[26px] text-black hover:text-[#c9a96e] transition-colors">
                 <UserIcon className="w-full h-full" />
-              </Link>
+              </UserNavLink>
             </nav>
           </header>
           

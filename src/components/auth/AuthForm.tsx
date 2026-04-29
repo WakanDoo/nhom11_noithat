@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 import AuthTabs from "./AuthTabs";
@@ -27,6 +27,12 @@ const initialRegisterValues: RegisterValues = {
 export default function AuthForm() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<AuthTab>("signin");
+
+  useEffect(() => {
+    const isAuth = localStorage.getItem("owlhome_auth") === "true" ||
+      localStorage.getItem("isLoggedIn") === "true";
+    if (isAuth) router.replace("/account");
+  }, [router]);
   const [loginValues, setLoginValues] = useState<LoginValues>(initialLoginValues);
   const [registerValues, setRegisterValues] = useState<RegisterValues>(initialRegisterValues);
   const [loginErrors, setLoginErrors] = useState<Partial<Record<keyof LoginValues, string>>>({});

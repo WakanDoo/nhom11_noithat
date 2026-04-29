@@ -6,8 +6,9 @@ import { OrbitControls, Box, Plane } from "@react-three/drei";
 import { useState, Suspense, useMemo, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, Search, ShoppingCart, User } from "lucide-react";
+import { Menu, Search, ShoppingCart } from "lucide-react";
 import { CartBadgeLink } from "@/components/CartBadgeLink";
+import { UserNavLink } from "@/components/UserNavLink";
 import { products } from "@/data/products";
 
 function Room() {
@@ -464,7 +465,7 @@ export default function ThreeDPage() {
             <Link href="/products" className="hidden md:inline hover:opacity-60">Products</Link>
             <Link href="/construction" className="hidden md:inline hover:opacity-60">Construction</Link>
             <CartBadgeLink><ShoppingCart className="h-3.5 w-3.5" /></CartBadgeLink>
-            <Link href="/login" className="hover:opacity-60"><User className="h-3.5 w-3.5" /></Link>
+            <UserNavLink />
           </div>
         </div>
       </header>

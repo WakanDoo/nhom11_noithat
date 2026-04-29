@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Menu, Search, ShoppingCart, User } from "lucide-react";
+import { Menu, Search, ShoppingCart } from "lucide-react";
 import { CartBadgeLink } from "@/components/CartBadgeLink";
+import { UserNavLink } from "@/components/UserNavLink";
 import type { AccountData, AccountNavItem } from "../../src/types";
 import { AccountInformationForm } from "./AccountInformationForm";
 import { AccountSidebar } from "./AccountSidebar";
@@ -119,7 +120,7 @@ export function AccountPageClient() {
             <Link href="/products" className="hidden md:inline hover:opacity-60">Products</Link>
             <Link href="/construction" className="hidden md:inline hover:opacity-60">Construction</Link>
             <CartBadgeLink><ShoppingCart className="h-3.5 w-3.5" /></CartBadgeLink>
-            <Link href="/login" className="hover:opacity-60"><User className="h-3.5 w-3.5" /></Link>
+            <UserNavLink />
           </div>
         </div>
       </header>
