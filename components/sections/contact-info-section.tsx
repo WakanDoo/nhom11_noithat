@@ -15,12 +15,12 @@ const cards = [
   {
     icon: "pin" as const,
     title: "Location",
-    lines: ["123 Design Avenue", "New York, NY 10001", "United States"],
+    lines: ["1 Vo Van Ngan Street, Thu Duc District","Ho Chi Minh City", "Vietnam"],
   },
   {
     icon: "globe" as const,
     title: "Connect",
-    lines: ["+1 (555) 123-4567", "owlhome@gmail.com", "@owlhome_design"],
+    lines: ["+84 123 456 789", "owlhome@gmail.com", "@owlhome_design"],
   },
 ];
 

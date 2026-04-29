@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Minus, Plus, X } from "lucide-react";
 import { useCartStore } from "@/store/useCartStore";
+import { cormorant } from "@/src/lib/fonts";
 
 const SHIPPING_LABEL = "Complimentary";
 const formatVnd = (value: number) =>
@@ -17,7 +18,9 @@ export default function CartPage() {
   return (
     <main className="min-h-screen bg-white px-3 py-3 text-black md:px-4 md:py-5 lg:px-8">
       <div className="w-full rounded-sm border border-black/15 bg-white p-3 md:p-5 lg:p-6">
-        <h2 className="mb-3 text-[26px] font-semibold leading-none md:mb-6 md:text-[36px]">Shopping Cart</h2>
+        <h2 className={`${cormorant.className} mb-3 text-[26px] font-semibold leading-none md:mb-6 md:text-[36px]`}>
+          Shopping Cart
+        </h2>
 
         <div className="grid gap-4 md:grid-cols-[1fr_320px] lg:gap-6">
           <section className="rounded-sm border border-black/15 bg-white p-3 md:p-6">
@@ -127,7 +130,7 @@ export default function CartPage() {
               Continue shopping
             </Link>
             <ul className="mt-5 space-y-2 border-t border-black/15 pt-5 text-[11px] text-black/65">
-              <li>- Complimentary shipping on orders over $500</li>
+              <li>- Complimentary shipping on orders over 10,000,000 VND</li>
               <li>- 30-day hassle-free returns</li>
               <li>- White glove delivery service available</li>
             </ul>

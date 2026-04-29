@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CheckCircle } from "lucide-react";
 import { useState } from "react";
 import { useCartStore } from "@/store/useCartStore";
+import { cormorant } from "@/src/lib/fonts";
 
 const USD_RATE = 26400;
 
@@ -94,7 +95,9 @@ export default function CheckoutPage() {
       <div className="w-full border border-black/15 bg-white p-3 md:p-5 lg:p-6">
         <div className="grid gap-6 md:grid-cols-[1fr_290px] lg:grid-cols-[1fr_340px]">
           <section className="order-2 md:order-1">
-            <h2 className="mb-6 text-[26px] md:text-[40px]">Checkout</h2>
+            <h2 className={`${cormorant.className} mb-6 text-[26px] md:text-[40px]`}>
+              Checkout
+            </h2>
 
             <div className="mb-7">
               <p className="mb-3 text-[11px] uppercase tracking-[0.13em] text-black/60">Customer Information</p>

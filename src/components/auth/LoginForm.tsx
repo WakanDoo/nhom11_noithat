@@ -3,6 +3,7 @@ import type { FormEvent } from "react";
 import Button from "../ui/Button";
 import Icon from "@/components/ui/Icon";
 import Input from "@/components/ui/Input";
+import Link from "next/dist/client/link";
 
 export type LoginValues = {
   email: string;
@@ -98,14 +99,19 @@ function SocialButtons() {
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2">
-        <Button className="text-xs" fullWidth variant="outline">
-          <Icon className="text-[#ea3535]" name="google" size={18} />
-          Google
-        </Button>
-        <Button className="text-xs" fullWidth variant="outline">
-          <Icon className="text-[#1877f2]" name="facebook" size={18} />
-          Facebook
-        </Button>
+        <Link href="https://accounts.google.com" target = "_blank">
+          <Button className="text-xs" fullWidth variant="outline">
+            <Icon className="text-[#ea3535]" name="google" size={18} />
+              Google
+          </Button>
+        </Link>
+
+        <Link href="https://facebook.com/login" target = "_blank">
+          <Button className="text-xs" fullWidth variant="outline">
+            <Icon className="text-[#1877f2]" name="facebook" size={18} />
+              Facebook
+          </Button>
+        </Link>
       </div>
     </div>
   );

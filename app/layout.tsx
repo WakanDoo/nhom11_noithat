@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   title: "OWLHOME",
   description: "Furniture showroom experience built with Next.js",
   icons: {
-    icon: "/owl.png",
-    shortcut: "/owl.png",
-    apple: "/owl.png",
+    icon: "/ICON.ico",
+    shortcut: "/ICON.ico",
+    apple: "/ICON.ico",
   },
 };
 
