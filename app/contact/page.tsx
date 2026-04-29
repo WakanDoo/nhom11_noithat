@@ -12,7 +12,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <div className="w-full flex justify-center bg-white">
-      <main className="w-full max-w-[1280px] mx-auto flex flex-col">
+      <main className="w-full flex flex-col">
         <ContactHeroSection />
         <ContactInfoSection />
         <GallerySection />

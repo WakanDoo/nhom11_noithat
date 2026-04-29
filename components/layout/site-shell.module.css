@@ -7,6 +7,11 @@
   background: #fff;
 }
 
+:global(.dark) .shell {
+  background: #111;
+  color: #f0f0f0;
+}
+
 .main {
   flex: 1 0 auto;
   min-width: 0;

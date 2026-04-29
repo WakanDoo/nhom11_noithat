@@ -2,7 +2,7 @@ import AuthForm from "@/components/auth/AuthForm";
 
 export default function LoginPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#f4efe6] text-[#171717]">
+    <main className="relative min-h-screen w-full overflow-hidden bg-[#f4efe6] text-[#171717]">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/bg.png')" }}

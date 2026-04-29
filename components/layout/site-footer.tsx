@@ -1,7 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import { FacebookIcon } from "@/components/icons/facebook-icon";
-import { GmailIcon } from "@/components/icons/gmail-icon";
-import { InstagramIcon } from "@/components/icons/instagram-icon";
 import { MailIcon } from "@/components/icons/mail-icon";
 import { routes } from "@/lib/routes";
 import styles from "./site-footer.module.css";
@@ -13,9 +11,9 @@ const footerLinks = [
 ] as const;
 
 const socialLinks = [
-  { href: "https://www.instagram.com", label: "Instagram", icon: <InstagramIcon className={styles.socialIcon} /> },
-  { href: "https://www.facebook.com", label: "Facebook", icon: <FacebookIcon className={styles.socialIcon} /> },
-  { href: "mailto:owlhome@gmail.com", label: "Gmail", icon: <GmailIcon className={styles.socialIcon} /> },
+  { href: "https://www.instagram.com", label: "Instagram", src: "/figma/home/footer-ig.png" },
+  { href: "https://www.facebook.com", label: "Facebook", src: "/figma/home/footer-facebook.png" },
+  { href: "mailto:owlhome@gmail.com", label: "Gmail", src: "/figma/home/footer-gmail.png" },
 ] as const;
 
 export function SiteFooter() {
@@ -52,7 +50,13 @@ export function SiteFooter() {
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel={item.href.startsWith("http") ? "noreferrer" : undefined}
               >
-                {item.icon}
+                <Image
+                  src={item.src}
+                  alt={item.label}
+                  width={40}
+                  height={40}
+                  className={styles.socialIcon}
+                />
               </a>
             ))}
           </div>

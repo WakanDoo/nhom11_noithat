@@ -37,7 +37,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <input
         ref={ref}
         className={cn(
-          "soft-focus w-full min-h-[52px] px-4 py-3.5 rounded-xl bg-owl-warm border border-transparent",
+          "soft-focus w-full min-h-[52px] px-4 py-3.5 rounded-xl bg-owl-warm border border-black/20",
           "font-inter text-[15px] leading-6 text-owl-black placeholder:text-owl-text-placeholder",
           "focus:bg-[#efefef] focus:border-[#dad4cd] focus:shadow-input-focus focus:outline-none",
           error && "border-owl-error bg-[#fff8f7]",
@@ -60,7 +60,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
       <textarea
         ref={ref}
         className={cn(
-          "soft-focus w-full min-h-[168px] px-4 py-4 rounded-xl bg-owl-warm border border-transparent",
+          "soft-focus w-full min-h-[168px] px-4 py-4 rounded-xl bg-owl-warm border border-black/20",
           "font-inter text-[15px] leading-6 text-owl-black placeholder:text-owl-text-placeholder",
           "resize-vertical",
           "focus:bg-[#efefef] focus:border-[#dad4cd] focus:shadow-input-focus focus:outline-none",
@@ -84,7 +84,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
       <select
         ref={ref}
         className={cn(
-          "soft-focus w-full min-h-[52px] px-4 py-3.5 rounded-xl bg-owl-warm border border-transparent",
+          "soft-focus w-full min-h-[52px] px-4 py-3.5 rounded-xl bg-owl-warm border border-black/20",
           "font-inter text-[15px] leading-6 text-owl-black",
           "appearance-none",
           "focus:bg-[#efefef] focus:border-[#dad4cd] focus:shadow-input-focus focus:outline-none",

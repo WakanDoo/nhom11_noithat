@@ -26,7 +26,7 @@ export function Button({
 
   const variants = {
     primary:
-      "h-[38px] min-w-[162px] px-8 bg-black text-white text-sm hover:bg-[#242424]",
+      "h-[52px] min-w-[200px] px-10 bg-black text-white text-base hover:bg-[#242424]",
     secondary:
       "h-[34px] min-w-[126px] px-6 bg-white text-black text-xs hover:bg-gray-100",
   };

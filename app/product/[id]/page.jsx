@@ -21,7 +21,7 @@ export default async function ProductDetailPage({ params }) {
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-black">
-      <div className="mx-auto min-h-screen w-full max-w-[375px] bg-white md:max-w-[768px] lg:max-w-[1280px]">
+      <div className="w-full min-h-screen bg-white">
         <div className="px-5 pb-0 pt-7 md:px-8 md:pt-10 lg:px-10">
           <ProductDetailSection product={product} gallery={gallery} />
           <RelatedProducts products={products} currentId={product.id} />

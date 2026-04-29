@@ -22,16 +22,15 @@ export function GallerySection() {
         {images.map((img) => (
           <div
             key={img.src}
-            className="interactive-media reveal-on-scroll w-full aspect-gallery overflow-hidden rounded-2xl"
+            className="relative interactive-media reveal-on-scroll w-full aspect-[392/296] overflow-hidden rounded-2xl"
           >
             <Image
-              loading="lazy"
-              width={380}
-              height={260}
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              alt={img.alt}
               src={img.src}
-              className="w-full h-full object-cover block"
+              alt={img.alt}
+              fill
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover block"
             />
           </div>
         ))}

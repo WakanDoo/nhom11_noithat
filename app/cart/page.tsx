@@ -16,7 +16,7 @@ export default function CartPage() {
 
   return (
     <main className="min-h-screen bg-white px-3 py-3 text-black md:px-4 md:py-5 lg:px-8">
-      <div className="mx-auto w-full max-w-[1280px] rounded-sm border border-black/15 bg-white p-3 md:p-5 lg:p-6">
+      <div className="w-full rounded-sm border border-black/15 bg-white p-3 md:p-5 lg:p-6">
         <h2 className="mb-3 text-[26px] font-semibold leading-none md:mb-6 md:text-[36px]">Shopping Cart</h2>
 
         <div className="grid gap-4 md:grid-cols-[1fr_320px] lg:gap-6">
@@ -117,13 +117,12 @@ export default function CartPage() {
             </div>
             <Link
               href="/checkout"
-              className="mb-3 block bg-black px-4 py-3 text-center text-[11px] uppercase tracking-[0.15em] text-white transition hover:bg-black/85"
-            >
+              className="mb-3 block bg-white border border-black px-4 py-3 text-center text-[11px] uppercase tracking-[0.15em] text-white transition hover:bg-white/85 hover:text-black">
               Proceed to checkout
             </Link>
             <Link
               href="/"
-              className="block border border-black/25 px-4 py-3 text-center text-[11px] uppercase tracking-[0.15em]"
+              className="block border border-black px-4 py-3 text-center text-[11px] uppercase tracking-[0.15em]"
             >
               Continue shopping
             </Link>

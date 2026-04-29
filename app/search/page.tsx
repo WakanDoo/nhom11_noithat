@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { products } from "@/data/products";
-import ProductCard from "@/components/ProductCard";
+import { ProductCard } from "@/components/product/product-card";
 
 export default function SearchPage() {
   const [query, setQuery] = useState("");
@@ -17,7 +17,7 @@ export default function SearchPage() {
 
   return (
     <main className="bg-white">
-      <div className="mx-auto flex min-h-[900px] w-full max-w-[1280px] flex-col items-center px-4 py-20 sm:px-6 lg:px-10">
+      <div className="flex min-h-[900px] w-full flex-col items-center px-4 py-20 sm:px-6 lg:px-10">
         <h1 className="mb-12 mt-12 text-center text-[clamp(42px,8vw,64px)] font-light tracking-[0.3em] text-black [font-family:var(--font-cormorant),_serif]">
           SEARCH
         </h1>

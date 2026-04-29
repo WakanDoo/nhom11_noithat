@@ -28,7 +28,7 @@ const projects = [
 export default function Construction() {
   return (
     <main className="bg-white">
-      <div className="mx-auto w-full max-w-[1280px] px-4 py-10 sm:px-6 lg:px-8">
+      <div className="w-full px-4 py-10 sm:px-6 lg:px-8">
         <div className="h-[2px] w-full bg-black" />
 
         <div className="py-12 text-center">

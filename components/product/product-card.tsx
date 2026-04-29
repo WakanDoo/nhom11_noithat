@@ -19,8 +19,8 @@ export function ProductCard({
 
   return (
     <Link href={href} className="block">
-      <article className="group flex h-full flex-col overflow-hidden rounded-[16px] border border-black/8 bg-white transition-shadow duration-300 hover:shadow-lg">
-        <div className={`relative ${imageHeightClass} bg-[#f5f0ee]`}>
+      <article className="group flex h-full flex-col overflow-hidden rounded-[16px] border border-black/8 bg-white transition-shadow duration-300 hover:shadow-lg dark:border-white/10 dark:bg-neutral-800">
+        <div className={`relative ${imageHeightClass} bg-[#f5f0ee] dark:bg-neutral-700`}>
           <Image
             src={product.image}
             alt={label}
@@ -30,22 +30,22 @@ export function ProductCard({
           />
         </div>
 
-        <div className="mt-auto flex min-h-[140px] flex-col justify-between gap-3 bg-white px-4 py-4">
+        <div className="mt-auto flex min-h-[140px] flex-col justify-between gap-3 bg-white px-4 py-4 dark:bg-neutral-800">
           <div className="min-w-0 flex-1">
             <h3
-              className={`${roboto.className} overflow-hidden text-[20px] font-bold uppercase leading-[1.1] tracking-[0.04em] text-[#141414] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]`}
+              className={`${roboto.className} overflow-hidden text-[20px] font-bold uppercase leading-[1.1] tracking-[0.04em] text-[#141414] dark:text-neutral-100 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]`}
             >
               {label}
             </h3>
             {showSubtitle ? (
               <p
-                className={`${inter.className} mt-2 overflow-hidden text-[14px] leading-[1.5] text-black/62 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]`}
+                className={`${inter.className} mt-2 overflow-hidden text-[14px] leading-[1.5] text-black/62 dark:text-white/60 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]`}
               >
                 {title}
               </p>
             ) : null}
             {descriptionExcerpt ? (
-              <p className={`${inter.className} mt-3 text-[13px] leading-[1.5] text-black/60`}>
+              <p className={`${inter.className} mt-3 text-[13px] leading-[1.5] text-black/60 dark:text-white/55`}>
                 {descriptionExcerpt}
               </p>
             ) : null}

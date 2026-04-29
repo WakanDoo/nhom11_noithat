@@ -106,7 +106,7 @@ export function ContactFormSection() {
           </p>
         </div>
 
-        <div className="w-full grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-6 lg:gap-8 items-start">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-6 lg:gap-8 items-stretch">
           <form
             onSubmit={handleSubmit}
             noValidate
@@ -224,17 +224,17 @@ export function ContactFormSection() {
             )}
           </form>
 
-          <div className="interactive-card reveal-on-scroll min-h-[360px] md:min-h-[440px] lg:min-h-[560px] overflow-hidden rounded-2xl bg-[#f7f3ee] shadow-map">
+          <div className="interactive-card reveal-on-scroll min-h-[360px] md:min-h-[440px] lg:min-h-full overflow-hidden rounded-2xl bg-[#f7f3ee] shadow-map">
             <iframe
               title="OWLHOME Location - Thu Duc, Ho Chi Minh City"
               src="https://www.google.com/maps?q=Thu%20Duc%2C%20Ho%20Chi%20Minh%20City&z=14&output=embed"
               width="100%"
               height="100%"
-              style={{ border: 0, minHeight: "inherit" }}
+              style={{ border: 0, height: "100%", minHeight: "360px" }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="block w-full h-full min-h-[360px] md:min-h-[440px] lg:min-h-[560px]"
+              className="block w-full h-full"
             />
           </div>
         </div>

@@ -5,8 +5,10 @@ import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, Box, Plane } from "@react-three/drei";
 import { useState, Suspense, useMemo, useEffect, useRef } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
 import { products } from "@/data/products";
+import { useCartStore } from "@/store/useCartStore";
 
 function Room() {
   return (
@@ -396,6 +398,8 @@ const formatVnd = (v: number) =>
   new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(v);
 
 export default function ThreeDPage() {
+  const router = useRouter();
+  const { addItem } = useCartStore();
   const [selectedGroup, setSelectedGroup] = useState("living-room");
   const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
   const [positions, setPositions] = useState<Record<string, [number, number, number]>>({});
@@ -422,6 +426,15 @@ export default function ThreeDPage() {
     [selectedProducts, productById]
   );
 
+  const handleGoToCart = () => {
+    if (selectedProducts.length === 0) return;
+    selectedProducts.forEach((id) => {
+      const product = productById.get(id) as { id: string; name: string; price: number; image: string } | undefined;
+      if (product) addItem({ id: product.id, name: product.name, price: product.price, image: product.image });
+    });
+    router.push("/cart");
+  };
+
   const toggleProduct = (id: string) =>
     setSelectedProducts((prev) => {
       if (prev.includes(id)) {
@@ -446,7 +459,7 @@ export default function ThreeDPage() {
   const currentGroup = groups.find((g) => g.id === selectedGroup);
 
   return (
-    <div className="flex h-[calc(100dvh-var(--site-header-height))] min-h-[680px] flex-col bg-white overflow-hidden">
+    <div className="flex h-[calc(100dvh-var(--site-header-height))] min-h-[680px] w-full flex-col overflow-hidden bg-white">
       <div className="flex flex-1 flex-col overflow-hidden lg:flex-row">
 
         <div
@@ -457,9 +470,17 @@ export default function ThreeDPage() {
             backgroundColor: "#f5f5f5",
           }}
         >
-          <div className="absolute top-4 left-4 z-10 bg-black text-white text-xs font-medium px-4 py-2 rounded-full">
-            Total: {formatVnd(total)}
-          </div>
+          <button
+            onClick={handleGoToCart}
+            disabled={selectedProducts.length === 0}
+            className={`absolute top-4 left-4 z-10 bg-black text-white text-xs font-medium px-4 py-2 rounded-full transition-all ${
+              selectedProducts.length === 0
+                ? "opacity-50 cursor-not-allowed"
+                : "hover:bg-black/75 active:scale-95 cursor-pointer"
+            }`}
+          >
+            Total: {formatVnd(total)} {selectedProducts.length > 0 && "→ Cart"}
+          </button>
 
           <div className="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex flex-col gap-2">
             <button

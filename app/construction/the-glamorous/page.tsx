@@ -15,7 +15,7 @@ export default function Construction2() {
 function ConstructionGallery({ title, rows }: { title: string; rows: readonly (readonly string[])[] }) {
   return (
     <main className="bg-white">
-      <div className="mx-auto w-full max-w-[1280px] px-4 py-10 sm:px-6 lg:px-8">
+      <div className="w-full px-4 py-10 sm:px-6 lg:px-8">
         <div className="mb-12 h-[2px] w-full bg-black" />
         <div className="py-12 text-center">
           <h1 className="text-[clamp(34px,5vw,64px)] font-medium uppercase tracking-wider text-black [font-family:var(--font-roboto),_system-ui]">

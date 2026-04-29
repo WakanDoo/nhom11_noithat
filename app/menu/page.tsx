@@ -20,7 +20,7 @@ const menuImages = [
 export default function MenuPage() {
   return (
     <main className="bg-white">
-      <div className="mx-auto grid w-full max-w-[1280px] border-t border-black lg:min-h-[613px] lg:grid-cols-[404px_minmax(0,1fr)]">
+      <div className="grid w-full border-t border-black lg:min-h-[613px] lg:grid-cols-[404px_minmax(0,1fr)]">
         <nav className="flex flex-col gap-5 border-b border-black/15 px-4 py-10 lg:border-b-0 lg:py-14" aria-label="Menu page">
           {menuItems.map((item, index) => (
             <Link

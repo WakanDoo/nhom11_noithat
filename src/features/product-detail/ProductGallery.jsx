@@ -53,15 +53,15 @@ export default function ProductGallery({
           {galleryImages.map((image, index) => (
             <div
               key={`${image}-desktop-${index}`}
-              className="flex min-h-[520px] items-center justify-center bg-white py-8"
+              className="flex min-h-[calc(100vh-118px)] items-center justify-center bg-white py-6"
             >
-              <div className="relative h-[330px] w-full max-w-[720px] xl:h-[360px] xl:max-w-[780px]">
+              <div className="relative h-[calc(100vh-200px)] w-full">
                 <Image
                   src={image}
                   alt={`${name} view ${index + 1}`}
                   fill
                   priority={index === 0}
-                  sizes="(min-width: 1280px) 760px, (min-width: 1024px) 60vw, 100vw"
+                  sizes="70vw"
                   className="object-contain"
                 />
               </div>
@@ -79,13 +79,13 @@ export default function ProductGallery({
           {galleryImages.map((image, index) => (
             <div
               key={`${image}-tablet-${index}`}
-              className="relative flex min-h-[210px] min-w-full snap-center items-center justify-center bg-white md:min-h-[420px]"
+              className="relative flex min-h-[320px] min-w-full snap-center items-center justify-center bg-white md:min-h-[520px]"
             >
               <div
                 className={`relative w-full ${
                   index === 0
-                    ? "h-[175px] max-w-[335px] md:h-[330px] md:max-w-[700px]"
-                    : "h-[155px] max-w-[315px] md:h-[300px] md:max-w-[660px]"
+                    ? "h-[290px] max-w-full md:h-[480px]"
+                    : "h-[260px] max-w-full md:h-[440px]"
                 }`}
               >
                 <Image

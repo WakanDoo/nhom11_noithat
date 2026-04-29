@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 export function ShowroomSection() {
   return (
     <section className="mt-14 flex w-full items-center justify-center overflow-hidden md:mt-16 lg:mt-20">
-      <div className="interactive-media reveal-on-scroll relative flex aspect-[16/5] min-h-[220px] w-full max-w-[1280px] items-center justify-center overflow-hidden md:min-h-0">
+      <div className="interactive-media reveal-on-scroll relative flex aspect-[16/5] min-h-[220px] w-full items-center justify-center overflow-hidden md:min-h-0">
         <Image
           fill
-          sizes="(min-width: 1280px) 1280px, 100vw"
+          sizes="100vw"
           alt="OWLHOME outdoor showroom with yellow lounge seating by the sea"
           src="/showroom.png"
           className="object-cover object-center"

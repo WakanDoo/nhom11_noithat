@@ -8,6 +8,7 @@ import { MenuIcon } from "@/components/icons/menu-icon";
 import { SearchIcon } from "@/components/icons/search-icon";
 import { UserIcon } from "@/components/icons/user-icon";
 import { MobileMenu } from "@/components/layout/mobile-menu";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { UserNavLink } from "@/components/layout/user-nav-link";
 import { routes } from "@/lib/routes";
 import styles from "./site-header.module.css";
@@ -48,6 +49,7 @@ export function SiteHeader() {
           </Link>
 
           <div className={styles.desktopRightIcons}>
+            <ThemeToggle className={styles.iconButton} />
             <CartBadgeLink className={styles.iconButton}>
               <CartIcon className={styles.cartIcon} />
             </CartBadgeLink>
@@ -82,6 +84,7 @@ export function SiteHeader() {
           </div>
 
           <div className={styles.tabletRight}>
+            <ThemeToggle className={styles.iconButton} />
             <CartBadgeLink className={styles.iconButton}>
               <CartIcon className={styles.cartIcon} />
             </CartBadgeLink>

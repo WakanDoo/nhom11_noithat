@@ -19,13 +19,14 @@ const formatUsd = (value: number) =>
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^\+?[0-9\s\-]{7,15}$/;
 
-function validate(name: string, phone: string, email: string) {
-  const errors: { name?: string; phone?: string; email?: string } = {};
-  if (!name.trim()) errors.name = "Vui lòng nhập họ tên";
-  if (!phone.trim()) errors.phone = "Vui lòng nhập số điện thoại";
-  else if (!PHONE_RE.test(phone.trim())) errors.phone = "Số điện thoại không hợp lệ";
-  if (!email.trim()) errors.email = "Vui lòng nhập email";
-  else if (!EMAIL_RE.test(email.trim())) errors.email = "Email không hợp lệ";
+function validate(name: string, phone: string, email: string, address: string) {
+  const errors: { name?: string; phone?: string; email?: string; address?: string } = {};
+  if (!name.trim()) errors.name = "Please enter your full name";
+  if (!phone.trim()) errors.phone = "Please enter your phone number";
+  else if (!PHONE_RE.test(phone.trim())) errors.phone = "Invalid phone number";
+  if (!email.trim()) errors.email = "Please enter your email";
+  else if (!EMAIL_RE.test(email.trim())) errors.email = "Invalid email address";
+  if (!address.trim()) errors.address = "Please enter your street address";
   return errors;
 }
 
@@ -41,7 +42,8 @@ export default function CheckoutPage() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [errors, setErrors] = useState<{ name?: string; phone?: string; email?: string }>({});
+  const [address, setAddress] = useState("");
+  const [errors, setErrors] = useState<{ name?: string; phone?: string; email?: string; address?: string }>({});
   const [submitted, setSubmitted] = useState(false);
   const { items } = useCartStore();
   const firstItem = items[0];
@@ -51,7 +53,7 @@ export default function CheckoutPage() {
 
   const handlePlaceOrder = () => {
     setSubmitted(true);
-    const errs = validate(name, phone, email);
+    const errs = validate(name, phone, email, address);
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
     setOrderSuccess(true);
@@ -74,7 +76,7 @@ export default function CheckoutPage() {
             <p className="mb-6 text-sm text-black/60">Chúng tôi sẽ liên hệ xác nhận đơn hàng sớm nhất.</p>
             <Link
               href="/"
-              className="block bg-black px-4 py-3 text-[11px] uppercase tracking-[0.15em] text-white transition hover:bg-black/85"
+              className="block bg-white border border-black px-4 py-3 text-[11px] uppercase tracking-[0.15em] text-white transition hover:bg-white/85 hover:text-black"
             >
               Về trang chủ
             </Link>
@@ -89,7 +91,7 @@ export default function CheckoutPage() {
         }
       `}</style>
 
-      <div className="mx-auto w-full max-w-[1280px] border border-black/15 bg-white p-3 md:p-5 lg:p-6">
+      <div className="w-full border border-black/15 bg-white p-3 md:p-5 lg:p-6">
         <div className="grid gap-6 md:grid-cols-[1fr_290px] lg:grid-cols-[1fr_340px]">
           <section className="order-2 md:order-1">
             <h2 className="mb-6 text-[26px] md:text-[40px]">Checkout</h2>
@@ -104,7 +106,7 @@ export default function CheckoutPage() {
                     value={name}
                     onChange={(e) => {
                       setName(e.target.value);
-                      if (submitted) setErrors((prev) => ({ ...prev, name: !e.target.value.trim() ? "Vui lòng nhập họ tên" : undefined }));
+                      if (submitted) setErrors((prev) => ({ ...prev, name: !e.target.value.trim() ? "Please enter your full name" : undefined }));
                     }}
                   />
                   {submitted && errors.name && <p className="mt-1 text-[11px] text-red-500">{errors.name}</p>}
@@ -116,7 +118,7 @@ export default function CheckoutPage() {
                     value={phone}
                     onChange={(e) => {
                       setPhone(e.target.value);
-                      if (submitted) setErrors((prev) => ({ ...prev, phone: !e.target.value.trim() ? "Vui lòng nhập số điện thoại" : !PHONE_RE.test(e.target.value.trim()) ? "Số điện thoại không hợp lệ" : undefined }));
+                      if (submitted) setErrors((prev) => ({ ...prev, phone: !e.target.value.trim() ? "Please enter your phone number" : !PHONE_RE.test(e.target.value.trim()) ? "Invalid phone number" : undefined }));
                     }}
                   />
                   {submitted && errors.phone && <p className="mt-1 text-[11px] text-red-500">{errors.phone}</p>}
@@ -128,7 +130,7 @@ export default function CheckoutPage() {
                     value={email}
                     onChange={(e) => {
                       setEmail(e.target.value);
-                      if (submitted) setErrors((prev) => ({ ...prev, email: !e.target.value.trim() ? "Vui lòng nhập email" : !EMAIL_RE.test(e.target.value.trim()) ? "Email không hợp lệ" : undefined }));
+                      if (submitted) setErrors((prev) => ({ ...prev, email: !e.target.value.trim() ? "Please enter your email" : !EMAIL_RE.test(e.target.value.trim()) ? "Invalid email address" : undefined }));
                     }}
                   />
                   {submitted && errors.email && <p className="mt-1 text-[11px] text-red-500">{errors.email}</p>}
@@ -139,7 +141,18 @@ export default function CheckoutPage() {
             <div className="mb-7">
               <p className="mb-3 text-[11px] uppercase tracking-[0.13em] text-black/60">Shipping Address</p>
               <div className="space-y-3">
-                <input className={inputNormal} placeholder="Street Address" />
+                <div>
+                  <input
+                    className={submitted && errors.address ? inputError : inputNormal}
+                    placeholder="Street Address"
+                    value={address}
+                    onChange={(e) => {
+                      setAddress(e.target.value);
+                      if (submitted) setErrors((prev) => ({ ...prev, address: !e.target.value.trim() ? "Please enter your street address" : undefined }));
+                    }}
+                  />
+                  {submitted && errors.address && <p className="mt-1 text-[11px] text-red-500">{errors.address}</p>}
+                </div>
                 <input className={inputNormal} placeholder="Delivery Note (Optional)" />
               </div>
             </div>
@@ -232,7 +245,7 @@ export default function CheckoutPage() {
 
       </div>
 
-      <div className="mx-auto mt-3 w-full max-w-[1280px] px-1 text-center text-xs text-black/55 md:hidden">
+      <div className="mt-3 w-full px-1 text-center text-xs text-black/55 md:hidden">
         <span>{formatUsd(total)}</span>
       </div>
     </main>

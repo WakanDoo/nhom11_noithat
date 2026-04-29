@@ -1,18 +1,18 @@
 .footer {
   flex-shrink: 0;
   width: 100%;
-  background: #000;
   color: #fff;
 }
 
 .inner {
   display: grid;
-  width: min(100%, 1280px);
+  width: 100%;
   min-height: 127px;
   margin: 0 auto;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 28px;
   padding: 25px 32px 22px 45px;
+  background: #000;
 }
 
 .left {
@@ -83,7 +83,7 @@
 .email {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   font-family: var(--font-inter), Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -94,6 +94,7 @@
 .mailIcon {
   width: 22px;
   height: 22px;
+  flex-shrink: 0;
 }
 
 .social {
@@ -115,13 +116,8 @@
 
 .socialLink {
   display: inline-flex;
-  width: 36px;
-  height: 36px;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
-  background: #fff;
-  color: #000;
   transition: opacity 180ms ease, transform 180ms ease;
 }
 
@@ -131,8 +127,11 @@
 }
 
 .socialIcon {
-  width: 19px;
-  height: 19px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 @media (max-width: 1023px) {
