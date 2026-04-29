@@ -2,7 +2,7 @@
 
 ## 1. Thông tin nhóm
 
-**Tên nhóm:** Nhóm 9 - OWLHOME
+**Tên nhóm:** Nhóm 11 - OWLHOME
 
 **Danh sách thành viên:**
 
