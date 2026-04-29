@@ -1,6 +1,6 @@
 import type { FormEvent } from "react";
 
-import Button from "@/components/ui/Button";
+import Button from "../ui/Button";
 import Icon from "@/components/ui/Icon";
 import Input from "@/components/ui/Input";
 

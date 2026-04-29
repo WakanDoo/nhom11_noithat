@@ -103,13 +103,17 @@ export default function AuthForm() {
   const handleLoginSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!validateLogin()) return;
-    router.push("/");
+    localStorage.setItem("owlhome_auth", "true");
+    localStorage.setItem("isLoggedIn", "true");
+    router.push("/account");
   };
 
   const handleRegisterSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!validateRegister()) return;
-    router.push("/");
+    localStorage.setItem("owlhome_auth", "true");
+    localStorage.setItem("isLoggedIn", "true");
+    router.push("/account");
   };
 
   return (
