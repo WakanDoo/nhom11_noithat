@@ -17,14 +17,34 @@ const formatUsd = (value: number) =>
     value / USD_RATE,
   );
 
-const inputStyle =
-  "w-full border-b border-black/35 bg-transparent py-3 text-sm outline-none placeholder:text-black/45";
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_RE = /^\+?[0-9\s\-]{7,15}$/;
+
+function validate(name: string, phone: string, email: string) {
+  const errors: { name?: string; phone?: string; email?: string } = {};
+  if (!name.trim()) errors.name = "Vui lòng nhập họ tên";
+  if (!phone.trim()) errors.phone = "Vui lòng nhập số điện thoại";
+  else if (!PHONE_RE.test(phone.trim())) errors.phone = "Số điện thoại không hợp lệ";
+  if (!email.trim()) errors.email = "Vui lòng nhập email";
+  else if (!EMAIL_RE.test(email.trim())) errors.email = "Email không hợp lệ";
+  return errors;
+}
+
+const inputBase =
+  "w-full border-b bg-transparent py-3 text-sm outline-none placeholder:text-black/45 transition-colors";
+const inputNormal = `${inputBase} border-black/35`;
+const inputError = `${inputBase} border-red-500`;
 
 export default function CheckoutPage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [selectedShipping, setSelectedShipping] = useState<"standard" | "express">("standard");
   const [selectedPayment, setSelectedPayment] = useState<"cod" | "bank" | "ewallet" | null>(null);
   const [orderSuccess, setOrderSuccess] = useState(false);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [errors, setErrors] = useState<{ name?: string; phone?: string; email?: string }>({});
+  const [submitted, setSubmitted] = useState(false);
   const { items } = useCartStore();
   const firstItem = items[0];
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -39,6 +59,10 @@ export default function CheckoutPage() {
   }, []);
 
   const handlePlaceOrder = () => {
+    setSubmitted(true);
+    const errs = validate(name, phone, email);
+    setErrors(errs);
+    if (Object.keys(errs).length > 0) return;
     setOrderSuccess(true);
   };
 
@@ -111,17 +135,50 @@ export default function CheckoutPage() {
             <div className="mb-7">
               <p className="mb-3 text-[11px] uppercase tracking-[0.13em] text-black/60">Customer Information</p>
               <div className="space-y-3">
-                <input className={inputStyle} placeholder="Full Name" />
-                <input className={inputStyle} placeholder="Phone Number" />
-                <input className={inputStyle} placeholder="Email Address" />
+                <div>
+                  <input
+                    className={submitted && errors.name ? inputError : inputNormal}
+                    placeholder="Full Name"
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                      if (submitted) setErrors((prev) => ({ ...prev, name: !e.target.value.trim() ? "Vui lòng nhập họ tên" : undefined }));
+                    }}
+                  />
+                  {submitted && errors.name && <p className="mt-1 text-[11px] text-red-500">{errors.name}</p>}
+                </div>
+                <div>
+                  <input
+                    className={submitted && errors.phone ? inputError : inputNormal}
+                    placeholder="Phone Number"
+                    value={phone}
+                    onChange={(e) => {
+                      setPhone(e.target.value);
+                      if (submitted) setErrors((prev) => ({ ...prev, phone: !e.target.value.trim() ? "Vui lòng nhập số điện thoại" : !PHONE_RE.test(e.target.value.trim()) ? "Số điện thoại không hợp lệ" : undefined }));
+                    }}
+                  />
+                  {submitted && errors.phone && <p className="mt-1 text-[11px] text-red-500">{errors.phone}</p>}
+                </div>
+                <div>
+                  <input
+                    className={submitted && errors.email ? inputError : inputNormal}
+                    placeholder="Email Address"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      if (submitted) setErrors((prev) => ({ ...prev, email: !e.target.value.trim() ? "Vui lòng nhập email" : !EMAIL_RE.test(e.target.value.trim()) ? "Email không hợp lệ" : undefined }));
+                    }}
+                  />
+                  {submitted && errors.email && <p className="mt-1 text-[11px] text-red-500">{errors.email}</p>}
+                </div>
               </div>
             </div>
 
             <div className="mb-7">
               <p className="mb-3 text-[11px] uppercase tracking-[0.13em] text-black/60">Shipping Address</p>
               <div className="space-y-3">
-                <input className={inputStyle} placeholder="Street Address" />
-                <input className={inputStyle} placeholder="Delivery Note (Optional)" />
+                <input className={inputNormal} placeholder="Street Address" />
+                <input className={inputNormal} placeholder="Delivery Note (Optional)" />
               </div>
             </div>
 

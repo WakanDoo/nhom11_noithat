@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import AuthTabs from "./AuthTabs";
 import LoginForm, { type LoginValues } from "./LoginForm";
@@ -24,6 +25,7 @@ const initialRegisterValues: RegisterValues = {
 };
 
 export default function AuthForm() {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState<AuthTab>("signin");
   const [loginValues, setLoginValues] = useState<LoginValues>(initialLoginValues);
   const [registerValues, setRegisterValues] = useState<RegisterValues>(initialRegisterValues);
@@ -100,22 +102,14 @@ export default function AuthForm() {
 
   const handleLoginSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    if (!validateLogin()) {
-      return;
-    }
-
-    console.log("Login payload", loginValues);
+    if (!validateLogin()) return;
+    router.push("/");
   };
 
   const handleRegisterSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    if (!validateRegister()) {
-      return;
-    }
-
-    console.log("Register payload", registerValues);
+    if (!validateRegister()) return;
+    router.push("/");
   };
 
   return (
