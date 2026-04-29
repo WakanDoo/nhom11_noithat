@@ -76,7 +76,7 @@ export default function CheckoutPage() {
             <p className="mb-6 text-sm text-black/60">Chúng tôi sẽ liên hệ xác nhận đơn hàng sớm nhất.</p>
             <Link
               href="/"
-              className="block bg-white border border-black px-4 py-3 text-[11px] uppercase tracking-[0.15em] text-white transition hover:bg-white/85 hover:text-black"
+              className="block bg-black border border-black px-4 py-3 text-[11px] uppercase tracking-[0.15em] text-white transition hover:bg-black/85"
             >
               Về trang chủ
             </Link>

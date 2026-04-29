@@ -8,14 +8,6 @@
   --foreground: #171717;
 }
 
-html.dark {
-  color-scheme: dark;
-}
-
-html.dark main {
-  background-color: #111;
-  color: #f0f0f0;
-}
 
 @theme inline {
   --color-background: var(--background);

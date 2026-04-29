@@ -39,6 +39,7 @@
   transition: transform 260ms ease;
 }
 
+
 .rootOpen .panel {
   transform: translateX(0);
 }
@@ -71,6 +72,7 @@
   cursor: pointer;
   transition: opacity 180ms ease, transform 180ms ease;
 }
+
 
 .closeButton:hover {
   opacity: 0.68;

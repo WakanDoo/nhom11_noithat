@@ -117,7 +117,7 @@ export default function CartPage() {
             </div>
             <Link
               href="/checkout"
-              className="mb-3 block bg-white border border-black px-4 py-3 text-center text-[11px] uppercase tracking-[0.15em] text-white transition hover:bg-white/85 hover:text-black">
+              className="mb-3 block bg-black border border-black px-4 py-3 text-center text-[11px] uppercase tracking-[0.15em] text-white transition hover:bg-black/85">
               Proceed to checkout
             </Link>
             <Link
