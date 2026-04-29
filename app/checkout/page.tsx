@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle } from "lucide-react";
 import { useState } from "react";
+import { asset } from "@/lib/asset";
 import { useCartStore } from "@/store/useCartStore";
 import { cormorant } from "@/src/lib/fonts";
 
@@ -212,7 +213,7 @@ export default function CheckoutPage() {
             {firstItem ? (
               <div className="mb-4 flex items-center gap-3 border-b border-black/15 pb-4">
                 <div className="h-[56px] w-[56px] overflow-hidden border border-black/30 bg-white">
-                  <Image src={firstItem.image} alt={firstItem.name} width={112} height={112} className="h-full w-full object-cover" />
+                  <Image src={asset(firstItem.image)} alt={firstItem.name} width={112} height={112} className="h-full w-full object-cover" />
                 </div>
                 <div className="min-w-0">
                   <p className="truncate text-sm">{firstItem.name}</p>

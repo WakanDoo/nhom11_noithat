@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MailIcon } from "@/components/icons/mail-icon";
+import { asset } from "@/lib/asset";
 import { routes } from "@/lib/routes";
 import styles from "./site-footer.module.css";
 
@@ -51,7 +52,7 @@ export function SiteFooter() {
                 rel={item.href.startsWith("http") ? "noreferrer" : undefined}
               >
                 <Image
-                  src={item.src}
+                  src={asset(item.src)}
                   alt={item.label}
                   width={40}
                   height={40}

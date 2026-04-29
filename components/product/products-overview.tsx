@@ -5,6 +5,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { asset } from "@/lib/asset";
 import { cormorant, roboto } from "@/lib/fonts";
 import { fadeInScale, fadeInUp, motionTransition, staggerContainer } from "@/lib/motion";
 
@@ -109,7 +110,7 @@ export function ProductsOverview() {
                   }`}
                 >
                   <Image
-                    src={image.src}
+                    src={asset(image.src)}
                     alt={image.label}
                     fill
                     sizes="(max-width: 640px) 100vw, 33vw"

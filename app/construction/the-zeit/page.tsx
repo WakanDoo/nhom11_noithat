@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 const rows = [
   ["/picture/construction3/Rectangle 39.png", "/picture/construction3/Rectangle 40.png"],
@@ -29,7 +30,7 @@ function ConstructionGallery({ title, rows }: { title: string; rows: readonly (r
             <div key={row.join("|")} className={row.length === 1 ? "relative h-[360px] md:h-[500px]" : "grid gap-4 md:grid-cols-2"}>
               {row.map((src) => (
                 <div key={src} className={row.length === 1 ? "absolute inset-0" : "relative aspect-square"}>
-                  <Image src={src} alt="" fill className="object-cover" sizes={row.length === 1 ? "100vw" : "(max-width: 768px) 100vw, 50vw"} />
+                  <Image src={asset(src)} alt="" fill className="object-cover" sizes={row.length === 1 ? "100vw" : "(max-width: 768px) 100vw, 50vw"} />
                 </div>
               ))}
             </div>

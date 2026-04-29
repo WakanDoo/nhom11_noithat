@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { asset } from "@/lib/asset";
 
 function ChevronLeftIcon({ className }: { className?: string }) {
   return (
@@ -25,8 +26,8 @@ function FigmaVideo({
   className?: string;
 }) {
   return (
-    <video className={className} poster={posterSrc} autoPlay muted loop playsInline preload="auto">
-      <source src={mp4Src} type="video/mp4" />
+    <video className={className} poster={asset(posterSrc)} autoPlay muted loop playsInline preload="auto">
+      <source src={asset(mp4Src)} type="video/mp4" />
     </video>
   );
 }
@@ -95,7 +96,7 @@ export default function Home() {
           <Link href="/product/desk-pulp" className="group relative block min-h-[380px] lg:min-h-0">
             <FigmaVideo
               mp4Src="/video/video4.mp4"
-              posterSrc="/figma/home/home-video-4.png"
+              posterSrc="/figma/home/home-tile-left.png"
               className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90"
             />
             <div className="pointer-events-none absolute inset-0 bg-black/25" />
@@ -103,19 +104,19 @@ export default function Home() {
 
           <div className="grid min-h-[760px] grid-cols-1 sm:min-h-[600px] sm:grid-cols-3 sm:grid-rows-2 lg:min-h-0">
             <Link href="/product/tables_chairs-pétale" className="group relative min-h-[300px] sm:col-span-2">
-              <Image src="/figma/home/home-tile-petale.png" alt="Pétale" fill className="object-cover transition-opacity duration-300 group-hover:opacity-90" />
+              <Image src={asset("/figma/home/home-tile-petale.png")} alt="Pétale" fill className="object-cover transition-opacity duration-300 group-hover:opacity-90" />
               <TileLabel>Pétale</TileLabel>
             </Link>
             <Link href="/product/tables_chairs-niwa" className="group relative min-h-[300px]">
-              <Image src="/figma/home/home-tile-niwa.png" alt="Niwa" fill className="object-cover transition-opacity duration-300 group-hover:opacity-90" />
+              <Image src={asset("/figma/home/home-tile-niwa.png")} alt="Niwa" fill className="object-cover transition-opacity duration-300 group-hover:opacity-90" />
               <TileLabel>Niwa</TileLabel>
             </Link>
             <Link href="/product/bed-en-tête" className="group relative min-h-[300px]">
-              <Image src="/figma/home/home-tile-en-tete.png" alt="En-Tête" fill className="object-cover transition-opacity duration-300 group-hover:opacity-90" />
+              <Image src={asset("/figma/home/home-tile-en-tete.png")} alt="En-Tête" fill className="object-cover transition-opacity duration-300 group-hover:opacity-90" />
               <TileLabel>En-Tête</TileLabel>
             </Link>
             <Link href="/product/tv_cabinets_consoles-trinta" className="group relative min-h-[300px] sm:col-span-2">
-              <Image src="/figma/home/home-tile-trinta.png" alt="Trinta" fill className="object-cover transition-opacity duration-300 group-hover:opacity-90" />
+              <Image src={asset("/figma/home/home-tile-trinta.png")} alt="Trinta" fill className="object-cover transition-opacity duration-300 group-hover:opacity-90" />
               <TileLabel>Trinta</TileLabel>
             </Link>
           </div>

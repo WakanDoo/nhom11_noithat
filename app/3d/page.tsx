@@ -7,6 +7,7 @@ import { useState, Suspense, useMemo, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
+import { asset } from "@/lib/asset";
 import { products } from "@/data/products";
 import { useCartStore } from "@/store/useCartStore";
 
@@ -584,7 +585,7 @@ export default function ThreeDPage() {
                   >
                     <div className="relative h-36 bg-[#f7f5f2] flex items-center justify-center">
                       <Image
-                        src={product.image}
+                        src={asset(product.image)}
                         alt={product.name}
                         fill
                         className="object-contain p-3"

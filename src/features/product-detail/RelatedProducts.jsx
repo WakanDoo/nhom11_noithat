@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { asset } from "@/lib/asset";
 
 function formatPrice(price) {
   return new Intl.NumberFormat("vi-VN").format(price);
@@ -39,7 +40,7 @@ export function RelatedProducts({ products = [], currentId }) {
           >
             <div className="relative aspect-[1.22/1] overflow-hidden bg-[#f6f5f3]">
               <Image
-                src={product.image}
+                src={asset(product.image)}
                 alt={product.name}
                 fill
                 sizes="(min-width: 1024px) 300px, (min-width: 768px) 31vw, 70vw"

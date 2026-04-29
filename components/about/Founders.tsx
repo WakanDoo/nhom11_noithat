@@ -1,5 +1,6 @@
 import RevealSection from "@/components/about/RevealSection";
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 const founders = [
   {
@@ -50,7 +51,7 @@ export default function Founders() {
           <article className="founder-card" key={founder.id}>
             <div className="founder-photo image-hover">
               <Image
-                src={`/assets/images/${founder.image}`}
+                src={asset(`/assets/images/${founder.image}`)}
                 alt={founder.name}
                 fill
                 loading="eager"

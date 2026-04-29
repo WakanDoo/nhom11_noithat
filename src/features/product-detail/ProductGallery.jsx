@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
+import { asset } from "@/lib/asset";
 
 export default function ProductGallery({
   gallery,
@@ -57,7 +58,7 @@ export default function ProductGallery({
             >
               <div className="relative h-[calc(100vh-200px)] w-full">
                 <Image
-                  src={image}
+                  src={asset(image)}
                   alt={`${name} view ${index + 1}`}
                   fill
                   priority={index === 0}
@@ -89,7 +90,7 @@ export default function ProductGallery({
                 }`}
               >
                 <Image
-                  src={image}
+                  src={asset(image)}
                   alt={`${name} view ${index + 1}`}
                   fill
                   priority={index === 0}

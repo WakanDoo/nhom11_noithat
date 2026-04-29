@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Minus, Plus, X } from "lucide-react";
+import { asset } from "@/lib/asset";
 import { useCartStore } from "@/store/useCartStore";
 import { cormorant } from "@/src/lib/fonts";
 
@@ -44,7 +45,7 @@ export default function CartPage() {
                   <div className="flex items-center gap-3 md:grid md:grid-cols-[1.6fr_1fr_1fr]">
                     <div className="flex min-w-0 items-center gap-3">
                       <div className="h-[62px] w-[88px] overflow-hidden rounded-sm border border-black/30 bg-white md:h-[74px] md:w-[96px]">
-                        <Image src={item.image} alt={item.name} width={192} height={148} className="h-full w-full object-cover" />
+                        <Image src={asset(item.image)} alt={item.name} width={192} height={148} className="h-full w-full object-cover" />
                       </div>
                       <div className="min-w-0">
                         <p className="text-base md:text-lg">{item.name}</p>

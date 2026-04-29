@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 const images = [
   {
@@ -25,7 +26,7 @@ export function GallerySection() {
             className="relative interactive-media reveal-on-scroll w-full aspect-[392/296] overflow-hidden rounded-2xl"
           >
             <Image
-              src={img.src}
+              src={asset(img.src)}
               alt={img.alt}
               fill
               loading="lazy"

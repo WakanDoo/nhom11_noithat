@@ -34,7 +34,7 @@ export const categoryMap: Record<string, { name: string; breadcrumbLabel: string
     heading: 'Living Room Furniture',
     description: 'Comfortable and stylish furniture for your living space.',
     products: [
-      { id: '1', name: 'Sofa', label: 'Sofa', title: 'Comfortable Sofa', price: 1000, image: '/sofa.jpg', category: 'livingroom', categorySlug: 'livingroom' },
+      { id: '1', name: 'Sofa', label: 'Sofa', title: 'Comfortable Sofa', price: 1000, image: '/category/sofa-setup.png', category: 'livingroom', categorySlug: 'livingroom' },
     ],
   },
   bedroom: {
@@ -43,7 +43,7 @@ export const categoryMap: Record<string, { name: string; breadcrumbLabel: string
     heading: 'Bedroom Furniture',
     description: 'Relaxing bedroom designs that combine comfort and style.',
     products: [
-      { id: '2', name: 'Bed', label: 'Bed', title: 'Cozy Bed', price: 1200, image: '/bedroom.jpg', category: 'bedroom', categorySlug: 'bedroom' },
+      { id: '2', name: 'Bed', label: 'Bed', title: 'Cozy Bed', price: 1200, image: '/assets/images/bedroom.jpg', category: 'bedroom', categorySlug: 'bedroom' },
     ],
   },
   sofa: {

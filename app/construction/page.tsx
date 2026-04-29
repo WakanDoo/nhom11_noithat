@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { asset } from "@/lib/asset";
 
 const projects = [
   {
@@ -44,7 +45,7 @@ export default function Construction() {
             <Link key={project.href} href={project.href} className="block">
               <article className="grid cursor-pointer items-center gap-6 transition hover:opacity-80 md:grid-cols-2">
                 <div className="relative min-h-[320px] md:h-[500px]">
-                  <Image src={project.image} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                  <Image src={asset(project.image)} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
                 </div>
 
                 <div className="min-w-0">

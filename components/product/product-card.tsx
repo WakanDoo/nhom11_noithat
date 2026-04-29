@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Product } from "@/lib/categories";
+import { asset } from "@/lib/asset";
 import { inter, roboto } from "@/lib/fonts";
 
 export function ProductCard({
@@ -22,7 +23,7 @@ export function ProductCard({
       <article className="group flex h-full flex-col overflow-hidden rounded-[16px] border border-black/8 bg-white transition-shadow duration-300 hover:shadow-lg">
         <div className={`relative ${imageHeightClass} bg-[#f5f0ee]`}>
           <Image
-            src={product.image}
+            src={asset(product.image)}
             alt={label}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 560px"

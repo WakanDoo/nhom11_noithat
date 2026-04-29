@@ -1,5 +1,6 @@
 import RevealSection from "@/components/about/RevealSection";
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 export default function Promise() {
   return (
@@ -10,7 +11,7 @@ export default function Promise() {
       <span className="decor-ring promise-ring" aria-hidden="true" />
       <div className="section-image kitchen-image image-hover">
         <Image
-          src="/assets/images/kitchen.jpg"
+          src={asset("/assets/images/kitchen.jpg")}
           alt="Modern OWLHOME kitchen with warm lighting"
           fill
           sizes="(max-width: 1024px) 100vw, 408px"

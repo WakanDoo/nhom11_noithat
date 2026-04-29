@@ -1,9 +1,11 @@
+import { asset } from "@/lib/asset";
+
 export function ContactHeroSection() {
   return (
     <section className="relative flex min-h-[300px] w-full items-center justify-center overflow-hidden md:min-h-[360px] lg:min-h-[440px]">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url(/contactus.png)" }}
+        style={{ backgroundImage: `url(${asset("/contactus.png")})` }}
       />
       <div className="absolute inset-0 bg-black/40" />
       <div className="relative z-10 flex flex-col items-center justify-center gap-2 px-6 py-6 text-center">

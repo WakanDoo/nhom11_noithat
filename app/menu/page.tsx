@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { asset } from "@/lib/asset";
 
 const menuItems = [
   { label: "CONTACT", href: "/contact" },
@@ -38,7 +39,7 @@ export default function MenuPage() {
         <div className="grid min-h-[720px] grid-cols-1 sm:min-h-[613px] sm:grid-cols-3">
           {menuImages.map((src, index) => (
             <div key={src} className="relative min-h-[240px] sm:min-h-0">
-              <Image src={src} alt="" fill className="object-cover" priority={index === 0} />
+              <Image src={asset(src)} alt="" fill className="object-cover" priority={index === 0} />
             </div>
           ))}
         </div>

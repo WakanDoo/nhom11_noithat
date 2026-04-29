@@ -1,5 +1,6 @@
 import RevealSection from "@/components/about/RevealSection";
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 export default function Expertise() {
   return (
@@ -42,7 +43,7 @@ export default function Expertise() {
       <span className="decor-ring why-ring" aria-hidden="true" />
       <div className="section-image bedroom-image image-hover">
         <Image
-          src="/assets/images/bedroom.jpg"
+          src={asset("/assets/images/bedroom.jpg")}
           alt="Calm OWLHOME bedroom with warm wood flooring"
           fill
           sizes="(max-width: 1024px) 100vw, 419px"

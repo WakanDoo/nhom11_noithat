@@ -1,5 +1,6 @@
 import RevealSection from "@/components/about/RevealSection";
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 export default function BrandStory() {
   return (
@@ -9,7 +10,7 @@ export default function BrandStory() {
     >
       <div className="section-image story-image image-hover">
         <Image
-          src="/assets/images/brand-story.jpg"
+          src={asset("/assets/images/brand-story.jpg")}
           alt="Luxury OWLHOME living room interior"
           fill
           sizes="(max-width: 1024px) 100vw, 410px"

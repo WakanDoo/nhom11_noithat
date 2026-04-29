@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { asset } from "@/lib/asset";
 
 export function ShowroomSection() {
   return (
@@ -9,7 +10,7 @@ export function ShowroomSection() {
           fill
           sizes="100vw"
           alt="OWLHOME outdoor showroom with yellow lounge seating by the sea"
-          src="/showroom.png"
+          src={asset("/showroom.png")}
           className="object-cover object-center"
           priority={false}
         />
