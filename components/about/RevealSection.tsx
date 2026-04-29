@@ -16,17 +16,15 @@ export default function RevealSection({ children, ...props }: RevealSectionProps
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reducedMotion || !("IntersectionObserver" in window)) {
-      setIsVisible(true);
       return;
     }
 
     const top = section.getBoundingClientRect().top;
     if (top < window.innerHeight - 40) {
-      setIsVisible(true);
       return;
     }
 
-    setIsVisible(false);
+    const frame = window.requestAnimationFrame(() => setIsVisible(false));
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -44,7 +42,10 @@ export default function RevealSection({ children, ...props }: RevealSectionProps
 
     observer.observe(section);
 
-    return () => observer.disconnect();
+    return () => {
+      window.cancelAnimationFrame(frame);
+      observer.disconnect();
+    };
   }, []);
 
   return (

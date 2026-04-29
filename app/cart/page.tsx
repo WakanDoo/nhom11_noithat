@@ -3,10 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, Minus, Plus, Search, ShoppingCart, X } from "lucide-react";
-import { CartBadgeLink } from "@/components/CartBadgeLink";
-import { UserNavLink } from "@/components/UserNavLink";
-import { useEffect, useState } from "react";
+import { Minus, Plus, X } from "lucide-react";
 import { useCartStore } from "@/store/useCartStore";
 
 const SHIPPING_LABEL = "Complimentary";
@@ -14,48 +11,11 @@ const formatVnd = (value: number) =>
   new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(value);
 
 export default function CartPage() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const { items, increaseQuantity, decreaseQuantity, removeItem } = useCartStore();
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 8);
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <main className="min-h-screen bg-white px-3 py-3 text-black md:px-4 md:py-5 lg:px-8">
-      <header
-        className={`fixed top-0 right-0 left-0 z-50 bg-white transition-shadow duration-200 ${
-          isScrolled ? "shadow-[0_2px_10px_rgba(0,0,0,0.12)]" : ""
-        }`}
-      >
-        <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between border-x border-b border-black/15 px-3 py-3 text-[11px] uppercase tracking-[0.12em] md:px-5 md:py-4 md:text-xs lg:px-6">
-          <div className="flex items-center gap-3">
-            <Link href="/menu" className="inline-flex items-center gap-1">
-              <Menu className="h-3.5 w-3.5" />
-              <span className="hidden md:inline">Menu</span>
-            </Link>
-            <span className="hidden md:inline">About</span>
-            <Link href="/search" className="inline-flex items-center gap-1">
-              <Search className="h-3.5 w-3.5" />
-              <span className="hidden md:inline">Search</span>
-            </Link>
-          </div>
-          <Link href="/" className="font-serif text-xl tracking-[0.2em] md:text-[46px] md:leading-none">OWLHOME</Link>
-          <div className="flex items-center gap-3">
-            <Link href="/products" className="hidden md:inline">Products</Link>
-            <Link href="/construction" className="hidden md:inline">Construction</Link>
-            <CartBadgeLink><ShoppingCart className="h-3.5 w-3.5" /></CartBadgeLink>
-            <UserNavLink />
-          </div>
-        </div>
-      </header>
-
-      <div className="h-[68px] md:h-[90px]" />
-
       <div className="mx-auto w-full max-w-[1280px] rounded-sm border border-black/15 bg-white p-3 md:p-5 lg:p-6">
         <h2 className="mb-3 text-[26px] font-semibold leading-none md:mb-6 md:text-[36px]">Shopping Cart</h2>
 

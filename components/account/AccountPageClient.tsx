@@ -2,10 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
-import { Menu, Search, ShoppingCart } from "lucide-react";
-import { CartBadgeLink } from "@/components/CartBadgeLink";
-import { UserNavLink } from "@/components/UserNavLink";
 import type { AccountData, AccountNavItem } from "../../src/types";
 import { AccountInformationForm } from "./AccountInformationForm";
 import { AccountSidebar } from "./AccountSidebar";
@@ -63,8 +59,10 @@ export function AccountPageClient() {
       return;
     }
 
-    setAccount(getStoredAccount());
-    setMounted(true);
+    queueMicrotask(() => {
+      setAccount(getStoredAccount());
+      setMounted(true);
+    });
   }, [router]);
 
   const saveAccount = (nextAccount: AccountData) => {
@@ -104,26 +102,6 @@ export function AccountPageClient() {
 
   return (
     <>
-      <header className="bg-white border-b border-black/10">
-        <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between px-5 py-3 text-[11px] uppercase tracking-[0.12em] md:text-xs">
-          <div className="flex items-center gap-4">
-            <Link href="/menu" className="inline-flex items-center gap-1 hover:opacity-60">
-              <Menu className="h-3.5 w-3.5" /><span className="hidden md:inline">Menu</span>
-            </Link>
-            <Link href="/about" className="hidden md:inline hover:opacity-60">About</Link>
-            <Link href="/search" className="inline-flex items-center gap-1 hover:opacity-60">
-              <Search className="h-3.5 w-3.5" /><span className="hidden md:inline">Search</span>
-            </Link>
-          </div>
-          <Link href="/" className="font-serif text-[28px] tracking-[0.18em] md:text-[44px] md:leading-none">OWLHOME</Link>
-          <div className="flex items-center gap-4">
-            <Link href="/products" className="hidden md:inline hover:opacity-60">Products</Link>
-            <Link href="/construction" className="hidden md:inline hover:opacity-60">Construction</Link>
-            <CartBadgeLink><ShoppingCart className="h-3.5 w-3.5" /></CartBadgeLink>
-            <UserNavLink />
-          </div>
-        </div>
-      </header>
       <main className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroInner}>
@@ -136,7 +114,7 @@ export function AccountPageClient() {
           <AccountSidebar activeItem={activeTab} onSelect={handleSelectTab} />
           <div className={styles.contentArea}>
             {activeTab === "ACCOUNT INFORMATION" && (
-              <AccountInformationForm account={account} onSave={saveAccount} />
+              <AccountInformationForm key={`${account.email}-${account.phone}-${account.addressLine}`} account={account} onSave={saveAccount} />
             )}
             {activeTab === "ORDERS" && <OrdersPanel />}
             {activeTab === "WISHLIST" && <WishlistPanel />}

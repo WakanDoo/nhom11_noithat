@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { useCartStore } from "@/store/useCartStore";
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 };
 
@@ -16,7 +17,8 @@ export function CartBadgeLink({ children, className }: Props) {
   );
 
   useEffect(() => {
-    setMounted(true);
+    const frame = window.requestAnimationFrame(() => setMounted(true));
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   return (

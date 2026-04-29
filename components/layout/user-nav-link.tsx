@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { User } from "lucide-react";
+import { UserIcon } from "@/components/icons/user-icon";
 
 const AUTH_KEYS = ["owlhome_auth", "isLoggedIn"];
 
@@ -32,7 +32,7 @@ export function UserNavLink({
 
   return (
     <Link href={href} className={className ?? "hover:opacity-60"}>
-      {children ?? <User className={iconClassName ?? "h-3.5 w-3.5"} />}
+      {children ?? <UserIcon className={iconClassName ?? "h-3.5 w-3.5"} />}
     </Link>
   );
 }

@@ -4,11 +4,8 @@ import * as THREE from "three";
 import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, Box, Plane } from "@react-three/drei";
 import { useState, Suspense, useMemo, useEffect, useRef } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { Menu, Search, ShoppingCart } from "lucide-react";
-import { CartBadgeLink } from "@/components/CartBadgeLink";
-import { UserNavLink } from "@/components/UserNavLink";
+import { Search } from "lucide-react";
 import { products } from "@/data/products";
 
 function Room() {
@@ -287,8 +284,14 @@ function DragHandler({ draggingId, onMove, onDragEnd }: {
   const floorPlane = useMemo(() => new THREE.Plane(new THREE.Vector3(0, 1, 0), 0), []);
   const onMoveRef = useRef(onMove);
   const onDragEndRef = useRef(onDragEnd);
-  onMoveRef.current = onMove;
-  onDragEndRef.current = onDragEnd;
+
+  useEffect(() => {
+    onMoveRef.current = onMove;
+  }, [onMove]);
+
+  useEffect(() => {
+    onDragEndRef.current = onDragEnd;
+  }, [onDragEnd]);
 
   useEffect(() => {
     if (!draggingId) return;
@@ -443,34 +446,8 @@ export default function ThreeDPage() {
   const currentGroup = groups.find((g) => g.id === selectedGroup);
 
   return (
-    <div className="flex flex-col h-screen bg-white overflow-hidden">
-
-      <header className="shrink-0 bg-white border-b border-black/10 z-50">
-        <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between px-5 py-3 text-[11px] uppercase tracking-[0.12em] md:text-xs">
-          <div className="flex items-center gap-4">
-            <Link href="/menu" className="inline-flex items-center gap-1 hover:opacity-60">
-              <Menu className="h-3.5 w-3.5" />
-              <span className="hidden md:inline">Menu</span>
-            </Link>
-            <Link href="/about" className="hidden md:inline hover:opacity-60">About</Link>
-            <Link href="/search" className="inline-flex items-center gap-1 hover:opacity-60">
-              <Search className="h-3.5 w-3.5" />
-              <span className="hidden md:inline">Search</span>
-            </Link>
-          </div>
-          <Link href="/" className="font-serif text-[28px] tracking-[0.18em] md:text-[44px] md:leading-none">
-            OWLHOME
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link href="/products" className="hidden md:inline hover:opacity-60">Products</Link>
-            <Link href="/construction" className="hidden md:inline hover:opacity-60">Construction</Link>
-            <CartBadgeLink><ShoppingCart className="h-3.5 w-3.5" /></CartBadgeLink>
-            <UserNavLink />
-          </div>
-        </div>
-      </header>
-
-      <div className="flex flex-1 overflow-hidden">
+    <div className="flex h-[calc(100dvh-var(--site-header-height))] min-h-[680px] flex-col bg-white overflow-hidden">
+      <div className="flex flex-1 flex-col overflow-hidden lg:flex-row">
 
         <div
           className="relative flex-1 overflow-hidden"
@@ -533,7 +510,7 @@ export default function ThreeDPage() {
           </div>
         </div>
 
-        <div className="w-[300px] shrink-0 bg-white border-l border-black/10 flex flex-col overflow-hidden">
+        <div className="h-[340px] w-full shrink-0 border-t border-black/10 bg-white flex flex-col overflow-hidden lg:h-auto lg:w-[300px] lg:border-l lg:border-t-0">
 
           <div className="px-4 pt-5 pb-2 shrink-0">
             <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">

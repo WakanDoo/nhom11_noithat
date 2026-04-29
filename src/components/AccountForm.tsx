@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import type { AccountData } from "../types";
 
 type AccountFormProps = {
@@ -33,10 +33,6 @@ const passwordFields: Field[] = [
 
 export function AccountForm({ account, onSave }: AccountFormProps) {
   const [draft, setDraft] = useState(account);
-
-  useEffect(() => {
-    setDraft(account);
-  }, [account]);
 
   const updateField = (key: keyof AccountData, value: string) => {
     setDraft((current) => ({ ...current, [key]: value }));

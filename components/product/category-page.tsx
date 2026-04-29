@@ -1,7 +1,5 @@
 import { notFound } from "next/navigation";
-import { ProductCard } from "@/components/product-card";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
+import { ProductCard } from "@/components/product/product-card";
 import { categoryMap } from "@/lib/categories";
 import { inter, roboto } from "@/lib/fonts";
 import { products } from "@/data/products";
@@ -33,7 +31,6 @@ export function CategoryPage({ slug }: { slug: string }) {
 
   return (
     <div className={`${inter.className} min-h-screen bg-[#fffdfb] text-black`}>
-      <SiteHeader />
       <main className="mx-auto w-full max-w-7xl px-5 pb-8 pt-8 sm:px-8 lg:px-10 lg:pt-10">
         <div className="border-b border-black/10 pb-7">
           <p className={`${roboto.className} text-[11px] uppercase tracking-[0.24em] text-black/50`}>
@@ -61,7 +58,6 @@ export function CategoryPage({ slug }: { slug: string }) {
           ))}
         </section>
       </main>
-      <SiteFooter />
     </div>
   );
 }

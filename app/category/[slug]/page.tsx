@@ -1,4 +1,4 @@
-import { CategoryPage } from "@/components/category-page";
+import { CategoryPage } from "@/components/product/category-page";
 import { categories } from "@/lib/categories";
 
 export function generateStaticParams() {

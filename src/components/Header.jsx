@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { CartBadgeLink } from "@/components/CartBadgeLink";
+import { CartBadgeLink } from "@/components/cart/cart-badge-link";
 
 function MenuIcon() {
   return (

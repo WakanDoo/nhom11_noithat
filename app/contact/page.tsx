@@ -1,5 +1,4 @@
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import { ContactHeroSection } from "@/components/sections/contact-hero-section";
 import { ContactInfoSection } from "@/components/sections/contact-info-section";
 import { GallerySection } from "@/components/sections/gallery-section";
 import { ContactFormSection } from "@/components/sections/contact-form-section";
@@ -14,12 +13,11 @@ export default function ContactPage() {
   return (
     <div className="w-full flex justify-center bg-white">
       <main className="w-full max-w-[1280px] mx-auto flex flex-col">
-        <Header />
+        <ContactHeroSection />
         <ContactInfoSection />
         <GallerySection />
         <ContactFormSection />
         <ShowroomSection />
-        <Footer />
       </main>
     </div>
   );

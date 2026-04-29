@@ -5,9 +5,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
-import { categoryMap } from "@/lib/categories";
 import { cormorant, roboto } from "@/lib/fonts";
 import { fadeInScale, fadeInUp, motionTransition, staggerContainer } from "@/lib/motion";
 
@@ -53,8 +50,6 @@ const sections = [
 export function ProductsOverview() {
   return (
     <div className="min-h-screen bg-[#fffdfb] text-black">
-      <SiteHeader />
-
       <main className="mx-auto w-full max-w-7xl px-5 pb-0 pt-8 sm:px-8 lg:px-10 lg:pt-9">
         <section className="grid gap-8 lg:grid-cols-[392px_minmax(0,1fr)] lg:gap-10">
 
@@ -134,8 +129,6 @@ export function ProductsOverview() {
           </motion.div>
         </section>
       </main>
-
-      <SiteFooter />
     </div>
   );
 }
