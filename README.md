@@ -2,7 +2,7 @@
 
 ## 1. Thông tin nhóm
 
-**Tên nhóm:** Nhóm 9 - OWLHOME
+**Tên nhóm:** Nhóm 11 - OWLHOME
 
 **Danh sách thành viên:**
 
@@ -73,7 +73,7 @@ Xem bản thiết kế tại:
 ## 5. Demo website
 
 Truy cập website đã deploy:
-👉 wakandoo.github.io/nhom11_noithat/
+👉 https://wakandoo.github.io/nhom11_noithat/
 
 ---
 
