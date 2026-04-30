@@ -4,7 +4,15 @@ import { getProductById, products } from "@/data/products";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
-  return products.map((product) => ({ id: String(product.id) }));
+  const ids = new Set();
+
+  products.forEach((product) => {
+    const id = String(product.id);
+    ids.add(id);
+    ids.add(encodeURIComponent(id));
+  });
+
+  return Array.from(ids, (id) => ({ id }));
 }
 
 export default async function ProductDetailPage({ params }) {

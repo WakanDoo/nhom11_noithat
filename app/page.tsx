@@ -103,12 +103,12 @@ export default function Home() {
           </Link>
 
           <div className="grid min-h-[760px] grid-cols-1 sm:min-h-[600px] sm:grid-cols-3 sm:grid-rows-2 lg:min-h-0">
-            <Link href="/product/tables_chairs-pétale" className="group relative min-h-[300px] sm:col-span-2">
-              <Image src={asset("/figma/home/home-tile-petale.png")} alt="Pétale" fill className="object-cover transition-opacity duration-300 group-hover:opacity-90" />
+            <Link href="/product/tables_chairs-pétale" className="group relative min-h-[300px] overflow-hidden sm:col-span-2">
+              <Image src={asset("/figma/home/home-tile-petale.png")} alt="Pétale" fill className="scale-x-[1.2] scale-y-[1.12] object-cover transition-opacity duration-300 group-hover:opacity-90" />
               <TileLabel>Pétale</TileLabel>
             </Link>
-            <Link href="/product/tables_chairs-niwa" className="group relative min-h-[300px]">
-              <Image src={asset("/figma/home/home-tile-niwa.png")} alt="Niwa" fill className="object-cover transition-opacity duration-300 group-hover:opacity-90" />
+            <Link href="/product/tables_chairs-niwa" className="group relative min-h-[300px] overflow-hidden">
+              <Image src={asset("/figma/home/home-tile-niwa.png")} alt="Niwa" fill className="scale-[1.12] object-cover transition-opacity duration-300 group-hover:opacity-90" />
               <TileLabel>Niwa</TileLabel>
             </Link>
             <Link href="/product/bed-en-tête" className="group relative min-h-[300px]">

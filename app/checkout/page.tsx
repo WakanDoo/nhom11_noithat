@@ -20,9 +20,17 @@ const formatUsd = (value: number) =>
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^\+?[0-9\s\-]{7,15}$/;
+type PaymentMethod = "cod" | "bank" | "ewallet";
+type CheckoutErrors = {
+  name?: string;
+  phone?: string;
+  email?: string;
+  address?: string;
+  payment?: string;
+};
 
 function validate(name: string, phone: string, email: string, address: string) {
-  const errors: { name?: string; phone?: string; email?: string; address?: string } = {};
+  const errors: CheckoutErrors = {};
   if (!name.trim()) errors.name = "Please enter your full name";
   if (!phone.trim()) errors.phone = "Please enter your phone number";
   else if (!PHONE_RE.test(phone.trim())) errors.phone = "Invalid phone number";
@@ -39,13 +47,13 @@ const inputError = `${inputBase} border-red-500`;
 
 export default function CheckoutPage() {
   const [selectedShipping, setSelectedShipping] = useState<"standard" | "express">("standard");
-  const [selectedPayment, setSelectedPayment] = useState<"cod" | "bank" | "ewallet" | null>(null);
+  const [selectedPayment, setSelectedPayment] = useState<PaymentMethod | null>(null);
   const [orderSuccess, setOrderSuccess] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
-  const [errors, setErrors] = useState<{ name?: string; phone?: string; email?: string; address?: string }>({});
+  const [errors, setErrors] = useState<CheckoutErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const { items } = useCartStore();
   const firstItem = items[0];
@@ -56,6 +64,7 @@ export default function CheckoutPage() {
   const handlePlaceOrder = () => {
     setSubmitted(true);
     const errs = validate(name, phone, email, address);
+    if (!selectedPayment) errs.payment = "Please select a payment method";
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
     setOrderSuccess(true);
@@ -74,13 +83,13 @@ export default function CheckoutPage() {
               <CheckCircle className="h-14 w-14 text-black" strokeWidth={1.2} />
             </div>
             <h2 className="mb-2 font-serif text-2xl tracking-wide">Order Placed!</h2>
-            <p className="mb-1 text-sm text-black/60">Thanh toán thành công.</p>
-            <p className="mb-6 text-sm text-black/60">Chúng tôi sẽ liên hệ xác nhận đơn hàng sớm nhất.</p>
+            <p className="mb-1 text-sm text-black/60">Payment successful</p>
+            <p className="mb-6 text-sm text-black/60">We will contact you to confirm your order as soon as possible.</p>
             <Link
               href="/"
-              className="block bg-black border border-black px-4 py-3 text-[11px] uppercase tracking-[0.15em] text-white transition hover:bg-black/85"
+              className="mb-3 block bg-white border border-black px-4 py-3 text-center text-[11px] uppercase tracking-[0.15em] text-black transition hover:bg-gray-100"
             >
-              Về trang chủ
+              Back to Home
             </Link>
           </div>
         </div>
@@ -194,7 +203,10 @@ export default function CheckoutPage() {
                 ].map(({ id, label }) => (
                   <button
                     key={id}
-                    onClick={() => setSelectedPayment(id as "cod" | "bank" | "ewallet")}
+                    onClick={() => {
+                      setSelectedPayment(id as PaymentMethod);
+                      if (submitted) setErrors((prev) => ({ ...prev, payment: undefined }));
+                    }}
                     className={`w-full px-4 py-3 text-left text-sm transition-all duration-150 ${
                       selectedPayment === id
                         ? "border border-black bg-black text-white"
@@ -205,6 +217,7 @@ export default function CheckoutPage() {
                   </button>
                 ))}
               </div>
+              {submitted && errors.payment && <p className="mt-2 text-[11px] text-red-500">{errors.payment}</p>}
             </div>
           </section>
 
